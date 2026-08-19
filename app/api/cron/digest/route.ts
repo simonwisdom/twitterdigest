@@ -4,11 +4,13 @@ import { TwitterApiIoFetcher } from "@/lib/fetcher/twitterapiio";
 import { createStorage } from "@/lib/storage";
 import { PipelineCtx, runPipeline } from "@/lib/pipeline/index";
 
-// Daily digest generation. Vercel Cron hits this with
-// "Authorization: Bearer <CRON_SECRET>". Re-invoking after a timeout resumes
-// from the last completed stage checkpoint; ?theme=science limits to one theme;
-// ?date=YYYY-MM-DD backfills.
-export const maxDuration = 800;
+// Sweeper / manual trigger. The primary daily run is the GitHub Action
+// (.github/workflows/daily-digest.yml) — it has no duration limit. This route
+// resumes from stage checkpoints, so a cron hit after the Action's window
+// finishes whatever is left (or no-ops cheaply). Requires
+// "Authorization: Bearer <CRON_SECRET>". ?theme= limits to one theme;
+// ?date=YYYY-MM-DD backfills. 300s is the Hobby-plan ceiling.
+export const maxDuration = 300;
 export const dynamic = "force-dynamic";
 
 export async function GET(request: NextRequest) {
