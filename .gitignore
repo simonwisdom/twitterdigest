@@ -1,0 +1,21 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# local data store (used when BLOB_READ_WRITE_TOKEN is unset)
+/.data/
+
+# env
+.env.local
+.env*.local
+
+# misc
+.DS_Store
+*.tsbuildinfo
+
+# vercel
+.vercel

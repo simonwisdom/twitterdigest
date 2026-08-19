@@ -1,0 +1,156 @@
+[
+  {
+    "id": "9001",
+    "authorHandle": "_akhaliq",
+    "text": "Scaling Laws for Sparse Mixture-of-Experts Reasoning Models\n\nShows MoE reasoning models follow distinct scaling laws with compute-optimal expert counts\n\nhttps://arxiv.org/abs/2408.01234",
+    "createdAt": "2026-08-17T12:00:00Z",
+    "urls": ["https://arxiv.org/abs/2408.01234"],
+    "likeCount": 850,
+    "retweetCount": 210,
+    "replyCount": 40,
+    "quoteCount": 55
+  },
+  {
+    "id": "9002",
+    "authorHandle": "iScienceLuvr",
+    "text": "This MoE scaling laws paper is the most interesting arxiv drop this week — the compute-optimal expert count result contradicts the folk wisdom that more experts is always better https://arxiv.org/abs/2408.01234v2",
+    "createdAt": "2026-08-17T13:00:00Z",
+    "urls": ["https://arxiv.org/abs/2408.01234v2"],
+    "likeCount": 420,
+    "retweetCount": 95,
+    "replyCount": 22,
+    "quoteCount": 18
+  },
+  {
+    "id": "9003",
+    "authorHandle": "emollick",
+    "text": "Worth reading skeptically: the MoE scaling paper's optimal-expert claim depends heavily on their FLOP accounting choices. Still a useful contribution. https://arxiv.org/pdf/2408.01234",
+    "createdAt": "2026-08-17T15:00:00Z",
+    "urls": ["https://arxiv.org/pdf/2408.01234"],
+    "likeCount": 610,
+    "retweetCount": 120,
+    "replyCount": 65,
+    "quoteCount": 30
+  },
+  {
+    "id": "9004",
+    "authorHandle": "erictopol",
+    "text": "A new biorxiv preprint reports a CRISPR base-editing approach that corrects the most common cystic fibrosis mutation in patient-derived organoids with 71% efficiency https://www.biorxiv.org/content/10.1101/2026.08.01.123456v1",
+    "createdAt": "2026-08-17T14:00:00Z",
+    "urls": ["https://www.biorxiv.org/content/10.1101/2026.08.01.123456v1"],
+    "likeCount": 1200,
+    "retweetCount": 340,
+    "replyCount": 80,
+    "quoteCount": 60
+  },
+  {
+    "id": "9005",
+    "authorHandle": "slavov_n",
+    "text": "Impressive editing efficiency in the CF organoid preprint, but note the off-target analysis only covers 8 predicted sites. Orthogonal genome-wide assays would strengthen this. https://www.biorxiv.org/content/10.1101/2026.08.01.123456v1.full",
+    "createdAt": "2026-08-17T16:30:00Z",
+    "urls": ["https://www.biorxiv.org/content/10.1101/2026.08.01.123456v1.full"],
+    "likeCount": 280,
+    "retweetCount": 45,
+    "replyCount": 18,
+    "quoteCount": 9
+  },
+  {
+    "id": "9006",
+    "authorHandle": "carlbergstrom",
+    "text": "New in Nature: a global analysis finding that citation inequality has doubled since 1990, with the top 1% of papers absorbing an ever-growing share of citations https://www.nature.com/articles/s41586-026-09876-1?utm_source=twitter",
+    "createdAt": "2026-08-17T18:00:00Z",
+    "urls": ["https://www.nature.com/articles/s41586-026-09876-1?utm_source=twitter"],
+    "likeCount": 520,
+    "retweetCount": 160,
+    "replyCount": 35,
+    "quoteCount": 25
+  },
+  {
+    "id": "9007",
+    "authorHandle": "ArtirKel",
+    "text": "The citation inequality paper undersells the role of field growth — normalizing by field size shrinks the effect by half. Thread with reanalysis: https://www.nature.com/articles/s41586-026-09876-1",
+    "createdAt": "2026-08-17T20:00:00Z",
+    "urls": ["https://www.nature.com/articles/s41586-026-09876-1"],
+    "likeCount": 310,
+    "retweetCount": 70,
+    "replyCount": 28,
+    "quoteCount": 14
+  },
+  {
+    "id": "9008",
+    "authorHandle": "emollick",
+    "text": "We are hiring two postdocs to study AI and work. Great team, great data. Apply here: https://apply.example.edu/postdoc",
+    "createdAt": "2026-08-17T19:00:00Z",
+    "urls": ["https://apply.example.edu/postdoc"],
+    "likeCount": 95,
+    "retweetCount": 40,
+    "replyCount": 5,
+    "quoteCount": 2
+  },
+  {
+    "id": "9009",
+    "authorHandle": "iScienceLuvr",
+    "text": "Conference deadline extended to Sept 1! Get those papers in https://mlconf.example.org/cfp",
+    "createdAt": "2026-08-17T21:00:00Z",
+    "urls": ["https://mlconf.example.org/cfp"],
+    "likeCount": 60,
+    "retweetCount": 25,
+    "replyCount": 3,
+    "quoteCount": 1
+  },
+  {
+    "id": "9010",
+    "authorHandle": "randomml_user",
+    "text": "The MoE scaling laws paper also quietly shows dense models are compute-optimal below 3B params, which everyone is ignoring https://arxiv.org/abs/2408.01234",
+    "createdAt": "2026-08-17T22:00:00Z",
+    "urls": ["https://arxiv.org/abs/2408.01234"],
+    "likeCount": 150,
+    "retweetCount": 20,
+    "replyCount": 12,
+    "quoteCount": 4
+  },
+  {
+    "id": "9011",
+    "authorHandle": "genomics_fan",
+    "text": "the CF base editing preprint is exactly the kind of result that makes me optimistic about genetic medicine https://www.biorxiv.org/content/10.1101/2026.08.01.123456v1",
+    "createdAt": "2026-08-17T23:00:00Z",
+    "urls": ["https://www.biorxiv.org/content/10.1101/2026.08.01.123456v1"],
+    "likeCount": 88,
+    "retweetCount": 12,
+    "replyCount": 4,
+    "quoteCount": 2
+  },
+  {
+    "id": "9012",
+    "authorHandle": "slavov_n",
+    "text": "Excited about our lab retreat next week! Beautiful venue this year.",
+    "createdAt": "2026-08-17T17:00:00Z",
+    "urls": [],
+    "likeCount": 45,
+    "retweetCount": 2,
+    "replyCount": 6,
+    "quoteCount": 0
+  },
+  {
+    "id": "9013",
+    "authorHandle": "erictopol",
+    "text": "A new JAMA study of 45,000 patients finds GLP-1 receptor agonists associated with 22% lower incidence of major cardiovascular events in non-diabetics https://jamanetwork.com/journals/jama/fullarticle/10.1001/jama.2026.12345",
+    "createdAt": "2026-08-18T02:00:00Z",
+    "urls": ["https://jamanetwork.com/journals/jama/fullarticle/10.1001/jama.2026.12345"],
+    "likeCount": 950,
+    "retweetCount": 280,
+    "replyCount": 70,
+    "quoteCount": 45
+  },
+  {
+    "id": "9014",
+    "authorHandle": "medstats_prof",
+    "text": "Before you share the GLP-1 cardio study: it's observational, and the healthy-user bias here is likely substantial. The authors acknowledge this in the limitations. https://jamanetwork.com/journals/jama/fullarticle/10.1001/jama.2026.12345",
+    "createdAt": "2026-08-18T05:00:00Z",
+    "urls": ["https://jamanetwork.com/journals/jama/fullarticle/10.1001/jama.2026.12345"],
+    "likeCount": 380,
+    "retweetCount": 110,
+    "replyCount": 25,
+    "quoteCount": 20
+  }
+]
