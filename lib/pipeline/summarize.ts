@@ -1,5 +1,6 @@
 import { MODEL_SMART } from "@/lib/claude";
 import { safeTruncate } from "@/lib/text";
+import { extractCanonicalIds } from "@/lib/links";
 import { resolveAbstract } from "@/lib/abstracts";
 import {
   Cluster,
@@ -124,6 +125,18 @@ ${cluster.urls.slice(0, 20).join("\n") || "(none)"}${paperSection}`;
   // Guard against invented links: keep only URLs actually in the cluster.
   const known = new Set(cluster.urls);
   const primaryLinks = (result.primaryLinks ?? []).filter((l) => known.has(l.url));
+
+  // The model paraphrases (and sometimes garbles) link titles. When the
+  // abstract resolver gave us the paper's exact title, use it verbatim for any
+  // link that points at that paper.
+  if (paper?.title) {
+    for (const link of primaryLinks) {
+      const ids = extractCanonicalIds([link.url], theme.canonicalPatterns);
+      if (ids.some((id) => cluster.canonicalIds.includes(id))) {
+        link.title = paper.title;
+      }
+    }
+  }
 
   // Unknown category ids fall back to "other" (or drop if no such category).
   const category = categoryIds?.includes(result.category ?? "")
