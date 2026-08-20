@@ -1,0 +1,52 @@
+{
+ "version": 1,
+ "themeId": "art-residencies",
+ "updatedAt": "2026-08-20T10:26:23.671Z",
+ "entries": [
+  {
+   "keys": [
+    "url:https://bit.ly/ruralcrea"
+   ],
+   "firstSeenDate": "2026-08-20",
+   "lastSeenDate": "2026-08-20",
+   "headline": "RURALCREA 2026 Rural Residency Open Call (Spain)",
+   "category": "funding-unclear",
+   "primaryLinks": [
+    {
+     "url": "https://bit.ly/ruralcrea",
+     "title": "RURALCREA 2026 Open Call - Nectar"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "url:https://tinyurl.com/23axhebk"
+   ],
+   "firstSeenDate": "2026-08-20",
+   "lastSeenDate": "2026-08-20",
+   "headline": "Espace Brownstone × Art in Latin America Residency in Paris",
+   "category": "funding-unclear",
+   "primaryLinks": [
+    {
+     "url": "https://tinyurl.com/23axhebk",
+     "title": "Convocatoria Residencia Artística Espace Brownstone × Art in Latin America"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "url:https://www.jaenhoy.es/ocio/convocatoria-residencia-artistica-rus-jaen-el-roalillo_0_2007710603.html?mrfcid=202608156a743f00c16f8d42b4152beb"
+   ],
+   "firstSeenDate": "2026-08-20",
+   "lastSeenDate": "2026-08-20",
+   "headline": "El Roalillo Community-Engaged Art Residency Open Call (Rus, Spain)",
+   "category": "funding-unclear",
+   "primaryLinks": [
+    {
+     "url": "https://www.jaenhoy.es/ocio/convocatoria-residencia-artistica-rus-jaen-el-roalillo_0_2007710603.html?mrfcid=202608156a743f00c16f8d42b4152beb",
+     "title": "Jaén Hoy - Convocatoria residencia artística Rus El Roalillo"
+    }
+   ]
+  }
+ ]
+}

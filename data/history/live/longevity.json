@@ -1,8 +1,24 @@
 {
  "version": 1,
  "themeId": "longevity",
- "updatedAt": "2026-08-20T10:03:45.042Z",
+ "updatedAt": "2026-08-20T10:24:46.646Z",
  "entries": [
+  {
+   "keys": [
+    "canonical:doi:10.1038/s43587-026-01162-7",
+    "url:https://doi.org/10.1038/s43587-026-01162-7"
+   ],
+   "firstSeenDate": "2026-08-20",
+   "lastSeenDate": "2026-08-20",
+   "headline": "21-Protein Blood Panel Shows Promise in Distinguishing Dementia Types",
+   "category": "research-watch",
+   "primaryLinks": [
+    {
+     "url": "https://doi.org/10.1038/s43587-026-01162-7",
+     "title": "Plasma proteome profiling identified biomarkers for the differential diagnosis and molecular staging of neurodegenerative dementias"
+    }
+   ]
+  },
   {
    "keys": [
     "canonical:doi:10.1038/s43587-026-01177-0",
@@ -11,7 +27,7 @@
    ],
    "firstSeenDate": "2026-08-20",
    "lastSeenDate": "2026-08-20",
-   "headline": "Physical Activity Linked to Slower Ovarian Aging via Adiponectin Pathway",
+   "headline": "Physical Activity Linked to Delayed Ovarian Aging via Adiponectin Signaling",
    "category": "research-watch",
    "primaryLinks": [
     {
@@ -38,38 +54,18 @@
   },
   {
    "keys": [
-    "canonical:doi:10.1038/s43587-026-01162-7",
-    "url:https://doi.org/10.1038/s43587-026-01162-7"
-   ],
-   "firstSeenDate": "2026-08-20",
-   "lastSeenDate": "2026-08-20",
-   "headline": "21-Protein Blood Panel Shows Promise in Distinguishing Dementia Types",
-   "category": "research-watch",
-   "primaryLinks": [
-    {
-     "url": "https://doi.org/10.1038/s43587-026-01162-7",
-     "title": "Plasma proteome profiling identified biomarkers for the differential diagnosis and molecular staging of neurodegenerative dementias"
-    }
-   ]
-  },
-  {
-   "keys": [
     "canonical:doi:10.1093/lifemeta/loac025",
     "url:https://doi.org/10.1093/lifemeta/loac025",
     "url:https://www.cell.com/cell/fulltext/S0092-8674(24)00050-3"
    ],
    "firstSeenDate": "2026-08-20",
    "lastSeenDate": "2026-08-20",
-   "headline": "Critical review challenges sirtuins as evolutionarily conserved longevity genes",
+   "headline": "Scientific Debate Continues Over Sirtuins and the Information Theory of Aging",
    "category": "research-watch",
    "primaryLinks": [
     {
      "url": "https://doi.org/10.1093/lifemeta/loac025",
-     "title": "Sirtuins are not conserved longevity genes"
-    },
-    {
-     "url": "https://www.cell.com/cell/fulltext/S0092-8674(24)00050-3",
-     "title": "A critical assessment of the information theory of aging"
+     "title": "Life Metabolism Analysis on Sirtuins and Aging Models"
     }
    ]
   },
@@ -80,7 +76,7 @@
    ],
    "firstSeenDate": "2026-08-20",
    "lastSeenDate": "2026-08-20",
-   "headline": "Midlife Blood Metabolites Linked to Brain Structure and Cognitive Health",
+   "headline": "Midlife blood metabolites, including ergothioneine, linked to brain health and cognition",
    "category": "research-watch",
    "primaryLinks": [
     {
@@ -96,7 +92,7 @@
    ],
    "firstSeenDate": "2026-08-20",
    "lastSeenDate": "2026-08-20",
-   "headline": "'Metabolically Healthy' Obesity Linked to Higher Long-Term Cardiovascular and Mortality Risks",
+   "headline": "Metabolically Healthy Obesity Linked to Increased Cardiovascular and Mortality Risk",
    "category": "clinician-conversation",
    "primaryLinks": [
     {
@@ -112,7 +108,7 @@
    ],
    "firstSeenDate": "2026-08-20",
    "lastSeenDate": "2026-08-20",
-   "headline": "Estrogen Therapy Linked to Lower Alzheimer's Neuropathology in Cohort Study",
+   "headline": "Menopausal Estrogen Therapy Linked to Lower Alzheimer's Neuropathology in Cohort Study",
    "category": "clinician-conversation",
    "primaryLinks": [
     {
@@ -127,7 +123,7 @@
    ],
    "firstSeenDate": "2026-08-20",
    "lastSeenDate": "2026-08-20",
-   "headline": "Physical Fitness Associated with Lower All-Cause Mortality in Older Adults",
+   "headline": "Observational Study Examines Physical Fitness and Mortality in Older Adults",
    "category": "applicable-now",
    "primaryLinks": [
     {
@@ -146,7 +142,7 @@
    ],
    "firstSeenDate": "2026-08-20",
    "lastSeenDate": "2026-08-20",
-   "headline": "Plant-Based Fats Linked to Modestly Lower Cardiovascular and All-Cause Mortality",
+   "headline": "Plant Fat Intake Linked to Lower Overall and Cardiovascular Mortality in Large Cohort",
    "category": "applicable-now",
    "primaryLinks": [
     {
@@ -161,12 +157,12 @@
    ],
    "firstSeenDate": "2026-08-20",
    "lastSeenDate": "2026-08-20",
-   "headline": "JAMA Publication Highlights the Role of Sleep Health in Obesity Management",
-   "category": "research-watch",
+   "headline": "JAMA Article Highlights the Role of Sleep Health in Obesity Prevention and Treatment",
+   "category": "applicable-now",
    "primaryLinks": [
     {
      "url": "https://jamanetwork.com/journals/jama/article-abstract/2852269",
-     "title": "JAMA Article on Sleep Health and Obesity"
+     "title": "JAMA: Sleep Health and Obesity Prevention and Treatment"
     }
    ]
   },
@@ -176,12 +172,45 @@
    ],
    "firstSeenDate": "2026-08-20",
    "lastSeenDate": "2026-08-20",
-   "headline": "Study Highlights Causes of US Excess Mortality Compared to Other High-Income Nations",
+   "headline": "US Excess Mortality Linked to Cardiometabolic Disease, Substance Use, and Suicide",
    "category": "research-watch",
    "primaryLinks": [
     {
      "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2848779",
      "title": "Causes of Excess Deaths in the US Compared With Other High-Income Countries"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "canonical:doi:10.1073/pnas.1418490112",
+    "url:https://jamanetwork.com/journals/jamapediatrics/fullarticle/2571463",
+    "url:https://www.pnas.org/doi/10.1073/pnas.1418490112"
+   ],
+   "firstSeenDate": "2026-08-20",
+   "lastSeenDate": "2026-08-20",
+   "headline": "Evening Light-Emitting eReader Use Delays Melatonin Release and Impairs Sleep Quality",
+   "category": "applicable-now",
+   "primaryLinks": [
+    {
+     "url": "https://www.pnas.org/doi/10.1073/pnas.1418490112",
+     "title": "Evening use of light-emitting eReaders negatively affects sleep, circadian timing, and next-morning alertness"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "canonical:pubmed:42600373",
+    "url:https://pubmed.ncbi.nlm.nih.gov/42600373"
+   ],
+   "firstSeenDate": "2026-08-20",
+   "lastSeenDate": "2026-08-20",
+   "headline": "Review Explores Yogurt's Role in Cardiometabolic Health and Healthy Aging",
+   "category": "research-watch",
+   "primaryLinks": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/42600373",
+     "title": "Yogurt and human health across history, culture, and science: Lessons for modern aging populations."
     }
    ]
   }

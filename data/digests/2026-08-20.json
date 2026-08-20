@@ -1,11 +1,11 @@
 {
  "date": "2026-08-20",
- "generatedAt": "2026-08-20T10:01:11.440Z",
+ "generatedAt": "2026-08-20T10:22:01.867Z",
  "themes": {
   "longevity": [
    {
-    "headline": "Physical Activity Linked to Slower Ovarian Aging via Adiponectin Pathway",
-    "summary": "Based on the paper title and linked discussion (as the published abstract is unavailable), this study combined observational analysis of 152,435 UK Biobank participants with mouse mechanistic models. Researchers found that higher physical activity levels correlated with delayed ovarian aging in humans. In mice, physical activity appeared to preserve ovarian reserve and extend reproductive lifespan by boosting ovarian adiponectin signaling, a protective effect absent in adiponectin-knockout models. While the rodent experiments demonstrate causal pathways for adiponectin, the human findings remain observational and subject to confounding, and animal reproductive timelines differ significantly from human biology. Practical meaning: Regular physical activity supports broad metabolic health, but more research is needed to determine how directly it influences human reproductive longevity.",
+    "headline": "Physical Activity Linked to Delayed Ovarian Aging via Adiponectin Signaling",
+    "summary": "A mixed-methods study combined observational data from 152,435 UK Biobank participants with mechanistic mouse models to examine how exercise influences reproductive longevity. In the human cohort, higher physical activity was associated with delayed markers of ovarian aging, while mouse experiments indicated that exercise preserved ovarian function and extended reproductive lifespan through adiponectin-related pathways. While the rodent findings demonstrated a causal mechanism via adiponectin, the human data remain observational and cannot establish direct causation. The primary limitation is that mechanistic longevity outcomes in rodents do not directly translate to clinical reproductive timing in humans. Because the full abstract was unavailable at the time of review, this summary is based on publication details and discussion. Practical meaning: Regular physical activity supports general metabolic health, but whether it directly extends human reproductive lifespan remains under investigation.",
     "category": "research-watch",
     "primaryLinks": [
      {
@@ -36,7 +36,7 @@
    },
    {
     "headline": "Lower Plasma Selenium Linked to Higher All-Cause and Cancer Mortality in Older Adults",
-    "summary": "In an observational cohort study of 1,389 older adults followed over 9 years (the EVA study), researchers examined baseline plasma selenium concentrations and mortality. Over the follow-up period, 101 participants died. After adjusting for sociodemographic factors, diet, baseline health, and cognitive status, lower plasma selenium (per 0.2 µmol/L decrement) was associated with an increased risk of all-cause mortality (adjusted RR 1.54, 95% CI 1.25–1.88) and cancer-related mortality (adjusted RR 1.79, 95% CI 1.32–2.44). As an observational analysis, this study demonstrates association rather than causation; lower selenium levels may reflect poor nutritional status, underlying illness, or other unmeasured confounders. Practical meaning: Meeting baseline dietary selenium requirements supports general nutritional health, but observational findings do not indicate that taking selenium supplements will lower mortality risk.",
+    "summary": "In a 9-year prospective cohort study of 1,389 older French adults (aged ~60–71 at baseline), researchers examined the relationship between baseline plasma selenium levels and mortality. Over the follow-up period, 101 participants died. Those who died had significantly lower baseline plasma selenium levels compared to survivors (mean 1.01 vs. 1.10 µmol/L). After adjusting for sociodemographic, dietary, cognitive, and health factors, each 0.2 µmol/L decrease in plasma selenium was associated with a 54% higher risk of all-cause mortality (adjusted RR 1.54, 95% CI 1.25–1.88) and a 79% higher risk of cancer mortality (adjusted RR 1.79, 95% CI 1.32–2.44). As an observational study, these results show an association rather than direct causation; lower selenium may reflect baseline subclinical illness, frailty, or overall poorer nutritional status. Practical meaning: Maintaining adequate dietary intake of essential trace minerals like selenium supports general health, but observational associations do not justify taking unguided high-dose supplements.",
     "category": "research-watch",
     "primaryLinks": [
      {
@@ -61,47 +61,13 @@
     ]
    },
    {
-    "headline": "21-Protein Blood Panel Shows Promise in Distinguishing Dementia Types",
-    "summary": "In an observational study analyzing 1,318 plasma samples and an independent validation cohort of 805 individuals, researchers developed a 21-protein multiplex blood panel to differentiate between Alzheimer’s disease, dementia with Lewy bodies (DLB), and frontotemporal dementia (FTD). Distinct protein signatures emerged: glial fibrillary acidic protein (GFAP) increased across the Alzheimer’s continuum, integrins alpha-V and alpha-M were reduced in DLB (including autopsy-confirmed cases), and elevated neurofilament light chain paired with lower GFAP was linked to FTD. A key limitation is that these findings reflect biomarker profiling in curated research cohorts and require prospective clinical trials to establish real-world diagnostic utility. Practical meaning: Multi-protein blood tests may eventually help clinicians tell major dementia subtypes apart without invasive procedures, but the test is not yet available for routine medical care.",
-    "category": "research-watch",
-    "primaryLinks": [
-     {
-      "url": "https://doi.org/10.1038/s43587-026-01162-7",
-      "title": "Plasma proteome profiling identified biomarkers for the differential diagnosis and molecular staging of neurodegenerative dementias"
-     }
-    ],
-    "sourceTweets": [
-     {
-      "url": "https://x.com/biogerontology/status/2087915404819935335",
-      "authorHandle": "biogerontology"
-     },
-     {
-      "url": "https://x.com/biogerontology/status/2087552551671808417",
-      "authorHandle": "biogerontology"
-     }
-    ],
-    "stats": {
-     "tweetCount": 2,
-     "distinctAuthors": 1,
-     "engagement": 44
-    },
-    "dedupeKeys": [
-     "canonical:doi:10.1038/s43587-026-01162-7",
-     "url:https://doi.org/10.1038/s43587-026-01162-7"
-    ]
-   },
-   {
-    "headline": "Critical review challenges sirtuins as evolutionarily conserved longevity genes",
-    "summary": "In a critical review of evolutionary and model-organism biology, the author evaluates whether sirtuin genes (such as SIR2 and its homologs) function as universal regulators of lifespan. The analysis highlights that initial reports of lifespan extension in yeast, worms, and flies were frequently confounded by genetic background artifacts and reporting biases. Furthermore, SIR2 acts as a pro-aging factor in yeast chronological aging and in flies under amino-acid deprivation. The review concludes that evidence does not support sirtuins as conserved lifespan determinants or as the primary mediators of NAD+ metabolism. The main limitation is that this is a conceptual and narrative review reflecting an ongoing scientific dispute rather than a new empirical trial. Practical meaning: Popular claims that sirtuin activation reliably drives lifespan extension remain scientifically contested and unproven in humans.",
+    "headline": "Scientific Debate Continues Over Sirtuins and the Information Theory of Aging",
+    "summary": "Because an abstract was unavailable, this summary is based on the linked scientific discussion regarding a published analysis of sirtuins and conceptual models of aging. The piece represents a critical academic evaluation questioning the evidentiary foundation behind sirtuin-targeted longevity claims and whether the 'information theory of aging' has been rigorously tested. A key limitation is that this discussion centers on basic biochemical theory and preclinical models rather than direct human clinical trial outcomes. Practical meaning: High-profile biological theories of aging remain subject to active debate among researchers and are not yet established guides for human longevity interventions.",
     "category": "research-watch",
     "primaryLinks": [
      {
       "url": "https://doi.org/10.1093/lifemeta/loac025",
-      "title": "Sirtuins are not conserved longevity genes"
-     },
-     {
-      "url": "https://www.cell.com/cell/fulltext/S0092-8674(24)00050-3",
-      "title": "A critical assessment of the information theory of aging"
+      "title": "Life Metabolism Analysis on Sirtuins and Aging Models"
      }
     ],
     "sourceTweets": [
@@ -122,8 +88,8 @@
     ]
    },
    {
-    "headline": "Midlife Blood Metabolites Linked to Brain Structure and Cognitive Health",
-    "summary": "In an observational study of 1,082 dementia-free middle-aged adults from the Rotterdam Study (replicated in two independent older cohorts), researchers analyzed 991 blood metabolites alongside cognitive tests and brain MRI scans. Fourteen metabolites consistently correlated with cognitive performance, with the diet-derived antioxidant ergothioneine showing the strongest association. The metabolite pattern linked to poorer midlife cognition mirrored markers of incident Alzheimer's disease. Modifiable factors like lifestyle and medications accounted for up to 28.6% of metabolite variation; notably, antacid use was linked to lower ergothioneine levels, accounting for roughly 31.5% of the statistical association between antacids and lower cognitive scores. Because this is an observational study, these findings show associations rather than direct causation, and residual confounding remains possible. Practical meaning: While blood markers like ergothioneine provide clues about brain aging pathways, these findings are preliminary and do not justify taking supplements or altering prescribed medications without clinical guidance.",
+    "headline": "Midlife blood metabolites, including ergothioneine, linked to brain health and cognition",
+    "summary": "In an observational cohort study of 1,082 dementia-free middle-aged adults from the Rotterdam Study (replicated in two independent cohorts), researchers evaluated 991 blood metabolites against brain MRI metrics and cognitive function. Fourteen metabolites showed replicated associations with cognitive performance, with the dietary antioxidant ergothioneine demonstrating the strongest positive link. Environmental and clinical factors—such as diet, gut microbiome, and medications—explained up to 28.6% of metabolite variance, substantially exceeding genetic contributions. Notably, antacid use was linked to lower ergothioneine levels, statistically mediating 31.5% of the association between antacid use and lower cognitive scores. Because this is an observational study, these correlations do not establish causation or prove that ergothioneine supplementation prevents dementia. Practical meaning: Blood metabolites provide valuable research insights into how lifestyle, gut health, and medications interact with brain aging, but they are not yet actionable screening tools or validated targets for self-directed supplementation.",
     "category": "research-watch",
     "primaryLinks": [
      {
@@ -148,8 +114,8 @@
     ]
    },
    {
-    "headline": "'Metabolically Healthy' Obesity Linked to Higher Long-Term Cardiovascular and Mortality Risks",
-    "summary": "In a prospective cohort study of 157,159 UK Biobank participants followed for a median of 12.9 years, researchers examined whether obesity without baseline hypertension, diabetes, or dyslipidemia is truly benign. Compared to normal-weight individuals with no metabolic abnormalities, those with obesity but no metabolic abnormalities had significantly higher risks of atherosclerotic cardiovascular disease (hazard ratio [HR] 1.46 in men, 1.34 in women), heart failure (HR 1.63 in men, 1.69 in women), liver disease (MASLD; HR 2.37 in men, 4.44 in women), and all-cause mortality (HR 1.36 in men, 1.27 in women). Risks escalated substantially when metabolic abnormalities were also present. Because this is an observational study, it demonstrates association rather than direct causation, and baseline metabolic status may have changed over the follow-up period. Practical meaning: Normal blood pressure, lipids, and glucose do not completely eliminate the elevated long-term cardiovascular and liver risks associated with obesity, supporting discussions with a clinician on comprehensive weight and metabolic health management.",
+    "headline": "Metabolically Healthy Obesity Linked to Increased Cardiovascular and Mortality Risk",
+    "summary": "In a prospective cohort study of 157,159 UK Biobank adults followed for a median of 12.9 years, researchers examined whether obesity without baseline metabolic abnormalities (hypertension, diabetes, or dyslipidemia) is truly benign. Compared with normal-weight individuals free of metabolic abnormalities, men with 'metabolically healthy' obesity had a higher relative risk of atherosclerotic cardiovascular disease (HR 1.46), heart failure (HR 1.63), steatotic liver disease (HR 2.37), and all-cause mortality (HR 1.36). Similar elevations were observed in women (heart failure HR 1.69; all-cause mortality HR 1.27). When metabolic abnormalities were present, risks rose substantially higher. Because this was an observational study with baseline exposure measurements, it cannot establish direct causality or account for metabolic changes over time. Practical meaning: Having normal blood pressure, lipids, and glucose does not completely offset the long-term health risks associated with obesity, supporting discussions with a clinician on comprehensive weight and metabolic management.",
     "category": "clinician-conversation",
     "primaryLinks": [
      {
@@ -174,8 +140,8 @@
     ]
    },
    {
-    "headline": "Estrogen Therapy Linked to Lower Alzheimer's Neuropathology in Cohort Study",
-    "summary": "Note: Because the full abstract was unavailable at review, this summary is based on the linked study report and public discussion. In an observational analysis across two US cohorts, researchers evaluated post-mortem brain tissue in women to assess whether menopausal estrogen therapy was associated with Alzheimer's disease neuropathology and dementia diagnoses. According to study reports, past estrogen use was associated with approximately 35% lower odds of Alzheimer's pathology at autopsy alongside fewer clinical dementia diagnoses. As an observational study, this demonstrates correlation rather than causation, and findings may be influenced by healthy-user bias or differences in baseline health between hormone users and non-users. Practical meaning: Hormone therapy decisions are complex and individualised; discuss the broader risks and benefits with your doctor rather than starting treatment solely for dementia prevention.",
+    "headline": "Menopausal Estrogen Therapy Linked to Lower Alzheimer's Neuropathology in Cohort Study",
+    "summary": "In an observational autopsy study of two US cohorts (reported here based on the linked discussion, as the full abstract was unavailable), women who used menopausal estrogen therapy had roughly 35% lower odds of Alzheimer's disease neuropathology at death alongside fewer clinical dementia diagnoses. Because this study is observational, it identifies an association rather than proving causation, and findings may be influenced by confounding factors such as the healthy user effect. Practical meaning: These findings add to ongoing research on hormone therapy and brain health, but decisions about starting or continuing menopausal hormone therapy should be made with your clinician based on individualized symptom management and overall risk profile.",
     "category": "clinician-conversation",
     "primaryLinks": [
      {
@@ -200,8 +166,8 @@
     ]
    },
    {
-    "headline": "Physical Fitness Associated with Lower All-Cause Mortality in Older Adults",
-    "summary": "Because full study details and an abstract are unavailable, this summary is based on the linked discussion of a study in JAMA Network Open investigating physical fitness and all-cause mortality among older adults. Observational research in this domain typically evaluates measures of cardiorespiratory or muscular fitness against long-term survival outcomes. While higher fitness levels are consistently associated with lower all-cause mortality, observational designs cannot establish direct causation and are subject to confounding factors, such as baseline health status and reverse causality. Practical meaning: Maintaining baseline physical fitness and regular activity remains a foundational, low-risk habit associated with better long-term survival in older age.",
+    "headline": "Observational Study Examines Physical Fitness and Mortality in Older Adults",
+    "summary": "Based on the linked discussion of a study published in JAMA Network Open, researchers evaluated the association between measured physical fitness levels and all-cause mortality among older adults. Detailed cohort numbers, specific interventions, and quantitative effect sizes were not provided in the discussion. Because this report reflects observational data, it indicates an association rather than direct causation, with baseline comorbidities and reverse causation serving as key potential limitations. Practical meaning: Maintaining routine physical activity and functional fitness into older age remains a low-risk, broadly supported cornerstone of long-term health.",
     "category": "applicable-now",
     "primaryLinks": [
      {
@@ -225,8 +191,8 @@
     ]
    },
    {
-    "headline": "Plant-Based Fats Linked to Modestly Lower Cardiovascular and All-Cause Mortality",
-    "summary": "In a prospective cohort analysis of 407,531 US adults in the NIH-AARP Diet and Health Study followed over 24 years, researchers evaluated the relationship between dietary fat sources and mortality. Comparing the highest to lowest quintile of intake, higher plant fat consumption—particularly from grains and vegetable oils—was associated with a lower risk of all-cause mortality (adjusted absolute risk difference [ARD] -1.10%; HR 0.91) and cardiovascular disease (CVD) mortality (adjusted ARD -0.73%; HR 0.86). Conversely, higher animal fat intake was associated with higher overall mortality (adjusted ARD +0.78%; HR 1.16) and CVD mortality (adjusted ARD +0.32%; HR 1.14). Modeling the replacement of 5% of daily energy from animal fat with plant fat was associated with a 4% to 24% reduction in overall mortality risk. As an observational study relying on self-reported baseline dietary questionnaires, these findings reflect associations rather than proven causation, and residual lifestyle confounding remains possible. Practical meaning: Swapping some dietary animal fats for plant-based sources like vegetable oils and whole grains aligns with broad, low-risk cardiovascular dietary patterns.",
+    "headline": "Plant Fat Intake Linked to Lower Overall and Cardiovascular Mortality in Large Cohort",
+    "summary": "In a prospective cohort study analyzing 407,531 US adults (NIH-AARP Diet and Health Study, mean age 61) over 24 years of follow-up, researchers evaluated the relationship between specific dietary fat sources and mortality. Comparing the highest to lowest intake quintiles, higher plant fat consumption—particularly from vegetable oils and grains—was associated with lower overall mortality (adjusted absolute risk difference [ARD] -1.10%; hazard ratio [HR] 0.91) and cardiovascular disease (CVD) mortality (adjusted ARD -0.73%; HR 0.86). In contrast, higher intake of animal fat was associated with increased overall mortality (adjusted ARD +0.78%; HR 1.16) and CVD mortality (adjusted ARD +0.32%; HR 1.14). Statistically substituting 5% of energy from animal fat with plant fat was associated with a 4% to 24% lower risk of total mortality. As an observational study, these results show association rather than direct causation, and a major limitation is the reliance on self-reported dietary intake measured only at baseline. Practical meaning: Swapping some dietary animal fats for plant-based sources like vegetable oils and whole grains is a low-risk dietary shift associated with modest long-term survival benefits.",
     "category": "applicable-now",
     "primaryLinks": [
      {
@@ -254,13 +220,13 @@
     ]
    },
    {
-    "headline": "JAMA Publication Highlights the Role of Sleep Health in Obesity Management",
-    "summary": "Based on linked discussion from the study authors, a new article in JAMA addresses how sleep health impacts obesity prevention and treatment. Because the detailed abstract was unavailable at the time of writing, specific study design, population characteristics, and effect sizes cannot be verified from the announcement alone. While established literature demonstrates strong links between sleep disruption and metabolic dysregulation, distinguishing direct causal effects from broader behavioral confounding requires evaluating the full study data. Practical meaning: Consistent, restorative sleep is a recognized component of overall metabolic wellness, though specific clinical weight-management plans should be coordinated with a physician.",
-    "category": "research-watch",
+    "headline": "JAMA Article Highlights the Role of Sleep Health in Obesity Prevention and Treatment",
+    "summary": "A publication in JAMA co-authored by UC San Diego sleep medicine faculty examines how sleep health directly influences obesity prevention and clinical management. Because the full study text and abstract were unavailable at the time of writing, this account is based on the linked announcement. While extensive observational and experimental evidence connects poor sleep duration and quality to altered metabolic hormones and increased weight gain, specific effect sizes, study design, and patient demographics cannot be confirmed from the post alone. The primary limitation is the absence of detailed trial data in the available summary. Practical meaning: Maintaining consistent, restorative sleep serves as a supportive, low-risk foundation alongside nutrition and physical activity for metabolic health.",
+    "category": "applicable-now",
     "primaryLinks": [
      {
       "url": "https://jamanetwork.com/journals/jama/article-abstract/2852269",
-      "title": "JAMA Article on Sleep Health and Obesity"
+      "title": "JAMA: Sleep Health and Obesity Prevention and Treatment"
      }
     ],
     "sourceTweets": [
@@ -279,8 +245,8 @@
     ]
    },
    {
-    "headline": "Study Highlights Causes of US Excess Mortality Compared to Other High-Income Nations",
-    "summary": "Based on the linked discussion of a study published in JAMA Network Open (full abstract unavailable), researchers analyzed the primary factors contributing to rising excess deaths in the United States compared to peer high-income nations. The report indicates that this widening mortality disparity is driven largely by increases in circulatory and metabolic diseases, as well as substance- and mental-health-related causes such as drug poisonings, alcohol-related deaths, and suicide. Because full study parameters and effect sizes were unavailable from the discussion, this summary reflects broad epidemiological associations rather than detailed individual-level causal analyses. Practical meaning: Sustaining long-term health requires prioritizing foundational cardiometabolic risk management alongside vigilance around mental health and substance misuse.",
+    "headline": "US Excess Mortality Linked to Cardiometabolic Disease, Substance Use, and Suicide",
+    "summary": "Based on the linked discussion of a JAMA Network Open study comparing United States mortality data against other high-income nations, the widening gap in US excess deaths is largely driven by surges in circulatory and metabolic disorders, drug overdoses, alcohol-induced mortality, and suicide. Because full abstract details and effect sizes were unavailable, this summary relies on reported excerpts. As a population-level observational analysis, the findings capture broad epidemiological trends rather than individual-level causal mechanisms. Practical meaning: Broad-based preventive care addressing foundational cardiometabolic health and substance or mental health support represents a primary target for mitigating premature mortality risk.",
     "category": "research-watch",
     "primaryLinks": [
      {
@@ -302,8 +268,137 @@
     "dedupeKeys": [
      "url:https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2848779"
     ]
+   },
+   {
+    "headline": "Evening Light-Emitting eReader Use Delays Melatonin Release and Impairs Sleep Quality",
+    "summary": "In a controlled crossover laboratory study, healthy adults read either a light-emitting eReader or a printed book for four hours before bedtime across five consecutive evenings. Compared to print reading, backlit screen exposure significantly suppressed evening melatonin secretion, prolonged sleep latency, delayed the circadian clock by over an hour, reduced REM sleep, and diminished next-morning alertness. Because this was a controlled inpatient trial, causal effects of evening screen light are established, though the primary limitation is that strict laboratory lighting conditions may overestimate or differ from variable home environments and modern device night modes. Practical meaning: Switching from backlit electronic screens to printed materials in the hours before bed helps protect natural melatonin production, shorten time to fall asleep, and improve morning alertness.",
+    "category": "applicable-now",
+    "primaryLinks": [
+     {
+      "url": "https://www.pnas.org/doi/10.1073/pnas.1418490112",
+      "title": "Evening use of light-emitting eReaders negatively affects sleep, circadian timing, and next-morning alertness"
+     }
+    ],
+    "sourceTweets": [
+     {
+      "url": "https://x.com/MarkCzeisler/status/2086086976797556767",
+      "authorHandle": "MarkCzeisler"
+     }
+    ],
+    "stats": {
+     "tweetCount": 1,
+     "distinctAuthors": 1,
+     "engagement": 7
+    },
+    "dedupeKeys": [
+     "canonical:doi:10.1073/pnas.1418490112",
+     "url:https://jamanetwork.com/journals/jamapediatrics/fullarticle/2571463",
+     "url:https://www.pnas.org/doi/10.1073/pnas.1418490112"
+    ]
+   },
+   {
+    "headline": "Review Explores Yogurt's Role in Cardiometabolic Health and Healthy Aging",
+    "summary": "This narrative review traces the history and scientific evidence surrounding yogurt consumption and aging-related chronic conditions, particularly cardiovascular disease and type 2 diabetes. The authors highlight that yogurt's combination of lactic acid bacteria, probiotics, and bioactive nutrients may beneficially influence gut microbiota-derived metabolites linked to cardiometabolic risk. However, the paper emphasizes that many underlying biological mechanisms and direct therapeutic thresholds remain unproven, and observational associations may be confounded by overall diet quality and lifestyle factors. Practical meaning: Incorporating unsweetened fermented dairy like yogurt can fit into a healthy, balanced diet, though specific longevity or therapeutic benefits are still being actively investigated.",
+    "category": "research-watch",
+    "primaryLinks": [
+     {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42600373",
+      "title": "Yogurt and human health across history, culture, and science: Lessons for modern aging populations."
+     }
+    ],
+    "sourceTweets": [
+     {
+      "url": "https://x.com/drdairy50/status/2089473042229400061",
+      "authorHandle": "drdairy50"
+     }
+    ],
+    "stats": {
+     "tweetCount": 1,
+     "distinctAuthors": 1,
+     "engagement": 5
+    },
+    "dedupeKeys": [
+     "canonical:pubmed:42600373",
+     "url:https://pubmed.ncbi.nlm.nih.gov/42600373"
+    ]
    }
   ],
-  "art-residencies": []
+  "art-residencies": [
+   {
+    "headline": "RURALCREA 2026 Rural Residency Open Call (Spain)",
+    "summary": "Location: Catalonia, Spain (exact municipality not stated). Deadline: September 12, 2026. Residency dates and duration are not stated. The call invites artists and cultural practitioners working within or focusing on rural contexts. Residents are expected to develop artistic practices situated in rural environments. Financial details: artist fee or stipend: not stated; housing: not stated; travel: not stated; production support: not stated; application/programme fees: not stated; costs the artist must cover: not stated. Note: Details are based on a secondary social media listing from Cultura y Ciudadanía, and full terms should be verified via the application link.",
+    "category": "funding-unclear",
+    "primaryLinks": [
+     {
+      "url": "https://bit.ly/ruralcrea",
+      "title": "RURALCREA 2026 Open Call - Nectar"
+     }
+    ],
+    "sourceTweets": [
+     {
+      "url": "https://x.com/cultuciudadania/status/2088211914643902924",
+      "authorHandle": "cultuciudadania"
+     }
+    ],
+    "stats": {
+     "tweetCount": 1,
+     "distinctAuthors": 1,
+     "engagement": 7
+    },
+    "dedupeKeys": [
+     "url:https://bit.ly/ruralcrea"
+    ]
+   },
+   {
+    "headline": "Espace Brownstone × Art in Latin America Residency in Paris",
+    "summary": "Location: Paris, France. Deadline: Not stated. Dates/Duration: Not stated. Disciplines/Eligibility: Likely targeted at Latin American artists based on the organising partners and hashtags; specific career stage and media restrictions are not stated. Resident commitments and outcomes are not stated. Financial terms: Artist stipend, housing, travel coverage, production support, and application/programme fees are not stated in the source announcement. Note: Details are drawn from a brief second-hand listing without full programme terms.",
+    "category": "funding-unclear",
+    "primaryLinks": [
+     {
+      "url": "https://tinyurl.com/23axhebk",
+      "title": "Convocatoria Residencia Artística Espace Brownstone × Art in Latin America"
+     }
+    ],
+    "sourceTweets": [
+     {
+      "url": "https://x.com/hipermedula/status/2086965597485576259",
+      "authorHandle": "hipermedula"
+     }
+    ],
+    "stats": {
+     "tweetCount": 1,
+     "distinctAuthors": 1,
+     "engagement": 3
+    },
+    "dedupeKeys": [
+     "url:https://tinyurl.com/23axhebk"
+    ]
+   },
+   {
+    "headline": "El Roalillo Community-Engaged Art Residency Open Call (Rus, Spain)",
+    "summary": "Location: Rus (Jaén), Spain. Deadline: Not stated (sourced from local press reporting). Residency dates/duration: Not stated. Accepted disciplines/career stage: Open to artists creating community-engaged, participatory works involving local residents; career stage not specified. Resident expectations: Develop artistic work in Rus actively engaging and involving the local community. Financial terms: Artist fee/stipend: not stated; Housing: not stated; Travel: not stated; Production support: not stated; Application/programme fees: not stated; Costs covered by artist: not stated. Note: Information is derived from a secondary local news report; official call terms should be verified directly.",
+    "category": "funding-unclear",
+    "primaryLinks": [
+     {
+      "url": "https://www.jaenhoy.es/ocio/convocatoria-residencia-artistica-rus-jaen-el-roalillo_0_2007710603.html?mrfcid=202608156a743f00c16f8d42b4152beb",
+      "title": "Jaén Hoy - Convocatoria residencia artística Rus El Roalillo"
+     }
+    ],
+    "sourceTweets": [
+     {
+      "url": "https://x.com/JaenHoyDiario/status/2088491778965946734",
+      "authorHandle": "JaenHoyDiario"
+     }
+    ],
+    "stats": {
+     "tweetCount": 1,
+     "distinctAuthors": 1,
+     "engagement": 0
+    },
+    "dedupeKeys": [
+     "url:https://www.jaenhoy.es/ocio/convocatoria-residencia-artistica-rus-jaen-el-roalillo_0_2007710603.html?mrfcid=202608156a743f00c16f8d42b4152beb"
+    ]
+   }
+  ]
  }
 }
