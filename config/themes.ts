@@ -48,13 +48,26 @@ export const THEMES: ThemeConfig[] = [
     summaryStyle:
       "Write for a careful non-specialist who wants useful, evidence-based takeaways—not biohacking hype. State the study type, population, intervention or exposure, outcome, and effect size (prefer absolute effects when available). Separate association from causation and name the most important limitation. End with a short 'Practical meaning:' sentence. Do not prescribe, recommend doses, diagnose, or imply that one study changes medical care. Assign applicable-now only to low-risk general behaviours backed by mature or converging human evidence; clinician-conversation to tests, treatments, risk factors, or decisions that need individual medical context; and research-watch to preliminary, mixed, surrogate-outcome, or not-yet-actionable findings. If no abstract is available, explicitly say the account is based on the linked discussion.",
     categories: [
-      { id: "applicable-now", label: "Applicable now", color: "#3f7654" },
+      {
+        id: "applicable-now",
+        label: "Applicable now",
+        color: "#3f7654",
+        description:
+          "Low-risk, general behaviours backed by mature or converging human evidence.",
+      },
       {
         id: "clinician-conversation",
         label: "Discuss with a clinician",
         color: "#5a6f9c",
+        description:
+          "Tests, treatments, or risk decisions that need individual medical context.",
       },
-      { id: "research-watch", label: "Research watch", color: "#806b9e" },
+      {
+        id: "research-watch",
+        label: "Research watch",
+        color: "#806b9e",
+        description: "Preliminary, mixed, or not-yet-actionable findings.",
+      },
     ],
     fetchAbstracts: true,
     lookbackDays: 14,
@@ -89,10 +102,32 @@ export const THEMES: ThemeConfig[] = [
     summaryStyle:
       "Write this as an application brief, not arts publicity. Start with location (city, country) and the exact deadline. Then give residency dates or duration, accepted disciplines/career stage, key eligibility restrictions, and what the resident is expected to do. Itemize money plainly: artist fee or stipend, housing, travel, production support, application/programme fees, and costs the artist must cover; write 'not stated' for missing facts. Include the official call/application page as the first primary link when it appears in the source material, without inventing a URL. Flag any uncertainty or second-hand listing. Assign fully-funded only when there is no programme fee and the major participation costs are covered; partially-funded when meaningful support is offered but the artist bears a major cost; self-funded when the artist bears most costs; and funding-unclear when the source does not say. If the deadline appears expired relative to the digest date, say so rather than encouraging an application.",
     categories: [
-      { id: "fully-funded", label: "Fully funded", color: "#3f7654" },
-      { id: "partially-funded", label: "Partially funded", color: "#567596" },
-      { id: "self-funded", label: "Self-funded", color: "#916a4f" },
-      { id: "funding-unclear", label: "Funding unclear", color: "#6e7278" },
+      {
+        id: "fully-funded",
+        label: "Fully funded",
+        color: "#3f7654",
+        description:
+          "No programme fee and the major participation costs are covered.",
+      },
+      {
+        id: "partially-funded",
+        label: "Partially funded",
+        color: "#567596",
+        description:
+          "Meaningful support is offered, but the artist bears a major cost.",
+      },
+      {
+        id: "self-funded",
+        label: "Self-funded",
+        color: "#916a4f",
+        description: "The artist bears most costs.",
+      },
+      {
+        id: "funding-unclear",
+        label: "Funding unclear",
+        color: "#6e7278",
+        description: "The source does not say how the residency is funded.",
+      },
     ],
     fetchAbstracts: false,
     lookbackDays: 30,

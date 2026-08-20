@@ -63,6 +63,8 @@ export interface ThemeCategory {
   id: string;
   label: string;
   color: string; // header band background (white text on top)
+  // One-line reader-facing explanation of what the category means.
+  description?: string;
 }
 
 export interface CanonicalPattern {

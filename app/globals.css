@@ -6,7 +6,8 @@
   --card: #ffffff;
   --border: #e5e7eb;
   --accent: #2563eb;
-  --muted: #9ca3af;
+  /* Darkest gray that still reads as muted; #9ca3af failed WCAG AA on white. */
+  --muted: #6b7280;
 }
 
 @theme inline {

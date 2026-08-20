@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build --webpack",
     "lint": "eslint .",
+    "test": "tsx --test lib/*.test.ts",
     "pipeline": "tsx scripts/run-pipeline.ts"
   },
   "dependencies": {
