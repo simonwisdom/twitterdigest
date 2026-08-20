@@ -42,8 +42,9 @@ Later rolling-window runs skip matching DOI, PubMed, and normalized URL
 identities before filtering and summarization. Mock data uses
 `history/fixtures/`, so it never suppresses a live item.
 
-The homepage shows the newest digest. `/archive` lists every published refresh,
-and `/digest/YYYY-MM-DD` opens a dated static page.
+The homepage contains every published refresh, newest first and grouped by
+date. Theme tabs switch between the longevity and art-residency feeds; there
+are no separate archive or per-date pages.
 
 ## Topic configuration
 
@@ -63,8 +64,8 @@ The repository contains two workflows:
 - `refresh-weekly-digest` runs Mondays at 11:00 UTC and can also be started
   manually. It generates the digest and commits only `data/digests/` and
   `data/history/`; raw pipeline checkpoints are ignored.
-- `deploy-pages` runs after changes reach `main`, exports the static Next.js site,
-  and deploys `out/` to GitHub Pages.
+- `deploy-pages` runs after changes reach `main` or after the weekly refresh
+  completes, exports the static Next.js site, and deploys `out/` to GitHub Pages.
 
 Repository setup:
 
