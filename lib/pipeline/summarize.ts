@@ -1,4 +1,5 @@
 import { MODEL_SMART } from "@/lib/openrouter";
+import { buildEvidenceNote } from "@/lib/format";
 import { safeTruncate } from "@/lib/text";
 import { extractCanonicalIds } from "@/lib/links";
 import { resolveAbstract } from "@/lib/abstracts";
@@ -91,12 +92,20 @@ async function summarizeCluster(
     ? `\ncategory must be exactly one of: ${categoryIds.join(", ")}.`
     : "";
 
+  // Evidence-based themes also get a study-type caption. Only the design/scale
+  // phrase comes from the model; the summary's basis (abstract vs discussion)
+  // is appended in code from what the pipeline actually fetched.
+  const studyTypeField = theme.fetchAbstracts ? ', "studyType": "..."' : "";
+  const studyTypeHint = theme.fetchAbstracts
+    ? `\nstudyType is a short plain-English phrase naming the study design and scale exactly as the source states it, e.g. "Randomized trial of 1,200 adults" or "Meta-analysis of 24 cohort studies". If the design is not stated, write "Study type unclear" — never guess.`
+    : "";
+
   const system = `You write one item for a weekly "${theme.label}" digest built from Twitter discussion.
 Digest date: ${ctx.date}. Interpret deadlines and time-sensitive claims relative to this date.
 Style: ${theme.summaryStyle}
 Respond ONLY with JSON:
-{"headline": "...", "summary": "...", "primaryLinks": [{"url": "...", "title": "..."}]${categoryField}}
-primaryLinks must be chosen from the URLs provided — never invent URLs. headline is a specific, factual title (max 100 chars).${categoryHint}${linkHint}`;
+{"headline": "...", "summary": "...", "primaryLinks": [{"url": "...", "title": "..."}]${categoryField}${studyTypeField}}
+primaryLinks must be chosen from the URLs provided — never invent URLs. headline is a specific, factual title (max 100 chars).${categoryHint}${studyTypeHint}${linkHint}`;
 
   const prompt = `Topic: ${cluster.label}
 
@@ -111,6 +120,7 @@ ${cluster.urls.slice(0, 20).join("\n") || "(none)"}${paperSection}`;
     summary: string;
     primaryLinks: { url: string; title: string }[];
     category?: string;
+    studyType?: string;
   }>({
     model: MODEL_SMART,
     system,
@@ -121,6 +131,7 @@ ${cluster.urls.slice(0, 20).join("\n") || "(none)"}${paperSection}`;
       summary: members[0]?.text.slice(0, 300) ?? "(no tweets)",
       primaryLinks: cluster.urls.slice(0, 2).map((u) => ({ url: u, title: u })),
       category: categoryIds?.[categoryIds.length - 1],
+      ...(theme.fetchAbstracts ? { studyType: "Study type unclear" } : {}),
     }),
   });
 
@@ -151,6 +162,14 @@ ${cluster.urls.slice(0, 20).join("\n") || "(none)"}${paperSection}`;
     headline: result.headline,
     summary: result.summary,
     ...(categoryIds ? { category } : {}),
+    ...(theme.fetchAbstracts
+      ? {
+          evidenceNote: buildEvidenceNote(
+            result.studyType,
+            Boolean(paper?.abstract)
+          ),
+        }
+      : {}),
     primaryLinks,
     sourceTweets: members.slice(0, MAX_SOURCE_TWEET_LINKS).map((t) => ({
       url: `https://x.com/${t.authorHandle}/status/${t.id}`,

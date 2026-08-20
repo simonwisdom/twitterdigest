@@ -94,7 +94,9 @@ export default function DigestView({
       <header className="space-y-5">
         <h1 className="font-headline text-5xl sm:text-6xl">Weekly Digest</h1>
         <p className="max-w-2xl text-foreground/75">
-          All published entries, newest first. Refreshed once a week.
+          All published entries, newest first. Refreshed once a week. Summaries
+          are AI-generated from the linked sources and X discussion — click
+          through to the source before acting on anything here.
         </p>
         <ThemeTabs themes={tabs} active={activeTheme} onSelect={selectTheme} />
         <CategoryFilter

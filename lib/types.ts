@@ -41,6 +41,9 @@ export interface DigestItem {
   summary: string;
   // id from the theme's `categories` config, when the theme defines categories
   category?: string;
+  // One-line caption for evidence-based themes: study type plus what the
+  // summary was built from ("the abstract" vs "tweet discussion only").
+  evidenceNote?: string;
   primaryLinks: { url: string; title: string }[];
   sourceTweets: { url: string; authorHandle: string }[];
   stats: { tweetCount: number; distinctAuthors: number; engagement: number };

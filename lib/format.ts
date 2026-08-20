@@ -40,6 +40,22 @@ export function splitSummary(summary: string): SplitSummary {
   };
 }
 
+// Caption line describing what an evidence-based item rests on. The study
+// type comes from the LLM; the basis half is composed here from what the
+// pipeline mechanically knows (whether an abstract was available), so the
+// provenance claim can never be hallucinated.
+export function buildEvidenceNote(
+  studyType: string | undefined,
+  hasAbstract: boolean
+): string {
+  const basis = hasAbstract
+    ? "summary based on the abstract"
+    : "summary based on tweet discussion only (no abstract)";
+  const type = studyType?.trim().replace(/\.+$/, "");
+  if (!type) return `${basis[0].toUpperCase()}${basis.slice(1)}`;
+  return `${type} · ${basis}`;
+}
+
 // Human label for a link: its title when present, otherwise the host name
 // instead of a raw URL. A title that just repeats the URL counts as missing.
 export function linkLabel(link: { url: string; title: string }): string {

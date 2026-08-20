@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import {
+  buildEvidenceNote,
   formatEditionDate,
   formatEditionDateShort,
   linkLabel,
@@ -54,6 +55,28 @@ test("linkLabel prefers the title and falls back to the hostname", () => {
       title: "https://doi.org/10.1/x",
     }),
     "doi.org"
+  );
+});
+
+test("buildEvidenceNote joins the study type with the summary basis", () => {
+  assert.equal(
+    buildEvidenceNote("Observational study of 152,435 adults", true),
+    "Observational study of 152,435 adults · summary based on the abstract"
+  );
+  assert.equal(
+    buildEvidenceNote("Meta-analysis of 24 randomized trials.", false),
+    "Meta-analysis of 24 randomized trials · summary based on tweet discussion only (no abstract)"
+  );
+});
+
+test("buildEvidenceNote falls back to the basis alone without a study type", () => {
+  assert.equal(
+    buildEvidenceNote(undefined, true),
+    "Summary based on the abstract"
+  );
+  assert.equal(
+    buildEvidenceNote("  ", false),
+    "Summary based on tweet discussion only (no abstract)"
   );
 });
 

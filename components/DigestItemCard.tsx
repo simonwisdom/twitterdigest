@@ -30,6 +30,10 @@ export default function DigestItemCard({
       <div className="p-8">
         <h3 className="font-headline text-2xl leading-tight">{item.headline}</h3>
 
+        {item.evidenceNote && (
+          <p className="mt-2 text-xs text-muted">{item.evidenceNote}</p>
+        )}
+
         <p className="mt-4 leading-relaxed">
           {summary.isTakeaway && (
             <strong className="font-semibold">Practical meaning: </strong>
