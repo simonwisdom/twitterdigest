@@ -9,8 +9,11 @@ export async function fetchStage(
   ctx: PipelineCtx,
   theme: ThemeConfig
 ): Promise<Tweet[]> {
-  const { sinceIso, untilIso } = windowFor(ctx.date);
-  ctx.log(`[${theme.id}] fetch: window ${sinceIso} .. ${untilIso}`);
+  const lookbackDays = theme.lookbackDays ?? 1;
+  const { sinceIso, untilIso } = windowFor(ctx.date, lookbackDays);
+  ctx.log(
+    `[${theme.id}] fetch: ${lookbackDays}-day window ${sinceIso} .. ${untilIso}`
+  );
 
   const accountBatches = await pMap(
     theme.accounts,

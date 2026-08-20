@@ -1,64 +1,94 @@
-# twitternews
+# twitterdigest
 
-Daily themed digest of Twitter/X discussion. Each day a pipeline fetches tweets
-from curated accounts + search queries, filters them per theme, clusters them by
-topic, ranks by breadth of discussion, and writes an LLM-summarized digest
-browsable by date.
+A weekly static digest of Twitter/X discussion, published on GitHub Pages. The
+pipeline fetches posts, filters and clusters them, writes LLM summaries, and
+exports a static site with no runtime server or exposed API keys.
 
-Themes are pure config (`config/themes.ts`): **science** (papers/preprints —
-summarizes the paper via its abstract plus the Twitter commentary) and **news**
-(serious world events — "just the facts" with links to professional sources).
-Adding a theme = adding one config entry.
+The configured themes are **Practical Longevity** (human evidence with an
+actionability/uncertainty check) and **European Art Residencies** (currently
+open, in-person calls presented as application briefs).
 
-## Setup
+## Local setup
 
 ```bash
 npm install
-cp .env.example .env.local   # fill in keys (see comments in the file)
+cp .env.example .env.local
 ```
 
-- `ANTHROPIC_API_KEY` — required for real runs.
-- `TWITTERAPI_IO_KEY` — required for real tweet fetching (twitterapi.io,
-  ~$0.15/1k tweets).
-- `BLOB_READ_WRITE_TOKEN` — optional locally; without it, data goes to `.data/`.
-- `CRON_SECRET` — required in production for the cron endpoint.
+- `OPENROUTER_API_KEY` — required for real LLM runs.
+- `OPENROUTER_MODEL` — defaults to `google/gemini-3.7-flash`. Optional
+  `OPENROUTER_MODEL_FAST` and `OPENROUTER_MODEL_SMART` values override the
+  filtering/clustering and summarization tiers.
+- `TWITTERAPI_IO_KEY` — required for real tweet fetching.
+- `TWITTERAPI_MIN_INTERVAL_MS` — optional request spacing; defaults to 5000 to
+  avoid entry-tier rate limits.
+- `DIGEST_DATA_DIR` — optional storage root; local runs default to `.data/`.
 
-## Run the pipeline
+## Run and view locally
 
 ```bash
-npm run pipeline -- --mock --date 2026-08-18        # fixtures + mock LLM, no keys needed
-npm run pipeline -- --mock-fetch --date 2026-08-18  # fixtures + real LLM (tests prompts)
-npm run pipeline -- --date 2026-08-18               # full real run
-npm run pipeline -- --date 2026-08-18 --theme science --force-from filter
+npm run pipeline -- --mock                         # fixtures + mock LLM
+npm run pipeline -- --mock-fetch --theme longevity # fixtures + real LLM
+npm run pipeline -- --theme longevity               # full real run
+npm run dev -- --port 3001                           # http://localhost:3001
 ```
 
-Every stage checkpoints to storage (`pipeline/{date}/{theme}/0N-*.json`); a
-re-run skips completed stages, so failed runs resume where they died.
-`--force-from <fetch|filter|cluster|summarize>` re-runs from that stage onward.
+Every stage checkpoints to
+`pipeline/{date}/{theme}/0N-*.json`. `--force-from
+<fetch|filter|cluster|summarize>` reruns that stage and everything after it.
 
-## View
+Completed items are recorded in a per-theme ledger under `history/live/`.
+Later rolling-window runs skip matching DOI, PubMed, and normalized URL
+identities before filtering and summarization. Mock data uses
+`history/fixtures/`, so it never suppresses a live item.
+
+The homepage shows the newest digest. `/archive` lists every published refresh,
+and `/digest/YYYY-MM-DD` opens a dated static page.
+
+## Topic configuration
+
+Edit `config/themes.ts`. Each theme defines source searches, inclusion and
+exclusion rules, summary instructions, categories, `topN`, `lookbackDays`, and
+`maxTweets`.
+
+- Longevity looks back 14 days and labels items `Applicable now`, `Discuss with
+  a clinician`, or `Research watch`.
+- Residencies look back 30 days, reject expired/unverifiable calls, and label
+  opportunities by funding level.
+
+## Weekly GitHub Pages deployment
+
+The repository contains two workflows:
+
+- `refresh-weekly-digest` runs Mondays at 11:00 UTC and can also be started
+  manually. It generates the digest and commits only `data/digests/` and
+  `data/history/`; raw pipeline checkpoints are ignored.
+- `deploy-pages` runs after changes reach `main`, exports the static Next.js site,
+  and deploys `out/` to GitHub Pages.
+
+Repository setup:
+
+1. Add `OPENROUTER_API_KEY` and `TWITTERAPI_IO_KEY` under **Settings → Secrets
+   and variables → Actions**.
+2. Under **Settings → Pages**, choose **GitHub Actions** as the source.
+3. Run **refresh-weekly-digest** once from the Actions tab to publish the first
+   real digest.
+
+The project Pages URL is:
+
+`https://simonwisdom.github.io/twitterdigest/`
+
+For a local production export using the committed data directory:
 
 ```bash
-npm run dev   # http://localhost:3000 — redirects to the latest digest
+DIGEST_DATA_DIR=data NEXT_PUBLIC_BASE_PATH=/twitterdigest npm run build
 ```
 
-`/digest/[date]?theme=news` for a specific day/theme, `/archive` for all dates.
+The generated site is written to `out/`.
 
-## Production (Vercel)
+## Cost controls
 
-`vercel.json` schedules `/api/cron/digest` daily at 11:00 UTC. The route
-requires `Authorization: Bearer $CRON_SECRET` (Vercel Cron sends it
-automatically once the env var is set). Manual backfill:
-
-```bash
-curl -H "Authorization: Bearer $CRON_SECRET" "https://<app>/api/cron/digest?date=2026-08-17"
-```
-
-If a run times out, hit the endpoint again — it resumes from checkpoints.
-`?theme=science` limits a run to one theme.
-
-## Cost
-
-Roughly $2/day at default caps (`maxTweets: 1500`/theme): ~$0.5–0.7 twitterapi.io,
-~$0.8 Haiku filtering/clustering, ~$0.75 Sonnet summaries. Tune via `maxTweets`,
-`topN`, and the `min_faves` thresholds in the search queries.
+Twitter and LLM spend varies with search volume and model pricing. Current caps
+are 800 longevity tweets and 600 residency tweets, with at most 12 and 15 new
+items summarized per refresh. Adjust `maxTweets`, `topN`, and query
+`min_faves` thresholds in `config/themes.ts`.

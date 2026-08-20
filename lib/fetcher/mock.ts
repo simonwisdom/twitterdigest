@@ -41,11 +41,20 @@ export class MockFetcher implements TweetFetcher {
 
   async search(query: string, sinceIso: string, maxResults: number): Promise<Tweet[]> {
     const all = await this.load();
-    // Naive interpretation of "url:HOST ..." queries; other queries match all tweets with URLs.
+    // Interpret URL searches, then use quoted phrases as a lightweight fallback
+    // for keyword searches. This keeps fixtures for unrelated themes separate.
     const urlOp = query.match(/url:(\S+)/)?.[1];
-    const matches = all.filter((t) =>
-      urlOp ? t.urls.some((u) => u.includes(urlOp)) : t.urls.length > 0
+    const quotedTerms = [...query.matchAll(/"([^"]+)"/g)].map((m) =>
+      m[1].toLowerCase()
     );
+    const matches = all.filter((t) => {
+      if (urlOp) return t.urls.some((u) => u.includes(urlOp));
+      if (quotedTerms.length > 0) {
+        const text = t.text.toLowerCase();
+        return quotedTerms.some((term) => text.includes(term));
+      }
+      return t.urls.length > 0;
+    });
     return this.rewriteTimes(matches, sinceIso).slice(0, maxResults);
   }
 }

@@ -31,6 +31,7 @@ function extractDoi(url: string): string | null {
   if (!m) return null;
   let doi = m[1].replace(/[.,;)\]]+$/, "");
   doi = doi.replace(/\.(pdf|full|abstract)$/i, "");
+  doi = doi.replace(/\/(pdf|full|abstract)$/i, "");
   doi = doi.replace(/v\d+$/i, ""); // preprint version suffix
   return doi.toLowerCase();
 }

@@ -23,7 +23,7 @@ export interface FilteredTweet extends Tweet {
 
 export interface Cluster {
   key: string; // canonical id, normalized URL, or topic slug
-  label: string; // human-readable name (paper title unknown at this stage; topic description for news)
+  label: string; // human-readable cluster name (exact title may be unknown here)
   tweetIds: string[];
   canonicalIds: string[];
   urls: string[];
@@ -44,6 +44,8 @@ export interface DigestItem {
   primaryLinks: { url: string; title: string }[];
   sourceTweets: { url: string; authorHandle: string }[];
   stats: { tweetCount: number; distinctAuthors: number; engagement: number };
+  // Stable DOI/PubMed/URL identities used for cross-run deduplication.
+  dedupeKeys?: string[];
 }
 
 export interface Digest {
@@ -78,6 +80,9 @@ export interface ThemeConfig {
   inclusionCriteria: string;
   exclusionCriteria: string;
   clusterStrategy: "canonical-link" | "topic";
+  // Canonical links can normally bypass LLM filtering. Set false when a theme
+  // still needs an evidence/eligibility check after a canonical id is found.
+  autoKeepCanonicalLinks?: boolean;
   canonicalPatterns?: CanonicalPattern[];
   // Preferred hosts for "professional source" links surfaced in the digest.
   primaryLinkHosts?: string[];
@@ -86,8 +91,26 @@ export interface ThemeConfig {
   // rendered as a color-coded header on the digest card.
   categories?: ThemeCategory[];
   fetchAbstracts: boolean;
+  // Rolling source window ending at 11:00 UTC on the digest date.
+  lookbackDays?: number;
   topN: number;
   maxTweets: number;
+}
+
+export interface ThemeHistoryEntry {
+  keys: string[];
+  firstSeenDate: string;
+  lastSeenDate: string;
+  headline: string;
+  category?: string;
+  primaryLinks: { url: string; title: string }[];
+}
+
+export interface ThemeHistory {
+  version: 1;
+  themeId: string;
+  updatedAt: string;
+  entries: ThemeHistoryEntry[];
 }
 
 export const STAGES = ["fetch", "filter", "cluster", "summarize"] as const;

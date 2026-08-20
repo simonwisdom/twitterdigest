@@ -1,108 +1,103 @@
 import { ThemeConfig } from "@/lib/types";
 
-// The theme registry. Adding a theme = adding an entry here; pipeline code
-// never branches on a theme id. Accounts and queries are starter seeds — edit freely.
+// The theme registry. Adding or refining a feed happens here; pipeline code
+// does not branch on theme ids. These searches cover each theme's rolling X
+// window, while the prompts do the evidence and eligibility screening.
 export const THEMES: ThemeConfig[] = [
   {
-    id: "science",
-    label: "Science",
-    accounts: [], // science is sourced purely from link searches
-    // Thresholds calibrated Aug 2026: paper-link tweets are low-engagement
-    // outside AI/arxiv (much of science Twitter left the platform), so these
-    // min_faves gates are low; doi.org is the highest-volume source.
+    id: "longevity",
+    label: "Practical Longevity",
+    accounts: [],
     searchQueries: [
-      "url:arxiv.org min_faves:30",
-      "url:biorxiv.org min_faves:5",
-      "url:medrxiv.org min_faves:5",
-      "url:nature.com min_faves:10",
-      "url:science.org min_faves:10",
-      "url:cell.com min_faves:5",
-      "url:nejm.org min_faves:5",
-      "url:thelancet.com min_faves:5",
-      "url:pnas.org min_faves:5",
-      "url:doi.org min_faves:10",
+      "url:pubmed.ncbi.nlm.nih.gov (aging OR healthspan OR mortality) min_faves:2",
+      "url:doi.org (aging OR healthspan OR longevity OR lifespan) min_faves:5",
+      "url:jamanetwork.com (aging OR mortality OR exercise OR sleep) min_faves:3",
+      "url:nejm.org (aging OR mortality OR prevention) min_faves:3",
+      "url:thelancet.com (aging OR mortality OR exercise OR nutrition) min_faves:3",
+      "url:bmj.com (aging OR mortality OR prevention OR healthspan) min_faves:3",
+      "url:nature.com (aging OR healthspan OR longevity) min_faves:3",
+      "url:cell.com (aging OR senescence OR metabolism) min_faves:3",
+      "url:cochranelibrary.com (aging OR exercise OR sleep OR nutrition) min_faves:2",
     ],
     inclusionCriteria:
-      "Tweets discussing a specific scientific paper, journal article, or preprint (arxiv, biorxiv, medrxiv, or a journal). The tweet should be about the paper's content: its findings, methods, or implications, or substantive commentary/criticism of it.",
+      "Include specific research or evidence syntheses relevant to extending healthy human life, prioritising human randomized trials, systematic reviews/meta-analyses, strong prospective cohorts, and clinical or public-health guidance. Focus on findings with a plausible practical implication: exercise and physical capacity, sleep, nutrition, cardiovascular or metabolic risk, prevention and screening, social/mental health, and diagnostics or biomarkers only when they have demonstrated clinical utility. Early-stage interventions may be included only when clearly framed as research to watch. Substantive criticism or correction of a longevity claim also qualifies.",
     exclusionCriteria:
-      "Exclude: tweets about science policy, funding, or academia in general without a specific paper; job postings; conference announcements; personal news; jokes or memes that merely mention a paper; threads about tools/software releases that aren't papers.",
+      "Exclude mouse, worm, cell, or other preclinical results presented as advice for people; influencer protocols and anecdotes; supplement or drug claims without substantial human evidence; biological-age tests without demonstrated clinical utility; vague anti-aging or lifespan claims; company promotion; and tweets that give individualized medical instructions or dosing. Exclude papers whose only connection is that they mention age without a meaningful healthspan, prevention, function, morbidity, or mortality outcome.",
     clusterStrategy: "canonical-link",
+    // A DOI or PubMed link proves that a paper exists, not that it is human,
+    // useful, or responsibly described. Keep the evidence screen enabled.
+    autoKeepCanonicalLinks: false,
     canonicalPatterns: [
       {
-        name: "arxiv",
-        hostPattern: "(^|\\.)arxiv\\.org$",
-        idPattern: "(\\d{4}\\.\\d{4,5})",
+        name: "pubmed",
+        hostPattern: "(^|\\.)pubmed\\.ncbi\\.nlm\\.nih\\.gov$",
+        idPattern: "pubmed\\.ncbi\\.nlm\\.nih\\.gov\\/(\\d+)",
       },
     ],
+    primaryLinkHosts: [
+      "pubmed\\.ncbi\\.nlm\\.nih\\.gov",
+      "doi\\.org",
+      "jamanetwork\\.com",
+      "nejm\\.org",
+      "thelancet\\.com",
+      "bmj\\.com",
+      "nature\\.com",
+      "cell\\.com",
+      "cochranelibrary\\.com",
+    ],
     summaryStyle:
-      "Write for a scientifically literate reader. First summarize what the paper claims and how (2-4 sentences, grounded in the abstract when available — if no abstract is available, say the summary is based on discussion only). Then summarize the Twitter commentary: what people found notable, any substantive criticism or skepticism, in 1-3 sentences. Attribute skepticism as commentary, not fact.",
+      "Write for a careful non-specialist who wants useful, evidence-based takeaways—not biohacking hype. State the study type, population, intervention or exposure, outcome, and effect size (prefer absolute effects when available). Separate association from causation and name the most important limitation. End with a short 'Practical meaning:' sentence. Do not prescribe, recommend doses, diagnose, or imply that one study changes medical care. Assign applicable-now only to low-risk general behaviours backed by mature or converging human evidence; clinician-conversation to tests, treatments, risk factors, or decisions that need individual medical context; and research-watch to preliminary, mixed, surrogate-outcome, or not-yet-actionable findings. If no abstract is available, explicitly say the account is based on the linked discussion.",
     categories: [
-      { id: "physics", label: "Physics", color: "#7d6fae" },
-      { id: "chemistry", label: "Chemistry", color: "#b57a52" },
-      { id: "mathematics", label: "Mathematics", color: "#4f8b9b" },
-      { id: "biology", label: "Biology", color: "#5f9173" },
-      { id: "medicine", label: "Medicine", color: "#ad6666" },
-      { id: "computer-science", label: "Computer Science", color: "#5f7ab3" },
-      { id: "earth-climate", label: "Earth & Climate", color: "#9a7f4a" },
-      { id: "social-science", label: "Social Science", color: "#a8718d" },
-      { id: "engineering", label: "Engineering", color: "#647080" },
-      { id: "other", label: "Other", color: "#7f858e" },
+      { id: "applicable-now", label: "Applicable now", color: "#3f7654" },
+      {
+        id: "clinician-conversation",
+        label: "Discuss with a clinician",
+        color: "#5a6f9c",
+      },
+      { id: "research-watch", label: "Research watch", color: "#806b9e" },
     ],
     fetchAbstracts: true,
-    topN: 20,
-    maxTweets: 1500,
+    lookbackDays: 14,
+    topN: 12,
+    maxTweets: 800,
   },
   {
-    id: "news",
-    label: "News",
-    // News wires and newspapers only — no individual journalists.
-    accounts: ["AP", "Reuters", "BBCWorld", "FinancialTimes"],
+    id: "art-residencies",
+    label: "European Art Residencies",
+    accounts: [],
     searchQueries: [
-      // Top-down: high-engagement tweets linking major news sites.
-      // (filter:news isn't supported by twitterapi.io, and long url: OR-chains
-      // return empty — keep these short. Paywalled sites (wsj/ft/bloomberg)
-      // yield nothing via search; their own accounts above cover them.)
-      "(url:reuters.com OR url:apnews.com OR url:nytimes.com OR url:washingtonpost.com) min_faves:100",
-      "url:bbc.com min_faves:100",
-      // Bottom-up: event-type keywords across languages, so events surface even
-      // when curated accounts and news sites haven't covered them. Every keyword
-      // group carries English + Japanese, Spanish, Portuguese, Arabic, and
-      // Indonesian (the biggest Twitter languages), plus FR/DE/RU/ZH where we
-      // already had them. High min_faves keeps volume bounded; the Haiku filter
-      // handles the noise.
-      "(war OR guerre OR guerra OR krieg OR война OR حرب OR 战争 OR 戦争 OR perang) min_faves:500",
-      "(earthquake OR terremoto OR séisme OR 地震 OR زلزال OR gempa OR flood OR inundación OR inundação OR 洪水 OR فيضان OR banjir) min_faves:500",
-      "(hurricane OR typhoon OR huracán OR tifón OR furacão OR tufão OR 台風 OR إعصار OR topan OR wildfire OR incêndio OR 山火事 OR \"kebakaran hutan\") min_faves:500",
-      "(election OR referendum OR élection OR elección OR elecciones OR eleições OR Wahl OR выборы OR انتخابات OR 選挙 OR pemilu OR استفتاء OR 国民投票) min_faves:500",
-      "(assassination OR assassinated OR murdered OR asesinato OR asesinado OR assassinato OR убийство OR اغتيال OR 暗殺 OR 殺害 OR pembunuhan) min_faves:500",
-      "(\"supreme court\" OR ruling OR verdict OR indictment OR sentencia OR veredicto OR \"corte suprema\" OR \"supremo tribunal\" OR \"mahkamah agung\" OR vonis OR 判決 OR 起訴 OR 最高裁 OR \"المحكمة العليا\") min_faves:500",
-      "(legislation OR impeachment OR legislación OR legislação OR تشريع OR 法案 OR 弾劾 OR pemakzulan OR \"undang-undang\" OR destitución) min_faves:500",
-      "(coup OR kudeta OR انقلاب OR クーデター OR \"golpe de estado\" OR uprising OR levantamiento OR انتفاضة OR ceasefire OR cessar-fogo OR \"alto el fuego\" OR \"وقف إطلاق النار\" OR 停戦 OR \"gencatan senjata\") min_faves:500",
-      "(sanctions OR sanciones OR sanções OR عقوبات OR 制裁 OR sanksi OR mobilization OR movilización OR mobilização OR 動員 OR \"martial law\" OR \"ley marcial\" OR \"lei marcial\" OR 戒厳令 OR \"darurat militer\" OR \"أحكام عرفية\") min_faves:500",
+      "url:on-the-move.org (residency OR fellowship)",
+      "url:transartists.org (residency OR open-call)",
+      "url:resartis.org (residency OR \"open call\")",
+      "url:culture.ec.europa.eu (residency OR \"Culture Moves Europe\")",
+      "url:artconnect.com (residency OR \"open call\")",
+      "(\"artist residency\" OR \"artists residency\") (\"open call\" OR apply OR deadline) (Europe OR European) min_faves:1",
+      "(\"résidence artistique\" OR \"residencia artística\" OR Künstlerresidenz OR residenza) (candidature OR convocatoria OR Ausschreibung OR candidatura)",
     ],
     inclusionCriteria:
-      "Tweets discussing serious current events of the kind covered on a newspaper front page: US politics and government, international affairs, wars and conflicts, elections, major crimes and attacks, major economic/policy developments, significant disasters. Tweets in any language qualify; firsthand or local reports of real events qualify even if no news organization has covered them yet.",
+      "Include a currently open call that an individual artist or artist collective can still apply to, for an in-person residency physically located in geographic Europe. The source must provide or link to a real programme page with an identifiable host, place, future application deadline, and application route. Visual art, design, writing, music/sound, film, performance, interdisciplinary, digital/new-media, socially engaged, and art-and-science practices all qualify. Prioritize opportunities offering a stipend, fee, housing, travel, production budget, or other meaningful support, while retaining reputable self-funded programmes when all costs are transparent.",
     exclusionCriteria:
-      "Exclude: celebrity and entertainment news, sports, gossip, pure opinion or hot takes not tied to a specific new event, culture-war dunking, promotional content, video-game or fictional 'events'.",
+      "Exclude calls whose deadline is before the digest date; opportunities outside geographic Europe or entirely online; exhibition, prize, job, workshop, or commission calls with no residency; calls only for host organizations; vague promotional posts without a verifiable deadline and application page; aggregator-only posts that cannot be traced to a programme or official call; high-fee pay-to-participate schemes with little substantive support; and opportunities whose stated nationality, age, career-stage, discipline, or other eligibility rules clearly make them unavailable to a general individual applicant. Do not assume that Culture Moves Europe host calls are artist application calls.",
     clusterStrategy: "topic",
     primaryLinkHosts: [
-      "reuters\\.com",
-      "apnews\\.com",
-      "bbc\\.(com|co\\.uk)",
-      "nytimes\\.com",
-      "washingtonpost\\.com",
-      "wsj\\.com",
-      "ft\\.com",
-      "bloomberg\\.com",
-      "economist\\.com",
-      "axios\\.com",
-      "politico\\.com",
+      "on-the-move\\.org",
+      "transartists\\.org",
+      "resartis\\.org",
+      "culture\\.ec\\.europa\\.eu",
+      "artconnect\\.com",
     ],
     summaryStyle:
-      'Write "just the facts" in the style of a wire service: what happened, who, where, when, and the immediate consequences. No opinion, no analysis of motives, no editorializing. Where facts are disputed or unconfirmed in the discussion, say so explicitly. If the source tweets are not in English, still write the summary in English. If no professional news source appears in the discussion, note that the report is unverified social-media reporting. 3-6 sentences.',
+      "Write this as an application brief, not arts publicity. Start with location (city, country) and the exact deadline. Then give residency dates or duration, accepted disciplines/career stage, key eligibility restrictions, and what the resident is expected to do. Itemize money plainly: artist fee or stipend, housing, travel, production support, application/programme fees, and costs the artist must cover; write 'not stated' for missing facts. Include the official call/application page as the first primary link when it appears in the source material, without inventing a URL. Flag any uncertainty or second-hand listing. Assign fully-funded only when there is no programme fee and the major participation costs are covered; partially-funded when meaningful support is offered but the artist bears a major cost; self-funded when the artist bears most costs; and funding-unclear when the source does not say. If the deadline appears expired relative to the digest date, say so rather than encouraging an application.",
+    categories: [
+      { id: "fully-funded", label: "Fully funded", color: "#3f7654" },
+      { id: "partially-funded", label: "Partially funded", color: "#567596" },
+      { id: "self-funded", label: "Self-funded", color: "#916a4f" },
+      { id: "funding-unclear", label: "Funding unclear", color: "#6e7278" },
+    ],
     fetchAbstracts: false,
-    topN: 20,
-    maxTweets: 1500,
+    lookbackDays: 30,
+    topN: 15,
+    maxTweets: 600,
   },
 ];
 

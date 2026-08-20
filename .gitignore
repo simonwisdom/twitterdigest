@@ -6,8 +6,11 @@
 /out/
 next-env.d.ts
 
-# local data store (used when BLOB_READ_WRITE_TOKEN is unset)
+# local development data store
 /.data/
+
+# Weekly builds commit digests/history but not resumable raw-stage data.
+/data/pipeline/
 
 # env
 .env.local
@@ -17,6 +20,7 @@ next-env.d.ts
 .DS_Store
 *.tsbuildinfo
 
-# vercel
-.vercel
+# deployment artifacts
+/.vercel/
+/out/
 .env*

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "9201",
+    "authorHandle": "OnTheMoveOTM",
+    "text": "Artist residency open call: Northern Light Studio, Helsinki, 4–8 weeks in spring 2027. Visual and media artists based in Europe may apply by 30 September 2026. Housing, €1,500 artist fee and up to €400 travel are covered; no application fee. https://northernlight.example.org/open-call-2027 https://on-the-move.org/news/northern-light-studio-residency-2027",
+    "createdAt": "2026-08-19T12:30:00Z",
+    "urls": [
+      "https://northernlight.example.org/open-call-2027",
+      "https://on-the-move.org/news/northern-light-studio-residency-2027"
+    ],
+    "likeCount": 75,
+    "retweetCount": 42,
+    "replyCount": 4,
+    "quoteCount": 6
+  },
+  {
+    "id": "9202",
+    "authorHandle": "TransArtists",
+    "text": "Open call for writers and translators: Harbour House residency in Tallinn, Estonia, January–March 2027. Deadline 15 October 2026. Private room and workspace included; residents receive €900 but arrange their own travel and meals. https://harbourhouse.example.ee/apply https://www.transartists.org/en/air/harbour-house",
+    "createdAt": "2026-08-19T14:00:00Z",
+    "urls": [
+      "https://harbourhouse.example.ee/apply",
+      "https://www.transartists.org/en/air/harbour-house"
+    ],
+    "likeCount": 54,
+    "retweetCount": 28,
+    "replyCount": 3,
+    "quoteCount": 4
+  },
+  {
+    "id": "9203",
+    "authorHandle": "ResArtis",
+    "text": "Convocatoria abierta: residencia de arte sonoro en Porto, Portugal, del 8 de febrero al 7 de marzo de 2027. Artistas internacionales pueden presentar candidatura hasta el 20 de septiembre de 2026. Alojamiento y estudio incluidos; viaje y manutención no incluidos. https://soundporto.example.pt/convocatoria-2027 https://resartis.org/open-call/sound-porto-2027",
+    "createdAt": "2026-08-19T16:00:00Z",
+    "urls": [
+      "https://soundporto.example.pt/convocatoria-2027",
+      "https://resartis.org/open-call/sound-porto-2027"
+    ],
+    "likeCount": 48,
+    "retweetCount": 24,
+    "replyCount": 3,
+    "quoteCount": 5
+  },
+  {
+    "id": "9204",
+    "authorHandle": "ArtConnectBerlin",
+    "text": "Artist residency open call in Brno, Czech Republic: six-week interdisciplinary programme in May–June 2027. Apply by 10 October 2026. Studio and accommodation provided; €600 production budget, but no artist fee or travel. https://brnoexchange.example.cz/2027-call https://www.artconnect.com/opportunities/brno-exchange-residency-2027",
+    "createdAt": "2026-08-19T18:00:00Z",
+    "urls": [
+      "https://brnoexchange.example.cz/2027-call",
+      "https://www.artconnect.com/opportunities/brno-exchange-residency-2027"
+    ],
+    "likeCount": 68,
+    "retweetCount": 31,
+    "replyCount": 6,
+    "quoteCount": 7
+  },
+  {
+    "id": "9205",
+    "authorHandle": "CreativeEuropeEU",
+    "text": "A Culture Moves Europe-supported host has opened resident applications: Alpine Arts Centre, Slovenia, offers a five-week visual-arts residency in April 2027. Apply by 5 October 2026. Housing, travel and a €1,200 stipend are covered. https://alpinearts.example.si/residency-2027 https://culture.ec.europa.eu/culture-moves-europe/selected-residency-hosts-2026",
+    "createdAt": "2026-08-19T20:00:00Z",
+    "urls": [
+      "https://alpinearts.example.si/residency-2027",
+      "https://culture.ec.europa.eu/culture-moves-europe/selected-residency-hosts-2026"
+    ],
+    "likeCount": 130,
+    "retweetCount": 77,
+    "replyCount": 9,
+    "quoteCount": 11
+  }
+]

@@ -1,4 +1,4 @@
-import { MODEL_FAST } from "@/lib/claude";
+import { MODEL_FAST } from "@/lib/openrouter";
 import { safeTruncate } from "@/lib/text";
 import { extractCanonicalIds, normalizeUrl } from "@/lib/links";
 import { FilteredTweet, ThemeConfig, Tweet } from "@/lib/types";
@@ -25,8 +25,12 @@ export async function filterStage(
   const needsClassification: FilteredTweet[] = [];
   for (const t of annotated) {
     if (theme.clusterStrategy === "canonical-link") {
-      if (t.canonicalIds.length > 0) {
-        // Having a paper link IS the inclusion criterion — skip the classifier.
+      if (
+        t.canonicalIds.length > 0 &&
+        theme.autoKeepCanonicalLinks !== false
+      ) {
+        // For broad paper feeds, having a canonical paper link can itself be
+        // the inclusion criterion. Focused evidence feeds can opt out above.
         autoKeep.push(t);
       } else if (t.normalizedUrls.length > 0) {
         needsClassification.push(t);
@@ -77,6 +81,7 @@ async function classifyBatch(
     .join("\n");
 
   const system = `You classify tweets for a themed digest called "${theme.label}".
+Digest date: ${ctx.date}. Treat deadlines and words such as "current" or "open" relative to this date.
 INCLUDE: ${theme.inclusionCriteria}
 EXCLUDE: ${theme.exclusionCriteria}
 Respond ONLY with a JSON array like [{"n": 1, "keep": true}, ...] covering every tweet number exactly once.`;

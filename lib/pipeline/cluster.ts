@@ -1,4 +1,4 @@
-import { MODEL_FAST, MODEL_SMART } from "@/lib/claude";
+import { MODEL_FAST, MODEL_SMART } from "@/lib/openrouter";
 import { safeTruncate } from "@/lib/text";
 import { Cluster, FilteredTweet, ThemeConfig } from "@/lib/types";
 import { PipelineCtx } from "@/lib/pipeline/index";
@@ -199,7 +199,7 @@ async function mergeLabels(
     const result = await ctx.llm.json<{ merges: string[][] }>({
       model: MODEL_SMART,
       system:
-        'You consolidate event labels for a daily digest. Given labels with one-line descriptions, return groups of slugs that cover the SAME underlying story — including different facets, reactions, follow-ups, or sub-events of one story (e.g. "colombia-earthquake-response", "colombia-earthquake-donations", and "colombia-earthquake-backlash" are one story; "fed-rate-decision" and "fomc-meeting" are one story). Merge whenever two labels would read as duplicate coverage of the same story in the same day\'s digest, and WHEN IN DOUBT, MERGE — a digest that folds two borderline-related labels into one item beats one that repeats the same story twice. Keep labels separate only when they are clearly unrelated stories. Respond ONLY with JSON: {"merges": [["slug-a", "slug-b", ...], ...]}. Return {"merges": []} if none.',
+        'You consolidate event labels for a weekly digest. Given labels with one-line descriptions, return groups of slugs that cover the SAME underlying story — including different facets, reactions, follow-ups, or sub-events of one story. Merge whenever two labels would read as duplicate coverage in one refresh, and WHEN IN DOUBT, MERGE — a digest that folds two borderline-related labels into one item beats one that repeats the same story twice. Keep labels separate only when they are clearly unrelated. Respond ONLY with JSON: {"merges": [["slug-a", "slug-b", ...], ...]}. Return {"merges": []} if none.',
       prompt: labels.map((l) => `- ${l.slug}: ${l.description}`).join("\n"),
       // Generous cap: the model reasons over 200+ labels before emitting JSON;
       // a low cap gets consumed by reasoning and yields an empty response.

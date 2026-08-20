@@ -9,7 +9,7 @@ const MAX_PAGES_PER_ACCOUNT = 2;
 const RETRIES = 5;
 // twitterapi.io enforces a strict QPS cap (low on entry-level tiers): all
 // requests are serialized through a global throttle with this spacing.
-const MIN_INTERVAL_MS = Number(process.env.TWITTERAPI_MIN_INTERVAL_MS ?? 1200);
+const MIN_INTERVAL_MS = Number(process.env.TWITTERAPI_MIN_INTERVAL_MS ?? 5000);
 
 interface RawTweet {
   id: string;

@@ -1,0 +1,57 @@
+[
+  {
+    "id": "9101",
+    "authorHandle": "healthyaginglab",
+    "text": "A randomized trial in 412 adults aged 65–80 found that twice-weekly supervised resistance training improved chair-rise time and strength at 12 months. Falls were a secondary outcome and the trial was not powered for mortality. https://pubmed.ncbi.nlm.nih.gov/49900001/",
+    "createdAt": "2026-08-19T12:00:00Z",
+    "urls": ["https://pubmed.ncbi.nlm.nih.gov/49900001/"],
+    "likeCount": 340,
+    "retweetCount": 92,
+    "replyCount": 28,
+    "quoteCount": 20
+  },
+  {
+    "id": "9102",
+    "authorHandle": "methods_first",
+    "text": "Useful resistance-training RCT, but don't call it a longevity trial: function improved, while follow-up was only 12 months and serious clinical events were uncommon. https://pubmed.ncbi.nlm.nih.gov/49900001/",
+    "createdAt": "2026-08-19T13:30:00Z",
+    "urls": ["https://pubmed.ncbi.nlm.nih.gov/49900001/"],
+    "likeCount": 180,
+    "retweetCount": 35,
+    "replyCount": 19,
+    "quoteCount": 11
+  },
+  {
+    "id": "9103",
+    "authorHandle": "epidemiology_notes",
+    "text": "New prospective cohort: irregular sleep timing was associated with higher cardiovascular-event risk after adjustment in 38,000 adults. Important signal, not proof that changing sleep timing lowers risk. https://jamanetwork.com/journals/jamanetworkopen/fullarticle/10.1001/jamanetworkopen.2026.19001",
+    "createdAt": "2026-08-19T15:00:00Z",
+    "urls": ["https://jamanetwork.com/journals/jamanetworkopen/fullarticle/10.1001/jamanetworkopen.2026.19001"],
+    "likeCount": 420,
+    "retweetCount": 105,
+    "replyCount": 31,
+    "quoteCount": 26
+  },
+  {
+    "id": "9104",
+    "authorHandle": "cardiometabolic",
+    "text": "The sleep-regularity cohort is well measured, but residual confounding is a real concern: unstable schedules can track shift work, illness, housing and income. Treat the hazard ratio as association. https://doi.org/10.1001/jamanetworkopen.2026.19001",
+    "createdAt": "2026-08-19T17:00:00Z",
+    "urls": ["https://doi.org/10.1001/jamanetworkopen.2026.19001"],
+    "likeCount": 230,
+    "retweetCount": 56,
+    "replyCount": 22,
+    "quoteCount": 15
+  },
+  {
+    "id": "9105",
+    "authorHandle": "evidence_review",
+    "text": "Updated Cochrane review of exercise programmes for community-dwelling older adults: balance and functional exercise probably reduces falls, though programme adherence and reporting varied widely. https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD012424.pub3/full",
+    "createdAt": "2026-08-19T19:00:00Z",
+    "urls": ["https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD012424.pub3/full"],
+    "likeCount": 290,
+    "retweetCount": 88,
+    "replyCount": 14,
+    "quoteCount": 12
+  }
+]

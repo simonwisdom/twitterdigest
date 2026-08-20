@@ -1,4 +1,4 @@
-import { MODEL_SMART } from "@/lib/claude";
+import { MODEL_SMART } from "@/lib/openrouter";
 import { safeTruncate } from "@/lib/text";
 import { extractCanonicalIds } from "@/lib/links";
 import { resolveAbstract } from "@/lib/abstracts";
@@ -12,6 +12,7 @@ import {
 import { PipelineCtx, pMap } from "@/lib/pipeline/index";
 import { engagement } from "@/lib/pipeline/fetch";
 import { rankClusters } from "@/lib/pipeline/rank";
+import { dedupeKeysForCluster } from "@/lib/history";
 
 const CONCURRENCY = 3;
 const MAX_TWEETS_IN_PROMPT = 25;
@@ -90,7 +91,8 @@ async function summarizeCluster(
     ? `\ncategory must be exactly one of: ${categoryIds.join(", ")}.`
     : "";
 
-  const system = `You write one item for a daily "${theme.label}" digest built from Twitter discussion.
+  const system = `You write one item for a weekly "${theme.label}" digest built from Twitter discussion.
+Digest date: ${ctx.date}. Interpret deadlines and time-sensitive claims relative to this date.
 Style: ${theme.summaryStyle}
 Respond ONLY with JSON:
 {"headline": "...", "summary": "...", "primaryLinks": [{"url": "...", "title": "..."}]${categoryField}}
@@ -159,5 +161,6 @@ ${cluster.urls.slice(0, 20).join("\n") || "(none)"}${paperSection}`;
       distinctAuthors: cluster.distinctAuthors,
       engagement: cluster.engagement,
     },
+    dedupeKeys: dedupeKeysForCluster(theme, cluster),
   };
 }

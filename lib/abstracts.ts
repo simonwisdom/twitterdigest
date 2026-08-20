@@ -16,7 +16,7 @@ async function fetchText(url: string, accept?: string): Promise<string | null> {
     const res = await fetch(url, {
       signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
       headers: {
-        "User-Agent": "twitternews-digest (personal project)",
+        "User-Agent": "twitterdigest (personal project)",
         ...(accept ? { Accept: accept } : {}),
       },
     });
@@ -75,6 +75,25 @@ async function fromBiorxiv(doi: string): Promise<PaperInfo | null> {
   return null;
 }
 
+async function fromPubmed(id: string): Promise<PaperInfo | null> {
+  const xml = await fetchText(
+    `https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=${encodeURIComponent(id)}&retmode=xml`
+  );
+  if (!xml) return null;
+  const article = xml.match(/<PubmedArticle>([\s\S]*?)<\/PubmedArticle>/)?.[1];
+  if (!article) return null;
+  const title = article.match(/<ArticleTitle>([\s\S]*?)<\/ArticleTitle>/)?.[1];
+  const abstractParts = [...article.matchAll(/<AbstractText[^>]*>([\s\S]*?)<\/AbstractText>/g)]
+    .map((m) => stripTags(m[1]))
+    .filter(Boolean);
+  if (!title && abstractParts.length === 0) return null;
+  return {
+    title: title ? stripTags(title) : undefined,
+    abstract: abstractParts.length > 0 ? abstractParts.join(" ") : undefined,
+    source: "pubmed",
+  };
+}
+
 async function fromCrossref(doi: string): Promise<PaperInfo | null> {
   const raw = await fetchText(
     `https://api.crossref.org/works/${encodeURIComponent(doi)}`
@@ -118,6 +137,9 @@ export async function resolveAbstract(
     const id = rest.join(":");
     if (ns === "arxiv") {
       const r = await fromArxiv(id);
+      if (r) return r;
+    } else if (ns === "pubmed") {
+      const r = await fromPubmed(id);
       if (r) return r;
     } else if (ns === "doi") {
       if (id.startsWith("10.1101/")) {

@@ -6,7 +6,7 @@ import { engagement } from "@/lib/pipeline/fetch";
 // Multi-author clusters always outrank single-author ones, but single-author
 // clusters can fill remaining topN slots — on current Twitter most papers get
 // exactly one substantive tweet, and a hard >=2-author floor starves the
-// science digest.
+// canonical-link digest.
 export function rankClusters(
   theme: ThemeConfig,
   clusters: Cluster[],

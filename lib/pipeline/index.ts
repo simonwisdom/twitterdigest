@@ -1,5 +1,5 @@
 import { THEMES } from "@/config/themes";
-import { LlmClient } from "@/lib/claude";
+import { LlmClient } from "@/lib/openrouter";
 import { TweetFetcher } from "@/lib/fetcher/types";
 import { Storage, digestKey, indexKey, stageKey } from "@/lib/storage";
 import {
@@ -14,13 +14,22 @@ import { fetchStage } from "@/lib/pipeline/fetch";
 import { filterStage } from "@/lib/pipeline/filter";
 import { clusterStage } from "@/lib/pipeline/cluster";
 import { summarizeStage } from "@/lib/pipeline/summarize";
+import {
+  filterPreviouslySeenClusters,
+  filterPreviouslySeenTweets,
+  HistoryScope,
+  loadThemeHistory,
+  recordThemeHistory,
+  seenKeysBefore,
+} from "@/lib/history";
 
 export interface PipelineCtx {
-  date: string; // YYYY-MM-DD — the digest date; the tweet window is the 24h ending at 11:00 UTC on this date
+  date: string; // YYYY-MM-DD — source windows end at 11:00 UTC on this date
   storage: Storage;
   fetcher: TweetFetcher;
   llm: LlmClient;
   mock: boolean;
+  historyScope: HistoryScope;
   forceFrom?: Stage;
   log: (msg: string) => void;
 }
@@ -67,15 +76,37 @@ export async function runThemePipeline(
   theme: ThemeConfig
 ): Promise<DigestItem[]> {
   const raw = await runStage(ctx, theme, "fetch", () => fetchStage(ctx, theme));
+  const history = await loadThemeHistory(
+    ctx.storage,
+    ctx.historyScope,
+    theme.id
+  );
+  const seen = seenKeysBefore(history, ctx.date);
+  const unseenRaw = filterPreviouslySeenTweets(theme, raw, seen);
+  ctx.log(
+    `[${theme.id}] history: skipped ${raw.length - unseenRaw.length} previously processed tweets; ${unseenRaw.length} remain`
+  );
   const filtered = await runStage(ctx, theme, "filter", () =>
-    filterStage(ctx, theme, raw)
+    filterStage(ctx, theme, unseenRaw)
   );
   const clusters = await runStage(ctx, theme, "cluster", () =>
     clusterStage(ctx, theme, filtered)
   );
-  return runStage(ctx, theme, "summarize", () =>
-    summarizeStage(ctx, theme, clusters, filtered)
+  const unseenClusters = filterPreviouslySeenClusters(theme, clusters, seen);
+  ctx.log(
+    `[${theme.id}] history: skipped ${clusters.length - unseenClusters.length} previously processed clusters; ${unseenClusters.length} remain`
   );
+  const items = await runStage(ctx, theme, "summarize", () =>
+    summarizeStage(ctx, theme, unseenClusters, filtered)
+  );
+  await recordThemeHistory(
+    ctx.storage,
+    ctx.historyScope,
+    theme,
+    ctx.date,
+    items
+  );
+  return items;
 }
 
 export async function runPipeline(
@@ -126,11 +157,17 @@ export async function runPipeline(
   return digest;
 }
 
-// The tweet window for a digest date: 24h ending at the cron hour (11:00 UTC).
-export function windowFor(date: string): { sinceIso: string; untilIso: string } {
+// Rolling source window ending at the cron hour (11:00 UTC).
+export function windowFor(
+  date: string,
+  lookbackDays = 1
+): { sinceIso: string; untilIso: string } {
+  if (!Number.isInteger(lookbackDays) || lookbackDays < 1) {
+    throw new Error(`lookbackDays must be a positive integer, got ${lookbackDays}`);
+  }
   const end = new Date(`${date}T11:00:00Z`).getTime();
   return {
-    sinceIso: new Date(end - 24 * 60 * 60 * 1000).toISOString(),
+    sinceIso: new Date(end - lookbackDays * 24 * 60 * 60 * 1000).toISOString(),
     untilIso: new Date(end).toISOString(),
   };
 }

@@ -4,14 +4,12 @@ export default function DateNav({
   date,
   prev,
   next,
-  theme,
 }: {
   date: string;
   prev?: string;
   next?: string;
-  theme: string;
 }) {
-  const link = (d: string) => `/digest/${d}?theme=${theme}`;
+  const link = (d: string) => `/digest/${d}`;
   return (
     <div className="flex items-center gap-3 text-sm">
       {prev ? (

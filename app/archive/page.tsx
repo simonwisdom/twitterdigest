@@ -3,8 +3,6 @@ import { getTheme } from "@/config/themes";
 import { createStorage, indexKey } from "@/lib/storage";
 import { DigestIndexEntry } from "@/lib/types";
 
-export const dynamic = "force-dynamic";
-
 export default async function ArchivePage() {
   const index =
     (await createStorage().getJson<DigestIndexEntry[]>(indexKey())) ?? [];

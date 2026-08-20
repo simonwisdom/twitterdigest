@@ -16,8 +16,8 @@
   --color-border: var(--border);
   --color-accent: var(--accent);
   --color-muted: var(--muted);
-  --font-headline: "Editorial New", "PP Editorial New",
-    var(--font-instrument-serif), Georgia, serif;
+  --font-headline: "Editorial New", "PP Editorial New", Georgia,
+    "Times New Roman", serif;
 }
 
 body {

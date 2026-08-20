@@ -1,18 +1,15 @@
 {
-  "name": "twitternews",
+  "name": "twitterdigest",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint",
+    "build": "next build --webpack",
+    "lint": "eslint .",
     "pipeline": "tsx scripts/run-pipeline.ts"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.117.1",
-    "@vercel/blob": "^2.8.0",
-    "next": "16.1.1",
+    "next": "16.3.1",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
@@ -22,7 +19,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.1.1",
+    "eslint-config-next": "16.3.1",
     "tailwindcss": "^4",
     "tsx": "^4.23.0",
     "typescript": "^5"

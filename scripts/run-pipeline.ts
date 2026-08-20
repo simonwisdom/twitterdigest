@@ -1,14 +1,14 @@
 // Local pipeline runner — the dev loop and the production fallback.
 //
 //   npm run pipeline -- --mock --date 2026-08-18
-//   npm run pipeline -- --date 2026-08-18 --theme science --force-from filter
+//   npm run pipeline -- --date 2026-08-20 --theme longevity --force-from filter
 //
-// Loads .env.local itself (no --env-file needed). Without BLOB_READ_WRITE_TOKEN
-// results go to ./.data/; with it, to the same Vercel Blob store production uses.
+// Loads .env.local itself (no --env-file needed). Local runs default to .data/;
+// GitHub Actions sets DIGEST_DATA_DIR=data for committed durable output.
 import { loadEnvConfig } from "@next/env";
 loadEnvConfig(process.cwd());
 
-import { createLlm } from "@/lib/claude";
+import { createLlm } from "@/lib/openrouter";
 import { MockFetcher } from "@/lib/fetcher/mock";
 import { TwitterApiIoFetcher } from "@/lib/fetcher/twitterapiio";
 import { createStorage } from "@/lib/storage";
@@ -40,12 +40,13 @@ async function main() {
     fetcher: mockFetch ? new MockFetcher() : new TwitterApiIoFetcher(log),
     llm: createLlm({ mock }),
     mock,
+    historyScope: mockFetch ? "fixtures" : "live",
     forceFrom,
     log,
   };
 
   log(
-    `pipeline start: date=${date} mock=${mock} mockFetch=${mockFetch} storage=${process.env.BLOB_READ_WRITE_TOKEN ? "blob" : "local .data/"}` +
+    `pipeline start: date=${date} mock=${mock} mockFetch=${mockFetch} storage=${process.env.DIGEST_DATA_DIR ?? ".data"}` +
       (themeArg ? ` theme=${themeArg}` : "") +
       (forceFrom ? ` force-from=${forceFrom}` : "")
   );
