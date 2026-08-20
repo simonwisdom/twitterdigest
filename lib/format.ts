@@ -56,6 +56,20 @@ export function buildEvidenceNote(
   return `${type} · ${basis}`;
 }
 
+// Inverse of buildEvidenceNote, for rendering the two halves separately
+// (study type as a caption, basis as a status pill). Returns null when the
+// item has no evidence note.
+export function splitEvidenceNote(
+  note: string | undefined
+): { studyType?: string; hasAbstract: boolean } | null {
+  if (!note) return null;
+  const hasAbstract = !/no abstract/i.test(note);
+  const studyType = note.split(/\s*·\s*/)[0];
+  return /^summary based on/i.test(studyType)
+    ? { studyType: undefined, hasAbstract }
+    : { studyType, hasAbstract };
+}
+
 // Human label for a link: its title when present, otherwise the host name
 // instead of a raw URL. A title that just repeats the URL counts as missing.
 export function linkLabel(link: { url: string; title: string }): string {

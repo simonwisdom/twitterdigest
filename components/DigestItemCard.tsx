@@ -1,9 +1,10 @@
 import { DigestItem, ThemeCategory } from "@/lib/types";
-import { linkLabel, splitSummary } from "@/lib/format";
+import { linkLabel, splitEvidenceNote, splitSummary } from "@/lib/format";
 
-// Presentation contract: the takeaway (or lead) is the dominant content, with
-// the rest of the summary behind a native disclosure; primary links are
-// normal-weight; source tweets are ONE muted footer line of plain <a> links —
+// Presentation contract (Examine-inspired skin): category chip and evidence-
+// basis pill on the top row, Lora headline, study type as a muted caption,
+// the takeaway in a tinted callout, remaining summary behind a native
+// disclosure; source tweets stay ONE muted footer line of plain <a> links —
 // never an embed, widget, or quoted tweet text.
 export default function DigestItemCard({
   item,
@@ -15,80 +16,109 @@ export default function DigestItemCard({
   const shownTweets = item.sourceTweets.slice(0, 5);
   const extra = item.stats.tweetCount - shownTweets.length;
   const summary = splitSummary(item.summary);
+  const evidence = splitEvidenceNote(item.evidenceNote);
 
   return (
-    <article className="overflow-hidden rounded-lg border border-border bg-card shadow-sm">
-      {category && (
-        <div
-          className="px-8 py-1.5 text-xs font-semibold uppercase tracking-wider text-white"
-          style={{ backgroundColor: category.color }}
-          title={category.description}
-        >
-          {category.label}
+    <article className="rounded-lg border border-border bg-card p-6 shadow-sm">
+      {(category || evidence) && (
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          {category && (
+            <span
+              className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider"
+              style={{ color: category.color }}
+              title={category.description}
+            >
+              <span
+                aria-hidden
+                className="h-2.5 w-2.5 rounded-full"
+                style={{ backgroundColor: category.color }}
+              />
+              {category.label}
+            </span>
+          )}
+          {evidence && (
+            <span
+              className={
+                "rounded-full px-2.5 py-0.5 text-[11px] font-semibold " +
+                (evidence.hasAbstract
+                  ? "bg-success-bg text-success-fg"
+                  : "bg-danger-bg text-danger-fg")
+              }
+            >
+              {evidence.hasAbstract
+                ? "Abstract read"
+                : "No abstract — discussion only"}
+            </span>
+          )}
         </div>
       )}
-      <div className="p-8">
-        <h3 className="font-headline text-2xl leading-tight">{item.headline}</h3>
 
-        {item.evidenceNote && (
-          <p className="mt-2 text-xs text-muted">{item.evidenceNote}</p>
-        )}
+      <h3 className="mt-2.5 font-headline text-xl leading-snug font-semibold">
+        {item.headline}
+      </h3>
 
-        <p className="mt-4 leading-relaxed">
-          {summary.isTakeaway && (
-            <strong className="font-semibold">Practical meaning: </strong>
-          )}
-          {summary.visible}
-        </p>
+      {evidence?.studyType && (
+        <p className="mt-1.5 text-xs text-muted">{evidence.studyType}</p>
+      )}
 
-        {summary.rest && (
-          <details className="mt-3 group">
-            <summary className="cursor-pointer text-sm text-accent select-none">
-              <span className="group-open:hidden">Full summary</span>
-              <span className="hidden group-open:inline">Hide full summary</span>
-            </summary>
-            <p className="mt-2 whitespace-pre-line leading-relaxed">
-              {summary.rest}
-            </p>
-          </details>
-        )}
+      {summary.isTakeaway ? (
+        <div className="mt-3 rounded-md bg-accent-tint px-3.5 py-3">
+          <p className="text-[10px] font-bold uppercase tracking-wider text-accent">
+            Practical meaning
+          </p>
+          <p className="mt-1 text-sm leading-relaxed">{summary.visible}</p>
+        </div>
+      ) : (
+        <p className="mt-3 text-sm leading-relaxed">{summary.visible}</p>
+      )}
 
-        {item.primaryLinks.length > 0 && (
-          <ul className="mt-4 space-y-1">
-            {item.primaryLinks.map((link) => (
-              <li key={link.url}>
-                <a
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="break-words text-accent hover:underline"
-                >
-                  {linkLabel(link)}
-                </a>
-              </li>
-            ))}
-          </ul>
-        )}
+      {summary.rest && (
+        <details className="mt-3 group">
+          <summary className="cursor-pointer text-sm text-accent select-none">
+            <span className="group-open:hidden">Full summary</span>
+            <span className="hidden group-open:inline">Hide full summary</span>
+          </summary>
+          <p className="mt-2 whitespace-pre-line text-sm leading-relaxed">
+            {summary.rest}
+          </p>
+        </details>
+      )}
 
-        <p className="mt-4 border-t border-border pt-2 text-xs text-muted">
-          Discussion: {item.stats.tweetCount} tweets from{" "}
-          {item.stats.distinctAuthors} authors ·{" "}
-          {shownTweets.map((t, i) => (
-            <span key={t.url}>
-              {i > 0 && ", "}
+      {item.primaryLinks.length > 0 && (
+        <ul className="mt-3 space-y-1">
+          {item.primaryLinks.map((link) => (
+            <li key={link.url}>
               <a
-                href={t.url}
+                href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:underline"
+                className="break-words text-sm text-accent hover:underline"
               >
-                @{t.authorHandle}
+                {linkLabel(link)}
               </a>
-            </span>
+            </li>
           ))}
-          {extra > 0 && ` +${extra}`}
-        </p>
-      </div>
+        </ul>
+      )}
+
+      <p className="mt-4 border-t border-border pt-2 text-xs text-muted">
+        Discussion: {item.stats.tweetCount} tweets from{" "}
+        {item.stats.distinctAuthors} authors ·{" "}
+        {shownTweets.map((t, i) => (
+          <span key={t.url}>
+            {i > 0 && ", "}
+            <a
+              href={t.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              @{t.authorHandle}
+            </a>
+          </span>
+        ))}
+        {extra > 0 && ` +${extra}`}
+      </p>
     </article>
   );
 }

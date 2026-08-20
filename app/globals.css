@@ -1,13 +1,21 @@
 @import "tailwindcss";
 
+/* Examine-inspired system (built from real extracted tokens, plum nudged off
+   their brand value): gray neutrals on a cool page ground, white cards, one
+   plum accent with a lavender tint for callouts, green/red status tints for
+   the evidence-basis pills. Type: Lora headlines over Inter body. */
 :root {
-  --background: #9bb4d4;
-  --foreground: #1f2937;
+  --background: #f5f6f8;
+  --foreground: #111827;
   --card: #ffffff;
   --border: #e5e7eb;
-  --accent: #2563eb;
-  /* Darkest gray that still reads as muted; #9ca3af failed WCAG AA on white. */
+  --accent: #5b3a6f;
+  --accent-tint: #efeaf4;
   --muted: #6b7280;
+  --success-bg: #d1e7dd;
+  --success-fg: #0f5132;
+  --danger-bg: #f8d7da;
+  --danger-fg: #842029;
 }
 
 @theme inline {
@@ -16,13 +24,17 @@
   --color-card: var(--card);
   --color-border: var(--border);
   --color-accent: var(--accent);
+  --color-accent-tint: var(--accent-tint);
   --color-muted: var(--muted);
-  --font-headline: "Editorial New", "PP Editorial New", Georgia,
-    "Times New Roman", serif;
+  --color-success-bg: var(--success-bg);
+  --color-success-fg: var(--success-fg);
+  --color-danger-bg: var(--danger-bg);
+  --color-danger-fg: var(--danger-fg);
+  --font-headline: var(--font-lora), Georgia, "Times New Roman", serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
 }

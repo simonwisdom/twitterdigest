@@ -10,7 +10,10 @@ export default function ThemeTabs({
   onSelect: (id: string) => void;
 }) {
   return (
-    <nav className="flex flex-wrap gap-2" aria-label="Digest themes">
+    <nav
+      className="flex flex-wrap gap-6 border-b border-border"
+      aria-label="Digest themes"
+    >
       {themes.map((t) => (
         <button
           type="button"
@@ -18,10 +21,10 @@ export default function ThemeTabs({
           onClick={() => onSelect(t.id)}
           aria-pressed={t.id === active}
           className={
-            "rounded-full px-4 py-1.5 text-sm " +
+            "-mb-px border-b-[3px] pb-2.5 text-sm " +
             (t.id === active
-              ? "bg-foreground text-background"
-              : "border border-border bg-card hover:border-muted")
+              ? "border-accent font-semibold text-foreground"
+              : "border-transparent font-medium text-muted hover:text-foreground")
           }
         >
           {t.label} <span className="opacity-60">({t.count})</span>

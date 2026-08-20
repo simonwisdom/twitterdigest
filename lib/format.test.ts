@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import {
   buildEvidenceNote,
+  splitEvidenceNote,
   formatEditionDate,
   formatEditionDateShort,
   linkLabel,
@@ -78,6 +79,29 @@ test("buildEvidenceNote falls back to the basis alone without a study type", () 
     buildEvidenceNote("  ", false),
     "Summary based on tweet discussion only (no abstract)"
   );
+});
+
+test("splitEvidenceNote separates the study type from the basis", () => {
+  assert.deepEqual(
+    splitEvidenceNote(
+      "Prospective cohort study of 407,531 adults · summary based on the abstract"
+    ),
+    { studyType: "Prospective cohort study of 407,531 adults", hasAbstract: true }
+  );
+  assert.deepEqual(
+    splitEvidenceNote(
+      "Study type unclear · summary based on tweet discussion only (no abstract)"
+    ),
+    { studyType: "Study type unclear", hasAbstract: false }
+  );
+});
+
+test("splitEvidenceNote handles basis-only notes and missing notes", () => {
+  assert.deepEqual(splitEvidenceNote("Summary based on the abstract"), {
+    studyType: undefined,
+    hasAbstract: true,
+  });
+  assert.equal(splitEvidenceNote(undefined), null);
 });
 
 test("formatEditionDate humanizes ISO dates without timezone shifts", () => {
