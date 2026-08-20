@@ -1,0 +1,189 @@
+{
+ "version": 1,
+ "themeId": "longevity",
+ "updatedAt": "2026-08-20T10:03:45.042Z",
+ "entries": [
+  {
+   "keys": [
+    "canonical:doi:10.1038/s43587-026-01177-0",
+    "url:http://doi.org/10.1038/s43587-026-01177-0",
+    "url:https://doi.org/10.1038/s43587-026-01177-0"
+   ],
+   "firstSeenDate": "2026-08-20",
+   "lastSeenDate": "2026-08-20",
+   "headline": "Physical Activity Linked to Slower Ovarian Aging via Adiponectin Pathway",
+   "category": "research-watch",
+   "primaryLinks": [
+    {
+     "url": "https://doi.org/10.1038/s43587-026-01177-0",
+     "title": "Physical activity delays ovarian aging in part through adiponectin-related signaling pathways"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "canonical:pubmed:16123147",
+    "url:https://pubmed.ncbi.nlm.nih.gov/16123147"
+   ],
+   "firstSeenDate": "2026-08-20",
+   "lastSeenDate": "2026-08-20",
+   "headline": "Lower Plasma Selenium Linked to Higher All-Cause and Cancer Mortality in Older Adults",
+   "category": "research-watch",
+   "primaryLinks": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/16123147",
+     "title": "Selenium and mortality in the elderly: results from the EVA study."
+    }
+   ]
+  },
+  {
+   "keys": [
+    "canonical:doi:10.1038/s43587-026-01162-7",
+    "url:https://doi.org/10.1038/s43587-026-01162-7"
+   ],
+   "firstSeenDate": "2026-08-20",
+   "lastSeenDate": "2026-08-20",
+   "headline": "21-Protein Blood Panel Shows Promise in Distinguishing Dementia Types",
+   "category": "research-watch",
+   "primaryLinks": [
+    {
+     "url": "https://doi.org/10.1038/s43587-026-01162-7",
+     "title": "Plasma proteome profiling identified biomarkers for the differential diagnosis and molecular staging of neurodegenerative dementias"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "canonical:doi:10.1093/lifemeta/loac025",
+    "url:https://doi.org/10.1093/lifemeta/loac025",
+    "url:https://www.cell.com/cell/fulltext/S0092-8674(24)00050-3"
+   ],
+   "firstSeenDate": "2026-08-20",
+   "lastSeenDate": "2026-08-20",
+   "headline": "Critical review challenges sirtuins as evolutionarily conserved longevity genes",
+   "category": "research-watch",
+   "primaryLinks": [
+    {
+     "url": "https://doi.org/10.1093/lifemeta/loac025",
+     "title": "Sirtuins are not conserved longevity genes"
+    },
+    {
+     "url": "https://www.cell.com/cell/fulltext/S0092-8674(24)00050-3",
+     "title": "A critical assessment of the information theory of aging"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "canonical:doi:10.1038/s43587-026-01149-4",
+    "url:https://doi.org/10.1038/s43587-026-01149-4"
+   ],
+   "firstSeenDate": "2026-08-20",
+   "lastSeenDate": "2026-08-20",
+   "headline": "Midlife Blood Metabolites Linked to Brain Structure and Cognitive Health",
+   "category": "research-watch",
+   "primaryLinks": [
+    {
+     "url": "https://doi.org/10.1038/s43587-026-01149-4",
+     "title": "The blood metabolome of brain health in midlife and influences of genes, microbiome and exposome"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "canonical:pubmed:42395093",
+    "url:https://pubmed.ncbi.nlm.nih.gov/42395093"
+   ],
+   "firstSeenDate": "2026-08-20",
+   "lastSeenDate": "2026-08-20",
+   "headline": "'Metabolically Healthy' Obesity Linked to Higher Long-Term Cardiovascular and Mortality Risks",
+   "category": "clinician-conversation",
+   "primaryLinks": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/42395093",
+     "title": "Obesity, metabolic health status, and adverse outcomes in men and women."
+    }
+   ]
+  },
+  {
+   "keys": [
+    "canonical:doi:10.1212/wnl.0000000000218413",
+    "url:https://doi.org/10.1212/WNL.0000000000218413"
+   ],
+   "firstSeenDate": "2026-08-20",
+   "lastSeenDate": "2026-08-20",
+   "headline": "Estrogen Therapy Linked to Lower Alzheimer's Neuropathology in Cohort Study",
+   "category": "clinician-conversation",
+   "primaryLinks": [
+    {
+     "url": "https://doi.org/10.1212/WNL.0000000000218413",
+     "title": "Association Between Menopausal Hormone Therapy and Alzheimer Disease Neuropathology"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "url:https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2852597"
+   ],
+   "firstSeenDate": "2026-08-20",
+   "lastSeenDate": "2026-08-20",
+   "headline": "Physical Fitness Associated with Lower All-Cause Mortality in Older Adults",
+   "category": "applicable-now",
+   "primaryLinks": [
+    {
+     "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2852597",
+     "title": "Physical Fitness and All-Cause Mortality in Older Adults"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "canonical:pubmed:39133482",
+    "canonical:pubmed:27379574",
+    "url:https://pubmed.ncbi.nlm.nih.gov/39133482",
+    "url:http://pubmed.ncbi.nlm.nih.gov",
+    "url:https://pubmed.ncbi.nlm.nih.gov/27379574"
+   ],
+   "firstSeenDate": "2026-08-20",
+   "lastSeenDate": "2026-08-20",
+   "headline": "Plant-Based Fats Linked to Modestly Lower Cardiovascular and All-Cause Mortality",
+   "category": "applicable-now",
+   "primaryLinks": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/39133482",
+     "title": "Plant and Animal Fat Intake and Overall and Cardiovascular Disease Mortality."
+    }
+   ]
+  },
+  {
+   "keys": [
+    "url:https://jamanetwork.com/journals/jama/article-abstract/2852269"
+   ],
+   "firstSeenDate": "2026-08-20",
+   "lastSeenDate": "2026-08-20",
+   "headline": "JAMA Publication Highlights the Role of Sleep Health in Obesity Management",
+   "category": "research-watch",
+   "primaryLinks": [
+    {
+     "url": "https://jamanetwork.com/journals/jama/article-abstract/2852269",
+     "title": "JAMA Article on Sleep Health and Obesity"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "url:https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2848779"
+   ],
+   "firstSeenDate": "2026-08-20",
+   "lastSeenDate": "2026-08-20",
+   "headline": "Study Highlights Causes of US Excess Mortality Compared to Other High-Income Nations",
+   "category": "research-watch",
+   "primaryLinks": [
+    {
+     "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2848779",
+     "title": "Causes of Excess Deaths in the US Compared With Other High-Income Countries"
+    }
+   ]
+  }
+ ]
+}
