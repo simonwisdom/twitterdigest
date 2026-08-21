@@ -5,8 +5,9 @@ pipeline fetches posts, filters and clusters them, writes LLM summaries, and
 exports a static site with no runtime server or exposed API keys.
 
 The configured themes are **Practical Longevity** (human evidence with an
-actionability/uncertainty check) and **European Art Residencies** (currently
-open, in-person calls presented as application briefs).
+actionability/uncertainty check) and **Artist Opportunities** (currently open
+European residencies plus grants, prizes, commissions, and fellowships a
+Europe-based artist can apply to, presented as application briefs).
 
 ## Local setup
 
@@ -43,7 +44,7 @@ identities before filtering and summarization. Mock data uses
 `history/fixtures/`, so it never suppresses a live item.
 
 The homepage contains every published refresh, newest first and grouped by
-date. Theme tabs switch between the longevity and art-residency feeds; there
+date. Theme tabs switch between the longevity and artist-opportunity feeds; there
 are no separate archive or per-date pages.
 
 ## Topic configuration
@@ -54,8 +55,9 @@ exclusion rules, summary instructions, categories, `topN`, `lookbackDays`, and
 
 - Longevity looks back 14 days and labels items `Applicable now`, `Discuss with
   a clinician`, or `Research watch`.
-- Residencies look back 30 days, reject expired/unverifiable calls, and label
-  opportunities by funding level.
+- Artist opportunities look back 30 days, reject expired/unverifiable calls,
+  and label items by opportunity type (residency, grant, prize, commission,
+  fellowship/program); funding level is stated in the summary text.
 
 ## Weekly GitHub Pages deployment
 

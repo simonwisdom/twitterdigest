@@ -75,22 +75,28 @@ export const THEMES: ThemeConfig[] = [
     maxTweets: 800,
   },
   {
+    // Keep the historical id: the per-theme dedupe ledger and existing digest
+    // editions are keyed by it.
     id: "art-residencies",
-    label: "European Art Residencies",
+    label: "Artist Opportunities",
     accounts: [],
     searchQueries: [
-      "url:on-the-move.org (residency OR fellowship)",
+      "url:on-the-move.org (residency OR fellowship OR grant OR prize OR \"open call\")",
       "url:transartists.org (residency OR open-call)",
       "url:resartis.org (residency OR \"open call\")",
-      "url:culture.ec.europa.eu (residency OR \"Culture Moves Europe\")",
-      "url:artconnect.com (residency OR \"open call\")",
+      "url:culture.ec.europa.eu (residency OR grant OR \"open call\" OR \"Culture Moves Europe\")",
+      "url:artconnect.com (residency OR grant OR prize OR \"open call\")",
       "(\"artist residency\" OR \"artists residency\") (\"open call\" OR apply OR deadline) (Europe OR European) min_faves:1",
       "(\"résidence artistique\" OR \"residencia artística\" OR Künstlerresidenz OR residenza) (candidature OR convocatoria OR Ausschreibung OR candidatura)",
+      "(\"artist grant\" OR \"artists grant\" OR \"arts grant\" OR \"artist fund\") (\"open call\" OR apply OR deadline) min_faves:1",
+      "(\"art prize\" OR \"artist prize\" OR \"art award\" OR \"artist award\") (\"open call\" OR \"call for entries\" OR apply OR deadline) min_faves:1",
+      "(\"open call\" OR \"call for proposals\") (commission OR \"public art\") (artist OR artists) min_faves:1",
+      "(\"artist fellowship\" OR \"writing fellowship\" OR \"writers fellowship\" OR \"creative fellowship\") (apply OR deadline OR \"open call\") min_faves:1",
     ],
     inclusionCriteria:
-      "Include a currently open call that an individual artist or artist collective can still apply to, for an in-person residency physically located in geographic Europe. The source must provide or link to a real programme page with an identifiable host, place, future application deadline, and application route. Visual art, design, writing, music/sound, film, performance, interdisciplinary, digital/new-media, socially engaged, and art-and-science practices all qualify. Prioritize opportunities offering a stipend, fee, housing, travel, production budget, or other meaningful support, while retaining reputable self-funded programmes when all costs are transparent.",
+      "Include a currently open opportunity that an individual artist, writer, or artist collective can still apply to. Two scopes qualify: (1) in-person residencies physically located in geographic Europe; (2) grants, prizes, awards, commissions, fellowships, and funded research or writing programmes that a Europe-based individual applicant is eligible for, whether the funder is European or international and whether participation is in person or remote. The source must provide or link to a real programme page with an identifiable host or funder, a future application deadline, and an application route. Visual art, design, writing, music/sound, film, performance, interdisciplinary, digital/new-media, socially engaged, and art-and-science practices all qualify. Prioritize opportunities offering meaningful money or support—award money, stipend, artist fee, production budget, housing, travel—while retaining reputable self-funded residencies when all costs are transparent.",
     exclusionCriteria:
-      "Exclude calls whose deadline is before the digest date; opportunities outside geographic Europe or entirely online; exhibition, prize, job, workshop, or commission calls with no residency; calls only for host organizations; vague promotional posts without a verifiable deadline and application page; aggregator-only posts that cannot be traced to a programme or official call; high-fee pay-to-participate schemes with little substantive support; and opportunities whose stated nationality, age, career-stage, discipline, or other eligibility rules clearly make them unavailable to a general individual applicant. Do not assume that Culture Moves Europe host calls are artist application calls.",
+      "Exclude calls whose deadline is before the digest date; residencies outside geographic Europe or entirely online; opportunities whose stated nationality, location, age, career-stage, discipline, or other eligibility rules clearly make them unavailable to a general Europe-based individual applicant; job postings, internships, and degree or diploma programmes; unfunded workshops and exhibition-only calls with no money, residency, or commission attached; calls only for host organizations; vague promotional posts without a verifiable deadline and application page; aggregator-only posts that cannot be traced to a programme or official call; and pay-to-enter schemes—high-fee vanity prizes, publication fees dressed as awards, or residencies charging large fees with little substantive support. Do not assume that Culture Moves Europe host calls are artist application calls.",
     clusterStrategy: "topic",
     primaryLinkHosts: [
       "on-the-move\\.org",
@@ -100,39 +106,45 @@ export const THEMES: ThemeConfig[] = [
       "artconnect\\.com",
     ],
     summaryStyle:
-      "Write this as an application brief, not arts publicity. Start with location (city, country) and the exact deadline. Then give residency dates or duration, accepted disciplines/career stage, key eligibility restrictions, and what the resident is expected to do. Itemize money plainly: artist fee or stipend, housing, travel, production support, application/programme fees, and costs the artist must cover; write 'not stated' for missing facts. Include the official call/application page as the first primary link when it appears in the source material, without inventing a URL. Flag any uncertainty or second-hand listing. Assign fully-funded only when there is no programme fee and the major participation costs are covered; partially-funded when meaningful support is offered but the artist bears a major cost; self-funded when the artist bears most costs; and funding-unclear when the source does not say. If the deadline appears expired relative to the digest date, say so rather than encouraging an application.",
+      "Write this as an application brief, not arts publicity. Start by naming the opportunity type (residency, grant, prize, commission, or fellowship/programme), the host or funder, the location (city, country—or 'remote') and the exact deadline. Then give dates or duration, accepted disciplines/career stage, key eligibility restrictions (including any nationality or location requirements), and what the applicant is expected to do or deliver. Itemize money plainly: award or grant amount, artist fee or stipend, housing, travel, production support, application/programme fees, and costs the applicant must cover; write 'not stated' for missing facts; then state the funding level in words—fully funded, partially funded, self-funded, or funding unclear. Include the official call/application page as the first primary link when it appears in the source material, without inventing a URL. Flag any uncertainty or second-hand listing. Assign the category matching the opportunity's primary type: residency for in-person residency stays; grant for project or working grants; prize for prizes and awards; commission for commissioned new work including public art; fellowship-program for fellowships and funded research or writing programmes. For hybrids, pick the component the applicant is chiefly applying for. If the deadline appears expired relative to the digest date, say so rather than encouraging an application.",
     categories: [
       {
-        id: "fully-funded",
-        label: "Fully funded",
+        id: "residency",
+        label: "Residency",
         color: "#3f7654",
-        description:
-          "No programme fee and the major participation costs are covered.",
+        description: "In-person residency stays located in geographic Europe.",
       },
       {
-        id: "partially-funded",
-        label: "Partially funded",
-        color: "#567596",
+        id: "grant",
+        label: "Grant",
+        color: "#5a6f9c",
         description:
-          "Meaningful support is offered, but the artist bears a major cost.",
+          "Project or working grants an individual artist can apply for.",
       },
       {
-        id: "self-funded",
-        label: "Self-funded",
+        id: "prize",
+        label: "Prize",
+        color: "#806b9e",
+        description: "Prizes and awards with meaningful money or support.",
+      },
+      {
+        id: "commission",
+        label: "Commission",
         color: "#916a4f",
-        description: "The artist bears most costs.",
+        description: "Paid commissions for new work, including public art.",
       },
       {
-        id: "funding-unclear",
-        label: "Funding unclear",
-        color: "#6e7278",
-        description: "The source does not say how the residency is funded.",
+        id: "fellowship-program",
+        label: "Fellowship / program",
+        color: "#4a7d7d",
+        description:
+          "Fellowships and funded research or writing programmes, in person or remote.",
       },
     ],
     fetchAbstracts: false,
     lookbackDays: 30,
     topN: 15,
-    maxTweets: 600,
+    maxTweets: 800,
   },
 ];
 
