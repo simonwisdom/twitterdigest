@@ -1,8 +1,84 @@
 {
  "version": 1,
  "themeId": "art-residencies",
- "updatedAt": "2026-08-20T12:40:51.740Z",
+ "updatedAt": "2026-08-21T11:19:24.029Z",
  "entries": [
+  {
+   "keys": [
+    "url:http://www.award.art",
+    "url:https://www.award.art"
+   ],
+   "firstSeenDate": "2026-08-21",
+   "lastSeenDate": "2026-08-21",
+   "headline": "Inaugural .ART Award 2026 Open Call",
+   "category": "prize",
+   "primaryLinks": [
+    {
+     "url": "https://www.award.art",
+     "title": ".ART Award 2026"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "url:http://conveneo.eu/artprize"
+   ],
+   "firstSeenDate": "2026-08-21",
+   "lastSeenDate": "2026-08-21",
+   "headline": "Conveneo Human After All Art Prize for AI-Informed Artistic Practice",
+   "category": "prize",
+   "primaryLinks": [
+    {
+     "url": "http://conveneo.eu/artprize",
+     "title": "Conveneo Art Prize"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "url:https://lightupthenorth.com/development/illumine"
+   ],
+   "firstSeenDate": "2026-08-21",
+   "lastSeenDate": "2026-08-21",
+   "headline": "Light Up the North: ILLUMINE 2 Light Art Commission for Black and POC Artists",
+   "category": "commission",
+   "primaryLinks": [
+    {
+     "url": "https://lightupthenorth.com/development/illumine",
+     "title": "ILLUMINE - Light Up the North"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "url:http://urlr.me/xJsF6U"
+   ],
+   "firstSeenDate": "2026-08-21",
+   "lastSeenDate": "2026-08-21",
+   "headline": "DRAC Nouvelle-Aquitaine 6-Month Residency in La Rochelle Priority Neighborhoods",
+   "category": "residency",
+   "primaryLinks": [
+    {
+     "url": "http://urlr.me/xJsF6U",
+     "title": "Appel à candidature pour une résidence artistique dans les QPV de La Rochelle"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "url:https://www.nypl.org/about/fellowships-institutes/cullman-center-scholars-writers"
+   ],
+   "firstSeenDate": "2026-08-21",
+   "lastSeenDate": "2026-08-21",
+   "headline": "Cullman Center Fellowship 2027–2028 for Scholars and Writers (New York)",
+   "category": "fellowship-program",
+   "primaryLinks": [
+    {
+     "url": "https://www.nypl.org/about/fellowships-institutes/cullman-center-scholars-writers",
+     "title": "Cullman Center for Scholars and Writers Fellowship"
+    }
+   ]
+  },
   {
    "keys": [
     "url:https://bit.ly/ruralcrea"
