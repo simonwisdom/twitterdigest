@@ -1,26 +1,48 @@
 import { DigestItem, ThemeCategory } from "@/lib/types";
-import { linkLabel, splitEvidenceNote, splitSummary } from "@/lib/format";
+import {
+  describeDeadline,
+  fundingLabel,
+  linkLabel,
+  splitEvidenceNote,
+  splitSummary,
+} from "@/lib/format";
+
+// Funding pill styling: green for fully funded, plum tint for partial,
+// red tint when the artist pays, muted outline when the source doesn't say.
+const FUNDING_PILL_CLASSES: Record<string, string> = {
+  "fully-funded": "bg-success-bg text-success-fg",
+  "partially-funded": "bg-accent-tint text-accent",
+  "self-funded": "bg-danger-bg text-danger-fg",
+  "funding-unclear": "border border-border text-muted",
+};
 
 // Presentation contract (Examine-inspired skin): category chip and evidence-
-// basis pill on the top row, Lora headline, study type as a muted caption,
-// the takeaway in a tinted callout, remaining summary behind a native
-// disclosure; source tweets stay ONE muted footer line of plain <a> links —
-// never an embed, widget, or quoted tweet text.
+// basis (or funding) pill on the top row, Lora headline, study type or
+// deadline/location as a muted caption, the takeaway in a tinted callout,
+// remaining summary behind a native disclosure; source tweets stay ONE muted
+// footer line of plain <a> links — never an embed, widget, or quoted tweet
+// text.
 export default function DigestItemCard({
   item,
   category,
+  editionDate,
 }: {
   item: DigestItem;
   category?: ThemeCategory;
+  editionDate: string;
 }) {
   const shownTweets = item.sourceTweets.slice(0, 5);
   const extra = item.stats.tweetCount - shownTweets.length;
   const summary = splitSummary(item.summary);
   const evidence = splitEvidenceNote(item.evidenceNote);
+  const opportunity = item.opportunity;
+  const deadline = opportunity
+    ? describeDeadline(opportunity.deadline, editionDate)
+    : null;
 
   return (
     <article className="rounded-lg border border-border bg-card p-6 shadow-sm">
-      {(category || evidence) && (
+      {(category || evidence || opportunity?.funding) && (
         <div className="flex flex-wrap items-center justify-between gap-2">
           {category && (
             <span
@@ -50,6 +72,17 @@ export default function DigestItemCard({
                 : "No abstract — discussion only"}
             </span>
           )}
+          {opportunity?.funding && (
+            <span
+              className={
+                "rounded-full px-2.5 py-0.5 text-[11px] font-semibold " +
+                (FUNDING_PILL_CLASSES[opportunity.funding] ??
+                  FUNDING_PILL_CLASSES["funding-unclear"])
+              }
+            >
+              {fundingLabel(opportunity.funding)}
+            </span>
+          )}
         </div>
       )}
 
@@ -59,6 +92,21 @@ export default function DigestItemCard({
 
       {evidence?.studyType && (
         <p className="mt-1.5 text-xs text-muted">{evidence.studyType}</p>
+      )}
+
+      {deadline && (
+        <p className="mt-1.5 text-xs text-muted">
+          <span
+            className={
+              deadline.tone === "normal"
+                ? undefined
+                : "font-semibold text-danger-fg"
+            }
+          >
+            {deadline.text}
+          </span>
+          {opportunity?.location && <> · {opportunity.location}</>}
+        </p>
       )}
 
       {summary.isTakeaway ? (

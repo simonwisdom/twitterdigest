@@ -7,6 +7,8 @@ import {
   Cluster,
   DigestItem,
   FilteredTweet,
+  OpportunityFunding,
+  OpportunityMeta,
   RankedCluster,
   ThemeConfig,
 } from "@/lib/types";
@@ -18,6 +20,13 @@ import { dedupeKeysForCluster } from "@/lib/history";
 const CONCURRENCY = 3;
 const MAX_TWEETS_IN_PROMPT = 25;
 const MAX_SOURCE_TWEET_LINKS = 10;
+
+const FUNDING_IDS: OpportunityFunding[] = [
+  "fully-funded",
+  "partially-funded",
+  "self-funded",
+  "funding-unclear",
+];
 
 export async function summarizeStage(
   ctx: PipelineCtx,
@@ -100,12 +109,20 @@ async function summarizeCluster(
     ? `\nstudyType is a short plain-English phrase naming the study design and scale exactly as the source states it, e.g. "Randomized trial of 1,200 adults" or "Meta-analysis of 24 cohort studies". If the design is not stated, write "Study type unclear" — never guess.`
     : "";
 
+  // Opportunity themes also get a structured deadline/location/funding strip.
+  const oppField = theme.extractOpportunityMeta
+    ? ', "deadline": "...", "location": "...", "funding": "..."'
+    : "";
+  const oppHint = theme.extractOpportunityMeta
+    ? `\ndeadline is the application deadline as an ISO date (YYYY-MM-DD) exactly as stated in the source, or null when the source does not state one — never guess or infer a date. location is "City, Country" for in-person opportunities, "Remote" when participation is online-only, or null when not stated. funding must be exactly one of: ${FUNDING_IDS.join(", ")}.`
+    : "";
+
   const system = `You write one item for a weekly "${theme.label}" digest built from Twitter discussion.
 Digest date: ${ctx.date}. Interpret deadlines and time-sensitive claims relative to this date.
 Style: ${theme.summaryStyle}
 Respond ONLY with JSON:
-{"headline": "...", "summary": "...", "primaryLinks": [{"url": "...", "title": "..."}]${categoryField}${studyTypeField}}
-primaryLinks must be chosen from the URLs provided — never invent URLs. headline is a specific, factual title (max 100 chars).${categoryHint}${studyTypeHint}${linkHint}`;
+{"headline": "...", "summary": "...", "primaryLinks": [{"url": "...", "title": "..."}]${categoryField}${studyTypeField}${oppField}}
+primaryLinks must be chosen from the URLs provided — never invent URLs. headline is a specific, factual title (max 100 chars).${categoryHint}${studyTypeHint}${oppHint}${linkHint}`;
 
   const prompt = `Topic: ${cluster.label}
 
@@ -121,6 +138,9 @@ ${cluster.urls.slice(0, 20).join("\n") || "(none)"}${paperSection}`;
     primaryLinks: { url: string; title: string }[];
     category?: string;
     studyType?: string;
+    deadline?: string | null;
+    location?: string | null;
+    funding?: string | null;
   }>({
     model: MODEL_SMART,
     system,
@@ -132,6 +152,13 @@ ${cluster.urls.slice(0, 20).join("\n") || "(none)"}${paperSection}`;
       primaryLinks: cluster.urls.slice(0, 2).map((u) => ({ url: u, title: u })),
       category: categoryIds?.[categoryIds.length - 1],
       ...(theme.fetchAbstracts ? { studyType: "Study type unclear" } : {}),
+      ...(theme.extractOpportunityMeta
+        ? {
+            deadline: "2026-12-31",
+            location: "Mock City, Mockland",
+            funding: "funding-unclear",
+          }
+        : {}),
     }),
   });
 
@@ -158,6 +185,24 @@ ${cluster.urls.slice(0, 20).join("\n") || "(none)"}${paperSection}`;
       ? "other"
       : undefined;
 
+  // Validate extracted opportunity meta: a malformed deadline or location is
+  // dropped rather than displayed; funding falls back to "funding-unclear".
+  let opportunity: OpportunityMeta | undefined;
+  if (theme.extractOpportunityMeta) {
+    const deadline = /^\d{4}-\d{2}-\d{2}$/.test(result.deadline ?? "")
+      ? result.deadline!
+      : undefined;
+    const location = result.location?.trim() || undefined;
+    const funding = FUNDING_IDS.includes(result.funding as OpportunityFunding)
+      ? (result.funding as OpportunityFunding)
+      : "funding-unclear";
+    opportunity = {
+      ...(deadline ? { deadline } : {}),
+      ...(location ? { location } : {}),
+      funding,
+    };
+  }
+
   return {
     headline: result.headline,
     summary: result.summary,
@@ -170,6 +215,7 @@ ${cluster.urls.slice(0, 20).join("\n") || "(none)"}${paperSection}`;
           ),
         }
       : {}),
+    ...(opportunity ? { opportunity } : {}),
     primaryLinks,
     sourceTweets: members.slice(0, MAX_SOURCE_TWEET_LINKS).map((t) => ({
       url: `https://x.com/${t.authorHandle}/status/${t.id}`,

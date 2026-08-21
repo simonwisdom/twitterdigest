@@ -3,8 +3,10 @@ import { test } from "node:test";
 import {
   buildEvidenceNote,
   splitEvidenceNote,
+  describeDeadline,
   formatEditionDate,
   formatEditionDateShort,
+  fundingLabel,
   linkLabel,
   splitSummary,
 } from "./format";
@@ -108,4 +110,48 @@ test("formatEditionDate humanizes ISO dates without timezone shifts", () => {
   assert.equal(formatEditionDate("2026-08-20"), "Week of August 20, 2026");
   assert.equal(formatEditionDateShort("2026-08-20"), "Aug 20, 2026");
   assert.equal(formatEditionDate("garbage"), "garbage");
+});
+
+test("describeDeadline formats a comfortable deadline as normal", () => {
+  assert.deepEqual(describeDeadline("2026-11-01", "2026-08-21"), {
+    text: "Deadline November 1, 2026",
+    tone: "normal",
+  });
+});
+
+test("describeDeadline flags deadlines within two weeks of the edition", () => {
+  assert.deepEqual(describeDeadline("2026-09-03", "2026-08-21"), {
+    text: "Deadline September 3, 2026",
+    tone: "soon",
+  });
+  // Due on the edition date itself still counts as open.
+  assert.deepEqual(describeDeadline("2026-08-21", "2026-08-21"), {
+    text: "Deadline August 21, 2026",
+    tone: "soon",
+  });
+});
+
+test("describeDeadline marks passed deadlines as expired", () => {
+  assert.deepEqual(describeDeadline("2026-08-20", "2026-08-21"), {
+    text: "Deadline passed (August 20, 2026)",
+    tone: "expired",
+  });
+});
+
+test("describeDeadline reports missing or unparseable deadlines", () => {
+  assert.deepEqual(describeDeadline(undefined, "2026-08-21"), {
+    text: "Deadline not stated",
+    tone: "missing",
+  });
+  assert.deepEqual(describeDeadline("mid-October", "2026-08-21"), {
+    text: "Deadline mid-October",
+    tone: "normal",
+  });
+});
+
+test("fundingLabel maps funding ids to display labels", () => {
+  assert.equal(fundingLabel("fully-funded"), "Fully funded");
+  assert.equal(fundingLabel("partially-funded"), "Partially funded");
+  assert.equal(fundingLabel("self-funded"), "Self-funded");
+  assert.equal(fundingLabel("funding-unclear"), "Funding unclear");
 });

@@ -36,6 +36,20 @@ export interface RankedCluster extends Cluster {
   engagement: number;
 }
 
+export type OpportunityFunding =
+  | "fully-funded"
+  | "partially-funded"
+  | "self-funded"
+  | "funding-unclear";
+
+// Scannable facts for opportunity themes, extracted alongside the summary.
+// Fields are omitted (never guessed) when the source does not state them.
+export interface OpportunityMeta {
+  deadline?: string; // YYYY-MM-DD
+  location?: string; // "City, Country" or "Remote"
+  funding?: OpportunityFunding;
+}
+
 export interface DigestItem {
   headline: string;
   summary: string;
@@ -44,6 +58,8 @@ export interface DigestItem {
   // One-line caption for evidence-based themes: study type plus what the
   // summary was built from ("the abstract" vs "tweet discussion only").
   evidenceNote?: string;
+  // Present on themes with `extractOpportunityMeta` enabled.
+  opportunity?: OpportunityMeta;
   primaryLinks: { url: string; title: string }[];
   sourceTweets: { url: string; authorHandle: string }[];
   stats: { tweetCount: number; distinctAuthors: number; engagement: number };
@@ -96,6 +112,9 @@ export interface ThemeConfig {
   // rendered as a color-coded header on the digest card.
   categories?: ThemeCategory[];
   fetchAbstracts: boolean;
+  // When true, the summarizer also extracts deadline/location/funding meta
+  // for each item, rendered as a scannable strip on the digest card.
+  extractOpportunityMeta?: boolean;
   // Rolling source window ending at 11:00 UTC on the digest date.
   lookbackDays?: number;
   topN: number;

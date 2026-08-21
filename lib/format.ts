@@ -97,6 +97,55 @@ const MONTHS = [
   "December",
 ];
 
+// "2026-10-15" -> "October 15, 2026", or null when not an ISO date.
+function formatFullDate(date: string): string | null {
+  const [year, month, day] = date.split("-").map(Number);
+  const name = MONTHS[month - 1];
+  if (!name || !day || !year) return null;
+  return `${name} ${day}, ${year}`;
+}
+
+// Whole days from the edition date to the deadline, both taken as UTC dates.
+function daysUntil(deadline: string, editionDate: string): number {
+  return Math.round(
+    (Date.parse(`${deadline}T00:00:00Z`) -
+      Date.parse(`${editionDate}T00:00:00Z`)) /
+      86_400_000
+  );
+}
+
+export type DeadlineTone = "normal" | "soon" | "expired" | "missing";
+
+const DEADLINE_SOON_DAYS = 14;
+
+// Scannable deadline caption for opportunity items, judged against the
+// edition date the item was published under (never the viewer's clock, so a
+// static page renders the same for everyone).
+export function describeDeadline(
+  deadline: string | undefined,
+  editionDate: string
+): { text: string; tone: DeadlineTone } {
+  if (!deadline) return { text: "Deadline not stated", tone: "missing" };
+  const formatted = formatFullDate(deadline);
+  if (!formatted) return { text: `Deadline ${deadline}`, tone: "normal" };
+  const days = daysUntil(deadline, editionDate);
+  if (days < 0) return { text: `Deadline passed (${formatted})`, tone: "expired" };
+  if (days <= DEADLINE_SOON_DAYS)
+    return { text: `Deadline ${formatted}`, tone: "soon" };
+  return { text: `Deadline ${formatted}`, tone: "normal" };
+}
+
+const FUNDING_LABELS: Record<string, string> = {
+  "fully-funded": "Fully funded",
+  "partially-funded": "Partially funded",
+  "self-funded": "Self-funded",
+  "funding-unclear": "Funding unclear",
+};
+
+export function fundingLabel(funding: string): string {
+  return FUNDING_LABELS[funding] ?? funding;
+}
+
 // "2026-08-20" -> "Week of August 20, 2026". Parses the parts directly so the
 // result never shifts with the viewer's timezone.
 export function formatEditionDate(date: string): string {

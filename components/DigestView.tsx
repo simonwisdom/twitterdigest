@@ -151,6 +151,7 @@ export default function DigestView({
                 <DigestItemCard
                   key={`${edition.date}-${item.headline}-${index}`}
                   item={item}
+                  editionDate={edition.date}
                   category={
                     item.category
                       ? theme?.categories.find(

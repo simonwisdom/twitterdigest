@@ -142,6 +142,7 @@ export const THEMES: ThemeConfig[] = [
       },
     ],
     fetchAbstracts: false,
+    extractOpportunityMeta: true,
     lookbackDays: 30,
     topN: 15,
     maxTweets: 800,

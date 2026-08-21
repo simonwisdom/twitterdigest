@@ -68,7 +68,7 @@ export async function GET() {
     "  <channel>",
     "    <title>Weekly Digest</title>",
     `    <link>${escapeXml(`${SITE_URL}/`)}</link>`,
-    "    <description>A weekly digest of practical longevity research and European art residencies</description>",
+    "    <description>A weekly digest of practical longevity research and artist opportunities</description>",
     `    <lastBuildDate>${lastBuildDate}</lastBuildDate>`,
     ...items,
     "  </channel>",
