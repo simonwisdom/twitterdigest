@@ -11,6 +11,9 @@ on:
       force_from:
         description: "Re-run from stage (fetch|filter|cluster|summarize)"
         required: false
+      theme:
+        description: "Only refresh this theme id (e.g. art-residencies)"
+        required: false
 
 permissions:
   contents: write
@@ -42,6 +45,7 @@ jobs:
           ARGS=""
           if [ -n "${{ inputs.date }}" ]; then ARGS="$ARGS --date ${{ inputs.date }}"; fi
           if [ -n "${{ inputs.force_from }}" ]; then ARGS="$ARGS --force-from ${{ inputs.force_from }}"; fi
+          if [ -n "${{ inputs.theme }}" ]; then ARGS="$ARGS --theme ${{ inputs.theme }}"; fi
           npm run pipeline -- $ARGS
       - name: Persist digest and dedup history
         run: |
