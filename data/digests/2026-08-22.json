@@ -1,243 +1,11 @@
 {
  "date": "2026-08-22",
- "generatedAt": "2026-08-22T08:39:33.920Z",
+ "generatedAt": "2026-08-22T08:49:11.352Z",
  "themes": {
   "art-residencies": [
    {
-    "headline": "Discussion on Italian MEP Ilaria Salis's Legal Residence Status",
-    "summary": "Based on the linked discussion, this thread does not describe an artist opportunity, but rather political and legal commentary regarding Italian MEP Ilaria Salis and issues surrounding her official residence and receipt of judicial notices. The posts, written in Italian, discuss public accountability and legal notification procedures without providing any cultural or artistic open calls, programmes, or submission guidelines. Funding details, eligibility requirements, and application procedures are not stated as this is political commentary rather than an arts opportunity.",
-    "category": "residency",
-    "opportunity": {
-     "funding": "funding-unclear"
-    },
-    "primaryLinks": [],
-    "sourceTweets": [
-     {
-      "url": "https://x.com/AzzurraBarbuto/status/2080748491794792957",
-      "authorHandle": "AzzurraBarbuto"
-     },
-     {
-      "url": "https://x.com/Giovanni_Mex/status/2090829598682488964",
-      "authorHandle": "Giovanni_Mex"
-     }
-    ],
-    "stats": {
-     "tweetCount": 2,
-     "distinctAuthors": 2,
-     "engagement": 258
-    },
-    "dedupeKeys": []
-   },
-   {
-    "headline": "America's Future Fall 2026 Virtual Writing Fellowship",
-    "summary": "America's Future is accepting applications for its Fall 2026 Writing Fellowship, a six-week virtual workshop program connecting writers with established national editors and journalists. Fellows participate in small-group online sessions held Tuesday evenings from September 15 to October 27, 2026, to hone policy, opinion, and journalism writing, learn pitch strategies, and receive direct editorial feedback. The program is remote and designed specifically for writers based outside the Washington, D.C. area who align with the organization's mission. The application deadline is August 25, 2026. Applicants must submit a completed application form, a resume, and two writing samples (preferably published, up to 1,000 words each), with an optional letter of recommendation. Financial compensation, stipends, or participation fees are not stated, making the funding level funding unclear.",
-    "category": "fellowship-program",
-    "opportunity": {
-     "deadline": "2026-08-25",
-     "location": "Remote",
-     "funding": "funding-unclear"
-    },
-    "primaryLinks": [
-     {
-      "url": "https://americasfuture.org/opportunities/writing-fellows",
-      "title": "America's Future Writing Fellows"
-     },
-     {
-      "url": "https://libertyseeds.com/opportunities/2026-writing-fellowship",
-      "title": "Liberty Seeds - Writing Fellowship Listing"
-     }
-    ],
-    "sourceTweets": [
-     {
-      "url": "https://x.com/AFempowers/status/2080759017392230594",
-      "authorHandle": "AFempowers"
-     },
-     {
-      "url": "https://x.com/AFempowers/status/2090486400751907187",
-      "authorHandle": "AFempowers"
-     },
-     {
-      "url": "https://x.com/Libertyseedsco/status/2090866685666263482",
-      "authorHandle": "Libertyseedsco"
-     }
-    ],
-    "stats": {
-     "tweetCount": 3,
-     "distinctAuthors": 2,
-     "engagement": 22
-    },
-    "dedupeKeys": [
-     "url:https://americasfuture.org/opportunities/writing-fellows",
-     "url:https://libertyseeds.com/opportunities/2026-writing-fellowship"
-    ]
-   },
-   {
-    "headline": "Gibbes Museum of Art Society 1858 Prize for Contemporary Southern Art ($10,000)",
-    "summary": "Presented by the Gibbes Museum of Art and Society 1858, the 18th annual Society 1858 Prize awards $10,000 to one contemporary artist alongside a year-long museum exhibition of their work in Charleston and an invitation to a three-day celebration and forum in February 2027. This prize is open to artists working across all media who currently live or work in, or are originally from, 14 eligible Southern states: Alabama, Arkansas, Florida, Georgia, Kentucky, Louisiana, Maryland, Mississippi, North Carolina, South Carolina, Tennessee, Texas, Virginia, and West Virginia. The application deadline has been extended to September 14, 2026. The source specifies the $10,000 award and year-long exhibition; other financial details such as travel stipends or application fees are not stated. The funding is fully funded.",
-    "category": "prize",
-    "opportunity": {
-     "deadline": "2026-09-14",
-     "location": "Charleston, United States",
-     "funding": "fully-funded"
-    },
-    "primaryLinks": [
-     {
-      "url": "https://bit.ly/3RonvXt",
-      "title": "Charleston Daily: $10,000 Gibbes Museum Art Prize Extends Deadline to September 14"
-     }
-    ],
-    "sourceTweets": [
-     {
-      "url": "https://x.com/ChuckTownDaily/status/2083361797596143888",
-      "authorHandle": "ChuckTownDaily"
-     },
-     {
-      "url": "https://x.com/AroundCHS/status/2083361912515960874",
-      "authorHandle": "AroundCHS"
-     }
-    ],
-    "stats": {
-     "tweetCount": 2,
-     "distinctAuthors": 2,
-     "engagement": 20
-    },
-    "dedupeKeys": [
-     "url:https://bit.ly/3RonvXt"
-    ]
-   },
-   {
-    "headline": "Bloomsbury Academic Writing Fellowship 2026 for UK-Based Scholars",
-    "summary": "Based on discussion on Twitter, Bloomsbury Academic and Writers & Artists are running the 2026 Bloomsbury Academic Writing Fellowship to support early-career scholars from Black, Asian, and ethnically diverse backgrounds in getting their first book project publication-ready through 1:1 mentorship and resources. The fellowship is open to UK-based scholars working on academic book proposals. Application submissions closed on 2026-08-01, meaning this call is now expired for the current cycle. Specific financial provisions, stipends, or additional support details are not stated in the source discussion. Funding level is funding-unclear.",
-    "category": "fellowship-program",
-    "opportunity": {
-     "deadline": "2026-08-01",
-     "funding": "funding-unclear"
-    },
-    "primaryLinks": [
-     {
-      "url": "https://bit.ly/4pd67Bs",
-      "title": "Bloomsbury Academic Writing Fellowship Application"
-     },
-     {
-      "url": "https://bit.ly/4eu4GL2",
-      "title": "Bloomsbury Academic Writing Fellowship Information"
-     }
-    ],
-    "sourceTweets": [
-     {
-      "url": "https://x.com/BloomsburyAcad/status/2082376857568047577",
-      "authorHandle": "BloomsburyAcad"
-     },
-     {
-      "url": "https://x.com/BloomsburyPhilo/status/2081764325950140888",
-      "authorHandle": "BloomsburyPhilo"
-     }
-    ],
-    "stats": {
-     "tweetCount": 2,
-     "distinctAuthors": 2,
-     "engagement": 16
-    },
-    "dedupeKeys": [
-     "url:https://bit.ly/4pd67Bs",
-     "url:https://bit.ly/4eu4GL2"
-    ]
-   },
-   {
-    "headline": "PIPIPEN Launches Open Calls Feature for Artist Commission Proposals",
-    "summary": "Based on the linked discussion, art platform PIPIPEN has introduced an Open Calls feature in its Early Beta, enabling commissioners to post briefs and artists to submit proposals and portfolios for custom commissions. The remote platform facilitates direct applications to client project listings. Through August 31, 2026, PIPIPEN is running a promotional giveaway offering $5 to $10 platform credits for early open call postings; individual commission rates and payment terms depend on client briefs. Other financial and application details are not stated, and funding is unclear.",
-    "category": "commission",
-    "opportunity": {
-     "deadline": "2026-08-31",
-     "location": "Remote",
-     "funding": "funding-unclear"
-    },
-    "primaryLinks": [],
-    "sourceTweets": [
-     {
-      "url": "https://x.com/pipipen_en/status/2090072541830238538",
-      "authorHandle": "pipipen_en"
-     },
-     {
-      "url": "https://x.com/pipipen_en/status/2086818424559374485",
-      "authorHandle": "pipipen_en"
-     }
-    ],
-    "stats": {
-     "tweetCount": 2,
-     "distinctAuthors": 1,
-     "engagement": 108
-    },
-    "dedupeKeys": []
-   },
-   {
-    "headline": "STILL WET Group Exhibition at Galerie Met, Berlin",
-    "summary": "Based on discussion on Twitter, Galerie Met in Berlin is hosting 'STILL WET', a group exhibition curated by Kika Nicolela and Ruizhe Liang in collaboration with objkt.com, showcasing physical and digital painting expanded across canvas, screen, 3D, GIFs, and machine learning by 18 artists. The show runs from August 15 to September 5 at Mariannenstrasse 33 and highlights works including selected open call winners, though details on future application cycles or participation terms are not provided. Location: Berlin, Germany. Deadline: null. Eligible disciplines include digital art, painting, and new media. Other financial and submission details are not stated, making funding unclear.",
-    "category": "prize",
-    "opportunity": {
-     "location": "Berlin, Germany",
-     "funding": "funding-unclear"
-    },
-    "primaryLinks": [],
-    "sourceTweets": [
-     {
-      "url": "https://x.com/tezos/status/2088256913343725808",
-      "authorHandle": "tezos"
-     }
-    ],
-    "stats": {
-     "tweetCount": 1,
-     "distinctAuthors": 1,
-     "engagement": 157
-    },
-    "dedupeKeys": []
-   },
-   {
-    "headline": "V.A.M. La Vinotinto Fully OnChain Art Gallery Commission Call",
-    "summary": "Based on social media discussion, V.A.M. La Vinotinto is launching an open call commissioning 20 Venezuelan artists for its Season I Drop I NFT collection, titled \"Derrumbado Pero Jamás Vencido,\" to be deployed via OpenSea. Selected artists will each receive a commission payment of $100 in ETH. This is a remote commission open specifically to Venezuelan artists working in digital and on-chain art. Exact application deadlines and submission guidelines are not specified in the initial announcement, and other financial details are not stated. The funding level is partially funded. As no official website link was provided, details should be confirmed directly with the organizers.",
-    "category": "commission",
-    "opportunity": {
-     "location": "Remote",
-     "funding": "partially-funded"
-    },
-    "primaryLinks": [],
-    "sourceTweets": [
-     {
-      "url": "https://x.com/Metaleroz/status/2082308557177839688",
-      "authorHandle": "Metaleroz"
-     }
-    ],
-    "stats": {
-     "tweetCount": 1,
-     "distinctAuthors": 1,
-     "engagement": 139
-    },
-    "dedupeKeys": []
-   },
-   {
-    "headline": "Call for Applications: ACC Creative Fellowship",
-    "summary": "Based on social media discussion, ACC is inviting applications for a paid Creative Fellowship. Specific program parameters, including duration, location, eligible disciplines, and exact financial compensation or stipends, are not detailed in the available announcement. Application deadlines, location requirements, and submission instructions are not stated, and funding level remains funding-unclear.",
-    "category": "fellowship-program",
-    "opportunity": {
-     "funding": "funding-unclear"
-    },
-    "primaryLinks": [],
-    "sourceTweets": [
-     {
-      "url": "https://x.com/ChrisBarnardDL/status/2087206242016010348",
-      "authorHandle": "ChrisBarnardDL"
-     }
-    ],
-    "stats": {
-     "tweetCount": 1,
-     "distinctAuthors": 1,
-     "engagement": 58
-    },
-    "dedupeKeys": []
-   },
-   {
-    "headline": "Aesthetica Art Prize Call for Entries with £10,000 Award",
-    "summary": "Based on linked social media discussion, Aesthetica Magazine is accepting entries for the Aesthetica Art Prize, offering winners a £10,000 prize alongside inclusion in an exhibition and publication. This opportunity is a prize open to contemporary practitioners working across disciplines including photography, painting, sculpture, and digital art. Specific location requirements, dates, career stages, and submission materials are not detailed in the announcement, and the deadline is listed as 11 October without a specified year. Beyond the £10,000 prize, other financial details are not stated, making the overall funding level funding unclear.",
+    "headline": "Aesthetica Art Prize",
+    "summary": "Based on discussion on X, Aesthetica Magazine is accepting submissions for the Aesthetica Art Prize, offering winning contemporary artists a top award of £10,000 alongside inclusion in an exhibition and publication. This call is a prize opportunity open to artists working across photography, painting, sculpture, digital art, and other contemporary art disciplines. Specific entry fees, career stage requirements, geographic eligibility, and full submission guidelines are not detailed in the post. The deadline stated in the discussion is 11 October. Other financial and logistical details are not stated, and funding status is funding-unclear.",
     "category": "prize",
     "opportunity": {
      "funding": "funding-unclear"
@@ -245,7 +13,7 @@
     "primaryLinks": [
      {
       "url": "http://aestheticamagazine.com/artprize",
-      "title": "Aesthetica Art Prize Call for Submissions"
+      "title": "Aesthetica Art Prize"
      }
     ],
     "sourceTweets": [
@@ -264,150 +32,32 @@
     ]
    },
    {
-    "headline": "Monroe County Mid-sized Arts Grant Program",
-    "summary": "Monroe County has opened applications for its Mid-sized Arts Grant Program to provide funding support for local arts organizations. This opportunity is a grant based in Monroe County, United States. Note that relative to the digest date, the stated deadline of August 21, 2026, has expired. Eligibility is aimed at mid-sized arts organizations operating within Monroe County, NY. Specific award amounts and other financial details are not stated in the source material, leaving the funding level funding unclear.",
+    "headline": "Goethe-Institut Africa-Europe Partnerships for Culture: WP4 Visual Arts Grant (Lot 2)",
+    "summary": "Based on the linked discussion, the Goethe-Institut's Africa-Europe Partnerships for Culture programme is inviting creatives, researchers, and multidisciplinary professionals to apply for the WP4 Visual Arts grant (Lot 2) under its Sub-Saharan Africa component. The opportunity is a grant supporting collaborative cultural work across Africa and Europe. The location is not stated. The exact application deadline, project dates, duration, specific eligibility criteria, and required submission materials are not specified in the source. Grant amounts, artist fees, and related financial provisions are not stated. Funding is funding unclear.",
     "category": "grant",
     "opportunity": {
-     "deadline": "2026-08-21",
-     "location": "Monroe County, United States",
      "funding": "funding-unclear"
     },
-    "image": "https://www.monroecounty.gov/seal200x200.jpg?1",
     "primaryLinks": [
      {
-      "url": "https://www.monroecounty.gov/executive-arts-grant",
-      "title": "Monroe County Arts Grant Application"
+      "url": "http://www.goethe.de/aepc",
+      "title": "Goethe-Institut: Africa-Europe Partnerships for Culture"
      }
     ],
     "sourceTweets": [
      {
-      "url": "https://x.com/CountyExecBello/status/2085717166725161038",
-      "authorHandle": "CountyExecBello"
+      "url": "https://x.com/GZ_Kampala/status/2090778495148236902",
+      "authorHandle": "GZ_Kampala"
      }
     ],
     "stats": {
      "tweetCount": 1,
      "distinctAuthors": 1,
-     "engagement": 7
+     "engagement": 2
     },
     "dedupeKeys": [
-     "url:https://www.monroecounty.gov/executive-arts-grant"
+     "url:http://www.goethe.de/aepc"
     ]
-   },
-   {
-    "headline": "La Nazione Siciliana: Regional News Digest (August 2026)",
-    "summary": "This listing corresponds to a general Sicilian political and regional news bulletin published in Italian by La Nazione Siciliana, rather than an artist opportunity. The publication covers local infrastructure, judicial investigations, and political developments, including Catania airport privatization, Palermo stadium plans, and energy redevelopment projects. No artistic fellowship, grant, or creative residency call is included. Other financial details are not stated. The funding level is funding unclear.",
-    "category": "fellowship-program",
-    "opportunity": {
-     "funding": "funding-unclear"
-    },
-    "image": "https://lanazionesiciliana.eu/wp-content/uploads/cover-tg-01082026.jpg",
-    "primaryLinks": [
-     {
-      "url": "https://www.lanazionesiciliana.eu/notiziario-del-1-agosto-2026",
-      "title": "La Nazione Siciliana - Notiziario del 1 Agosto 2026"
-     }
-    ],
-    "sourceTweets": [
-     {
-      "url": "https://x.com/nazionsiciliana/status/2083471170687344795",
-      "authorHandle": "nazionsiciliana"
-     }
-    ],
-    "stats": {
-     "tweetCount": 1,
-     "distinctAuthors": 1,
-     "engagement": 6
-    },
-    "dedupeKeys": [
-     "url:https://www.lanazionesiciliana.eu/notiziario-del-1-agosto-2026"
-    ]
-   },
-   {
-    "headline": "France Announces National Museum Security Plan and Heritage Protection Updates",
-    "summary": "Based on the linked discussion, this report covers cultural heritage developments including a national plan unveiled by the French Ministry of Culture to enhance security and mapping across thousands of museum sites following recent thefts. The discussion also notes updates regarding exhibit signage debates at the Smithsonian National Museum of American History. The source does not outline an open application call, submission process, or eligibility requirements, and other financial details are not stated.",
-    "category": "grant",
-    "opportunity": {
-     "funding": "funding-unclear"
-    },
-    "primaryLinks": [],
-    "sourceTweets": [
-     {
-      "url": "https://x.com/ArtChainNews/status/2082552386120482977",
-      "authorHandle": "ArtChainNews"
-     }
-    ],
-    "stats": {
-     "tweetCount": 1,
-     "distinctAuthors": 1,
-     "engagement": 6
-    },
-    "dedupeKeys": []
-   },
-   {
-    "headline": "Prospect Art 2027 Visual Arts Commission Open Call",
-    "summary": "Based on social media discussion, Prospect Art is seeking applications from visual artists worldwide for its 2027 commission open call. One selected artist will receive a $1,500 commission to produce a new work responding to an unspecified theme. This opportunity is an open call for a commission open to visual artists globally. The stated deadline was 16 August 2026, which has expired relative to this digest date. The source does not specify location requirements, dates, submission materials, or additional financial provisions, leaving overall funding unclear.",
-    "category": "commission",
-    "opportunity": {
-     "deadline": "2026-08-16",
-     "funding": "funding-unclear"
-    },
-    "primaryLinks": [],
-    "sourceTweets": [
-     {
-      "url": "https://x.com/Kyekyekule_af/status/2082530250462748823",
-      "authorHandle": "Kyekyekule_af"
-     }
-    ],
-    "stats": {
-     "tweetCount": 1,
-     "distinctAuthors": 1,
-     "engagement": 6
-    },
-    "dedupeKeys": []
-   },
-   {
-    "headline": "Queens Arts Fund Artist Award ($10,000 Grant)",
-    "summary": "Based on social media discussion, the inaugural Queens Arts Fund Artist Award is offering a $10,000 unrestricted grant for New York City-based artists. This opportunity is a grant based in New York, United States. Note that the stated deadline of August 4 has already passed relative to this digest date. Full application requirements, accepted artistic disciplines, and other financial details are not stated in the discussion. Funding is fully funded.",
-    "category": "grant",
-    "opportunity": {
-     "location": "New York, United States",
-     "funding": "fully-funded"
-    },
-    "primaryLinks": [],
-    "sourceTweets": [
-     {
-      "url": "https://x.com/vercinyc/status/2082057983207637169",
-      "authorHandle": "vercinyc"
-     }
-    ],
-    "stats": {
-     "tweetCount": 1,
-     "distinctAuthors": 1,
-     "engagement": 5
-    },
-    "dedupeKeys": []
-   },
-   {
-    "headline": "Artist Discussion: The Multidimensional Nature of Failure in Creative Practice",
-    "summary": "Based on the linked discussion, this item reflects commentary shared by independent artist @cosmicbagelsart exploring how failure manifests across different dimensions in creative careers, contrasting low-stakes creative experimentation and open call rejections with higher-stakes risks like missed commission deadlines or unsustainable pricing. No active open call, residency, or award is offered in the post. Opportunity type, location, eligibility, application requirements, and financial details are not stated. Funding level is funding unclear.",
-    "category": "commission",
-    "opportunity": {
-     "funding": "funding-unclear"
-    },
-    "primaryLinks": [],
-    "sourceTweets": [
-     {
-      "url": "https://x.com/cosmicbagelsart/status/2089774673919615393",
-      "authorHandle": "cosmicbagelsart"
-     }
-    ],
-    "stats": {
-     "tweetCount": 1,
-     "distinctAuthors": 1,
-     "engagement": 5
-    },
-    "dedupeKeys": []
    }
   ]
  }

@@ -1,7 +1,7 @@
 {
  "version": 1,
  "themeId": "art-residencies",
- "updatedAt": "2026-08-22T08:42:45.808Z",
+ "updatedAt": "2026-08-22T08:51:49.978Z",
  "entries": [
   {
    "keys": [
@@ -60,21 +60,6 @@
   },
   {
    "keys": [
-    "url:http://aestheticamagazine.com/artprize"
-   ],
-   "firstSeenDate": "2026-08-22",
-   "lastSeenDate": "2026-08-22",
-   "headline": "Aesthetica Art Prize Call for Entries with £10,000 Award",
-   "category": "prize",
-   "primaryLinks": [
-    {
-     "url": "http://aestheticamagazine.com/artprize",
-     "title": "Aesthetica Art Prize Call for Submissions"
-    }
-   ]
-  },
-  {
-   "keys": [
     "url:https://www.monroecounty.gov/executive-arts-grant"
    ],
    "firstSeenDate": "2026-08-22",
@@ -100,6 +85,36 @@
     {
      "url": "https://www.lanazionesiciliana.eu/notiziario-del-1-agosto-2026",
      "title": "La Nazione Siciliana - Notiziario del 1 Agosto 2026"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "url:http://aestheticamagazine.com/artprize"
+   ],
+   "firstSeenDate": "2026-08-22",
+   "lastSeenDate": "2026-08-22",
+   "headline": "Aesthetica Art Prize",
+   "category": "prize",
+   "primaryLinks": [
+    {
+     "url": "http://aestheticamagazine.com/artprize",
+     "title": "Aesthetica Art Prize"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "url:http://www.goethe.de/aepc"
+   ],
+   "firstSeenDate": "2026-08-22",
+   "lastSeenDate": "2026-08-22",
+   "headline": "Goethe-Institut Africa-Europe Partnerships for Culture: WP4 Visual Arts Grant (Lot 2)",
+   "category": "grant",
+   "primaryLinks": [
+    {
+     "url": "http://www.goethe.de/aepc",
+     "title": "Goethe-Institut: Africa-Europe Partnerships for Culture"
     }
    ]
   },
