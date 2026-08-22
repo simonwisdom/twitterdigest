@@ -16,8 +16,8 @@ const FUNDING_PILL_CLASSES: Record<string, string> = {
   "funding-unclear": "border border-border text-muted",
 };
 
-// Presentation contract (Examine-inspired skin): category chip and evidence-
-// basis (or funding) pill on the top row, Lora headline, study type or
+// Presentation contract (Examine-inspired skin): category chip and funding
+// pill on the top row, Lora headline, study type or
 // deadline/location as a muted caption, the takeaway in a tinted callout,
 // remaining summary behind a native disclosure; source tweets stay ONE muted
 // footer line of plain <a> links — never an embed, widget, or quoted tweet
@@ -42,7 +42,7 @@ export default function DigestItemCard({
 
   return (
     <article className="rounded-lg border border-border bg-card p-6 shadow-sm">
-      {(category || evidence || opportunity?.funding) && (
+      {(category || opportunity?.funding) && (
         <div className="flex flex-wrap items-center justify-between gap-2">
           {category && (
             <span
@@ -56,20 +56,6 @@ export default function DigestItemCard({
                 style={{ backgroundColor: category.color }}
               />
               {category.label}
-            </span>
-          )}
-          {evidence && (
-            <span
-              className={
-                "rounded-full px-2.5 py-0.5 text-[11px] font-semibold " +
-                (evidence.hasAbstract
-                  ? "bg-success-bg text-success-fg"
-                  : "bg-danger-bg text-danger-fg")
-              }
-            >
-              {evidence.hasAbstract
-                ? "Abstract read"
-                : "No abstract — discussion only"}
             </span>
           )}
           {opportunity?.funding && (
@@ -107,6 +93,22 @@ export default function DigestItemCard({
           </span>
           {opportunity?.location && <> · {opportunity.location}</>}
         </p>
+      )}
+
+      {item.image && (
+        // Hotlinked og:image from the call page; static export has no image
+        // pipeline, and a broken/blocked image simply hides itself.
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={item.image}
+          alt=""
+          loading="lazy"
+          referrerPolicy="no-referrer"
+          className="mt-3 max-h-40 w-full rounded-md border border-border object-cover"
+          onError={(e) => {
+            e.currentTarget.style.display = "none";
+          }}
+        />
       )}
 
       {summary.isTakeaway ? (

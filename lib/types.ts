@@ -60,6 +60,8 @@ export interface DigestItem {
   evidenceNote?: string;
   // Present on themes with `extractOpportunityMeta` enabled.
   opportunity?: OpportunityMeta;
+  // og:image of the fetched call page, when `fetchPages` found one.
+  image?: string;
   primaryLinks: { url: string; title: string }[];
   sourceTweets: { url: string; authorHandle: string }[];
   stats: { tweetCount: number; distinctAuthors: number; engagement: number };
@@ -112,9 +114,17 @@ export interface ThemeConfig {
   // rendered as a color-coded header on the digest card.
   categories?: ThemeCategory[];
   fetchAbstracts: boolean;
+  // When true, the summarizer fetches the linked call/programme page and
+  // grounds the summary in its content (the opportunity analogue of
+  // fetchAbstracts). Also captures the page's og:image for the card.
+  fetchPages?: boolean;
   // When true, the summarizer also extracts deadline/location/funding meta
   // for each item, rendered as a scannable strip on the digest card.
   extractOpportunityMeta?: boolean;
+  // Reader-taste guidance appended to the filter prompt as soft ranking
+  // preference — not hard eligibility rules. Phrased impersonally; this file
+  // is public.
+  tasteNotes?: string;
   // Rolling source window ending at 11:00 UTC on the digest date.
   lookbackDays?: number;
   topN: number;

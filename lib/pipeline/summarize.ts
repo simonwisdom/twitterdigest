@@ -3,6 +3,7 @@ import { buildEvidenceNote } from "@/lib/format";
 import { safeTruncate } from "@/lib/text";
 import { extractCanonicalIds } from "@/lib/links";
 import { resolveAbstract } from "@/lib/abstracts";
+import { fetchCallPage } from "@/lib/pages";
 import {
   Cluster,
   DigestItem,
@@ -77,6 +78,9 @@ async function summarizeCluster(
       ? await resolveAbstract(cluster.canonicalIds, cluster.urls)
       : null;
 
+  const page =
+    theme.fetchPages && !ctx.mock ? await fetchCallPage(cluster.urls) : null;
+
   const tweetListing = members
     .slice(0, MAX_TWEETS_IN_PROMPT)
     .map(
@@ -89,6 +93,12 @@ async function summarizeCluster(
     ? `\n\nPaper title: ${paper.title ?? "(unknown)"}\nAbstract (from ${paper.source}):\n${paper.abstract ?? "(unavailable)"}`
     : theme.fetchAbstracts
       ? "\n\nAbstract unavailable — base the summary only on the tweet discussion and hedge accordingly."
+      : "";
+
+  const pageSection = page
+    ? `\n\nLinked page content (fetched from ${page.url}):\n${page.text}`
+    : theme.fetchPages
+      ? "\n\nThe linked page could not be fetched — base the summary only on the tweet discussion, hedge accordingly, and say the account is based on the linked discussion."
       : "";
 
   const linkHint = theme.primaryLinkHosts?.length
@@ -130,7 +140,7 @@ Tweets discussing it:
 ${tweetListing}
 
 URLs appearing in the discussion:
-${cluster.urls.slice(0, 20).join("\n") || "(none)"}${paperSection}`;
+${cluster.urls.slice(0, 20).join("\n") || "(none)"}${paperSection}${pageSection}`;
 
   const result = await ctx.llm.json<{
     headline: string;
@@ -216,6 +226,7 @@ ${cluster.urls.slice(0, 20).join("\n") || "(none)"}${paperSection}`;
         }
       : {}),
     ...(opportunity ? { opportunity } : {}),
+    ...(page?.image ? { image: page.image } : {}),
     primaryLinks,
     sourceTweets: members.slice(0, MAX_SOURCE_TWEET_LINKS).map((t) => ({
       url: `https://x.com/${t.authorHandle}/status/${t.id}`,

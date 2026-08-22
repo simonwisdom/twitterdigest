@@ -57,7 +57,10 @@ exclusion rules, summary instructions, categories, `topN`, `lookbackDays`, and
   a clinician`, or `Research watch`.
 - Artist opportunities look back 30 days, reject expired/unverifiable calls,
   and label items by opportunity type (residency, grant, prize, commission,
-  fellowship/program); funding level is stated in the summary text.
+  fellowship/program); funding level is stated in the summary text. The
+  summarizer fetches the linked call page (`fetchPages`) to ground summaries
+  and capture an og:image, and `tasteNotes` steers borderline filter
+  decisions toward the reader's preferences.
 
 ## Weekly GitHub Pages deployment
 

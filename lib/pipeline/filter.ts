@@ -80,10 +80,14 @@ async function classifyBatch(
     )
     .join("\n");
 
+  const tasteSection = theme.tasteNotes
+    ? `\nREADER PREFERENCES (soft guidance, not eligibility rules: items matching INCLUDE stay eligible even when they fit these poorly, but use them to decide borderline cases): ${theme.tasteNotes}`
+    : "";
+
   const system = `You classify tweets for a themed digest called "${theme.label}".
 Digest date: ${ctx.date}. Treat deadlines and words such as "current" or "open" relative to this date.
 INCLUDE: ${theme.inclusionCriteria}
-EXCLUDE: ${theme.exclusionCriteria}
+EXCLUDE: ${theme.exclusionCriteria}${tasteSection}
 Respond ONLY with a JSON array like [{"n": 1, "keep": true}, ...] covering every tweet number exactly once.`;
 
   try {
