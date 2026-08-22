@@ -1,23 +1,13 @@
 import { DigestItem, ThemeCategory } from "@/lib/types";
 import {
   describeDeadline,
-  fundingLabel,
   linkLabel,
   splitEvidenceNote,
   splitSummary,
 } from "@/lib/format";
 
-// Funding pill styling: green for fully funded, plum tint for partial,
-// red tint when the artist pays, muted outline when the source doesn't say.
-const FUNDING_PILL_CLASSES: Record<string, string> = {
-  "fully-funded": "bg-success-bg text-success-fg",
-  "partially-funded": "bg-accent-tint text-accent",
-  "self-funded": "bg-danger-bg text-danger-fg",
-  "funding-unclear": "border border-border text-muted",
-};
-
-// Presentation contract (Examine-inspired skin): category chip and funding
-// pill on the top row, Lora headline, study type or
+// Presentation contract (Examine-inspired skin): category chip on the top
+// row, Lora headline, study type or
 // deadline/location as a muted caption, the takeaway in a tinted callout,
 // remaining summary behind a native disclosure; source tweets stay ONE muted
 // footer line of plain <a> links — never an embed, widget, or quoted tweet
@@ -42,34 +32,19 @@ export default function DigestItemCard({
 
   return (
     <article className="rounded-lg border border-border bg-card p-6 shadow-sm">
-      {(category || opportunity?.funding) && (
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          {category && (
-            <span
-              className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider"
-              style={{ color: category.color }}
-              title={category.description}
-            >
-              <span
-                aria-hidden
-                className="h-2.5 w-2.5 rounded-full"
-                style={{ backgroundColor: category.color }}
-              />
-              {category.label}
-            </span>
-          )}
-          {opportunity?.funding && (
-            <span
-              className={
-                "rounded-full px-2.5 py-0.5 text-[11px] font-semibold " +
-                (FUNDING_PILL_CLASSES[opportunity.funding] ??
-                  FUNDING_PILL_CLASSES["funding-unclear"])
-              }
-            >
-              {fundingLabel(opportunity.funding)}
-            </span>
-          )}
-        </div>
+      {category && (
+        <span
+          className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider"
+          style={{ color: category.color }}
+          title={category.description}
+        >
+          <span
+            aria-hidden
+            className="h-2.5 w-2.5 rounded-full"
+            style={{ backgroundColor: category.color }}
+          />
+          {category.label}
+        </span>
       )}
 
       <h3 className="mt-2.5 font-headline text-xl leading-snug font-semibold">
