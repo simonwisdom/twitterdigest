@@ -4,7 +4,9 @@ import { extractCanonicalIds, normalizeUrl } from "@/lib/links";
 import { FilteredTweet, ThemeConfig, Tweet } from "@/lib/types";
 import { PipelineCtx, pMap } from "@/lib/pipeline/index";
 
-const BATCH_SIZE = 30;
+// Smaller batches keep the JSON verdict array short — the flash-tier model
+// occasionally garbles long arrays, and a failed batch drops all its tweets.
+const BATCH_SIZE = 20;
 const CONCURRENCY = 5;
 
 export async function filterStage(
@@ -99,11 +101,15 @@ Respond ONLY with a JSON array like [{"n": 1, "keep": true}, ...] covering every
       mock: () => batch.map((_, i) => ({ n: i + 1, keep: true })),
     });
     const keepByN = new Map(result.map((r) => [r.n, r.keep]));
-    // Fail-open per tweet: missing verdicts count as keep.
-    return batch.map((_, i) => keepByN.get(i + 1) ?? true);
+    // Fail closed per tweet: a missing verdict drops the tweet.
+    return batch.map((_, i) => keepByN.get(i + 1) ?? false);
   } catch (err) {
-    // Fail-open per batch: ranking will bury junk; silent drops are worse.
-    ctx.log(`[${theme.id}] filter: batch classification FAILED (keeping all): ${String(err)}`);
-    return batch.map(() => true);
+    // Fail closed per batch. Ranking does not bury junk — topN surfaces it —
+    // so an unclassified batch must not reach the digest. The LLM client
+    // already retried once before this throw.
+    ctx.log(
+      `[${theme.id}] filter: batch classification FAILED (dropping batch of ${batch.length}): ${String(err)}`
+    );
+    return batch.map(() => false);
   }
 }

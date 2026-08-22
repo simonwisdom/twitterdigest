@@ -46,6 +46,7 @@ export async function summarizeStage(
     async (cluster, i) => {
       try {
         const item = await summarizeCluster(ctx, theme, cluster, byId);
+        if (item === null) return null;
         ctx.log(
           `[${theme.id}] summarize: ${i + 1}/${ranked.length} "${item.headline.slice(0, 60)}"`
         );
@@ -62,12 +63,14 @@ export async function summarizeStage(
   return items.filter((i): i is DigestItem => i !== null);
 }
 
+// Returns null when the cluster is vetoed: the model judged it ineligible
+// after reading the fetched page, or its extracted deadline already passed.
 async function summarizeCluster(
   ctx: PipelineCtx,
   theme: ThemeConfig,
   cluster: RankedCluster,
   byId: Map<string, FilteredTweet>
-): Promise<DigestItem> {
+): Promise<DigestItem | null> {
   const members = cluster.tweetIds
     .map((id) => byId.get(id))
     .filter((t): t is FilteredTweet => t !== undefined)
@@ -119,6 +122,14 @@ async function summarizeCluster(
     ? `\nstudyType is a short plain-English phrase naming the study design and scale exactly as the source states it, e.g. "Randomized trial of 1,200 adults" or "Meta-analysis of 24 cohort studies". If the design is not stated, write "Study type unclear" — never guess.`
     : "";
 
+  // Page-grounded themes get a last-chance eligibility veto: the summarizer
+  // sees the fetched page, making it the best-informed screen in the
+  // pipeline. The tweet-level filter only saw tweet text.
+  const eligField = theme.fetchPages ? ', "eligible": true' : "";
+  const eligHint = theme.fetchPages
+    ? `\neligible: after reading everything provided, set to false when this item is NOT actually something the digest covers. INCLUDE: ${theme.inclusionCriteria} EXCLUDE: ${theme.exclusionCriteria} When eligible is false the other fields may be minimal.`
+    : "";
+
   // Opportunity themes also get a structured deadline/location/funding strip.
   const oppField = theme.extractOpportunityMeta
     ? ', "deadline": "...", "location": "...", "funding": "..."'
@@ -131,8 +142,8 @@ async function summarizeCluster(
 Digest date: ${ctx.date}. Interpret deadlines and time-sensitive claims relative to this date.
 Style: ${theme.summaryStyle}
 Respond ONLY with JSON:
-{"headline": "...", "summary": "...", "primaryLinks": [{"url": "...", "title": "..."}]${categoryField}${studyTypeField}${oppField}}
-primaryLinks must be chosen from the URLs provided — never invent URLs. headline is a specific, factual title (max 100 chars).${categoryHint}${studyTypeHint}${oppHint}${linkHint}`;
+{"headline": "...", "summary": "...", "primaryLinks": [{"url": "...", "title": "..."}]${categoryField}${studyTypeField}${oppField}${eligField}}
+primaryLinks must be chosen from the URLs provided — never invent URLs. headline is a specific, factual title (max 100 chars).${categoryHint}${studyTypeHint}${oppHint}${eligHint}${linkHint}`;
 
   const prompt = `Topic: ${cluster.label}
 
@@ -151,6 +162,7 @@ ${cluster.urls.slice(0, 20).join("\n") || "(none)"}${paperSection}${pageSection}
     deadline?: string | null;
     location?: string | null;
     funding?: string | null;
+    eligible?: boolean;
   }>({
     model: MODEL_SMART,
     system,
@@ -169,8 +181,16 @@ ${cluster.urls.slice(0, 20).join("\n") || "(none)"}${paperSection}${pageSection}
             funding: "funding-unclear",
           }
         : {}),
+      ...(theme.fetchPages ? { eligible: true } : {}),
     }),
   });
+
+  if (theme.fetchPages && result.eligible === false) {
+    ctx.log(
+      `[${theme.id}] summarize: vetoed as ineligible "${String(result.headline).slice(0, 60)}"`
+    );
+    return null;
+  }
 
   // Guard against invented links: keep only URLs actually in the cluster.
   const known = new Set(cluster.urls);
@@ -211,6 +231,13 @@ ${cluster.urls.slice(0, 20).join("\n") || "(none)"}${paperSection}${pageSection}
       ...(location ? { location } : {}),
       funding,
     };
+    // Mechanical, not LLM judgment: ISO dates compare lexicographically.
+    if (deadline && deadline < ctx.date) {
+      ctx.log(
+        `[${theme.id}] summarize: dropped expired deadline ${deadline} "${String(result.headline).slice(0, 60)}"`
+      );
+      return null;
+    }
   }
 
   return {
