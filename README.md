@@ -24,6 +24,10 @@ cp .env.example .env.local
 - `TWITTERAPI_MIN_INTERVAL_MS` — optional request spacing; defaults to 5000 to
   avoid entry-tier rate limits.
 - `DIGEST_DATA_DIR` — optional storage root; local runs default to `.data/`.
+- `RESEND_API_KEY`, `DIGEST_EMAIL_TO`, and `DIGEST_EMAIL_FROM` — required only
+  for email delivery. `DIGEST_EMAIL_TO` may contain comma-separated addresses.
+- `DIGEST_SITE_URL` — optional link used in the email; defaults to the project
+  GitHub Pages URL.
 
 ## Run and view locally
 
@@ -68,7 +72,8 @@ The repository contains two workflows:
 
 - `refresh-weekly-digest` runs Mondays at 11:00 UTC and can also be started
   manually. It generates the digest and commits only `data/digests/` and
-  `data/history/`; raw pipeline checkpoints are ignored.
+  `data/history/`; raw pipeline checkpoints are ignored. Successful scheduled
+  runs then email the generated edition.
 - `deploy-pages` runs after changes reach `main` or after the weekly refresh
   completes, exports the static Next.js site, and deploys `out/` to GitHub Pages.
 
@@ -79,6 +84,34 @@ Repository setup:
 2. Under **Settings → Pages**, choose **GitHub Actions** as the source.
 3. Run **refresh-weekly-digest** once from the Actions tab to publish the first
    real digest.
+
+## Weekly email delivery
+
+Email is sent directly from the refresh workflow through Resend, using the
+same generated JSON as the site. The message contains every new item in both
+HTML and plain text and uses the edition date as an idempotency key to protect
+against immediate duplicate sends.
+
+1. Create a Resend API key. For an initial email to the address belonging to
+   the Resend account, `Weekly Digest <onboarding@resend.dev>` can be used as
+   the sender. Verify a domain in Resend before sending from that domain or to
+   other recipients.
+2. Add these repository secrets under **Settings → Secrets and variables →
+   Actions**:
+   - `RESEND_API_KEY`
+   - `DIGEST_EMAIL_TO`
+   - `DIGEST_EMAIL_FROM`, for example
+     `Weekly Digest <digest@updates.example.com>`
+3. Scheduled Monday runs send automatically. Manual workflow runs do not send
+   unless **Email the generated digest after this manual run** is checked.
+   To test delivery without refreshing data, select an existing **Digest date**
+   and check **Skip refresh and email the existing edition selected by date**.
+
+Render and validate an existing committed edition locally without sending it:
+
+```bash
+DIGEST_DATA_DIR=data npm run email-digest -- --date 2026-08-22 --dry-run
+```
 
 The project Pages URL is:
 
