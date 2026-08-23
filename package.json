@@ -7,7 +7,8 @@
     "build": "next build --webpack",
     "lint": "eslint .",
     "test": "tsx --test lib/*.test.ts",
-    "pipeline": "tsx scripts/run-pipeline.ts"
+    "pipeline": "tsx scripts/run-pipeline.ts",
+    "email-digest": "tsx scripts/send-digest-email.ts"
   },
   "dependencies": {
     "next": "16.3.1",

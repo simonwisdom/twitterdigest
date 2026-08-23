@@ -14,6 +14,16 @@ on:
       theme:
         description: "Only refresh this theme id (e.g. art-residencies)"
         required: false
+      send_email:
+        description: "Email the generated digest after this manual run"
+        required: false
+        type: boolean
+        default: false
+      email_only:
+        description: "Skip refresh and email the existing edition selected by date"
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -35,19 +45,37 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Resolve digest date
+        env:
+          INPUT_DATE: ${{ inputs.date }}
+          INPUT_EMAIL_ONLY: ${{ inputs.email_only }}
+        run: |
+          if [ "$INPUT_EMAIL_ONLY" = "true" ] && [ -z "$INPUT_DATE" ]; then
+            echo "Email-only runs require an existing digest date" >&2
+            exit 1
+          fi
+          DIGEST_DATE="${INPUT_DATE:-$(date -u +%F)}"
+          if [[ ! "$DIGEST_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+            echo "Digest date must use YYYY-MM-DD" >&2
+            exit 1
+          fi
+          echo "DIGEST_DATE=$DIGEST_DATE" >> "$GITHUB_ENV"
       - name: Generate weekly digest
+        if: ${{ github.event_name == 'schedule' || ! inputs.email_only }}
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: google/gemini-3.7-flash
           TWITTERAPI_IO_KEY: ${{ secrets.TWITTERAPI_IO_KEY }}
           DIGEST_DATA_DIR: data
+          INPUT_FORCE_FROM: ${{ inputs.force_from }}
+          INPUT_THEME: ${{ inputs.theme }}
         run: |
-          ARGS=""
-          if [ -n "${{ inputs.date }}" ]; then ARGS="$ARGS --date ${{ inputs.date }}"; fi
-          if [ -n "${{ inputs.force_from }}" ]; then ARGS="$ARGS --force-from ${{ inputs.force_from }}"; fi
-          if [ -n "${{ inputs.theme }}" ]; then ARGS="$ARGS --theme ${{ inputs.theme }}"; fi
-          npm run pipeline -- $ARGS
+          ARGS=(--date "$DIGEST_DATE")
+          if [ -n "$INPUT_FORCE_FROM" ]; then ARGS+=(--force-from "$INPUT_FORCE_FROM"); fi
+          if [ -n "$INPUT_THEME" ]; then ARGS+=(--theme "$INPUT_THEME"); fi
+          npm run pipeline -- "${ARGS[@]}"
       - name: Persist digest and dedup history
+        if: ${{ github.event_name == 'schedule' || ! inputs.email_only }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -58,3 +86,12 @@ jobs:
             git commit -m "Update weekly digest data"
             git push
           fi
+      - name: Email weekly digest
+        if: ${{ github.event_name == 'schedule' || inputs.send_email || inputs.email_only }}
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DIGEST_EMAIL_TO: ${{ secrets.DIGEST_EMAIL_TO }}
+          DIGEST_EMAIL_FROM: ${{ secrets.DIGEST_EMAIL_FROM }}
+          DIGEST_DATA_DIR: data
+          DIGEST_SITE_URL: https://simonwisdom.github.io/twitterdigest
+        run: npm run email-digest -- --date "$DIGEST_DATE"
