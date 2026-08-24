@@ -1,0 +1,221 @@
+{
+ "date": "2026-08-24",
+ "generatedAt": "2026-08-24T11:18:35.450Z",
+ "themes": {
+  "longevity": [
+   {
+    "headline": "Decision-Making Framework Evaluates Clinical Futility in Advanced Heart Disease",
+    "summary": "In an expert review published in the European Heart Journal, clinicians outline a decision-making framework for older adults with advanced cardiovascular disease navigating complex, invasive interventions. The paper distinguishes between quantitative futility (statistically negligible clinical benefit) and qualitative futility (treatments misaligned with personal goals), while emphasizing that physical frailty does not automatically equal treatment futility. It highlights the need to weigh procedural risks against competing non-cardiac conditions, cognitive status, and functional independence, advocating for early palliative care integration when burdensome therapies offer minimal value. Because this is a conceptual clinical review rather than an empirical trial, it does not quantify specific procedural outcomes or provide absolute risk-reduction estimates. Practical meaning: Older adults facing high-risk cardiovascular procedures may benefit from discussing their personal quality-of-life goals and palliative options with their care team to prevent interventions that may be clinically futile.",
+    "category": "clinician-conversation",
+    "evidenceNote": "State-of-the-art review · summary based on the abstract",
+    "primaryLinks": [
+     {
+      "url": "https://doi.org/10.1093/eurheartj/ehaf351",
+      "title": "Decision-making for older adults with advanced heart disease: a framework for balancing benefit versus futility"
+     }
+    ],
+    "sourceTweets": [
+     {
+      "url": "https://x.com/ehj_ed/status/2091193843718693147",
+      "authorHandle": "ehj_ed"
+     }
+    ],
+    "stats": {
+     "tweetCount": 1,
+     "distinctAuthors": 1,
+     "engagement": 182
+    },
+    "dedupeKeys": [
+     "canonical:doi:10.1093/eurheartj/ehaf351",
+     "url:https://doi.org/10.1093/eurheartj/ehaf351"
+    ]
+   },
+   {
+    "headline": "Malnutrition Trajectories Linked to Functional Gains and Mortality in Rehab Inpatients",
+    "summary": "A retrospective cohort study of 13,386 adults in Japanese convalescent rehabilitation wards (median age 81) examined how changes in nutritional status, defined by Global Leadership Initiative on Malnutrition (GLIM) criteria between admission and discharge, related to recovery. Compared to patients who stayed well-nourished, those who developed new malnutrition or remained malnourished had significantly lower functional independence gains (adjusted differences of -8.1 and -5.9 FIM points, respectively) and higher in-hospital mortality (adjusted odds ratios 9.51 and 3.15, with 2.5% mortality in the declined group). Among tube-fed patients, those whose nutritional status improved were nearly twice as likely to successfully wean off tube feeding (adjusted OR 2.00; absolute weaning rate 48.5%). The primary limitation is the observational design, meaning nutritional decline may partly reflect unmeasured illness severity rather than directly causing worse outcomes. Practical meaning: Routine nutritional monitoring and targeted support during inpatient rehabilitation may help improve functional independence and tube-feeding weaning rates, though clinical trials are needed to confirm causal benefit.",
+    "category": "clinician-conversation",
+    "evidenceNote": "Retrospective cohort study of 13,386 adults · summary based on the abstract",
+    "primaryLinks": [
+     {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42617807",
+      "title": "Associations between transition of malnutrition diagnosis defined by the Global Leadership Initiative on Malnutrition criteria and functionality, mortality, and weaning of enteral nutrition in an inpatient rehabilitation setting: findings from a national surveillance."
+     }
+    ],
+    "sourceTweets": [
+     {
+      "url": "https://x.com/HideWakabayashi/status/2090396266165649868",
+      "authorHandle": "HideWakabayashi"
+     }
+    ],
+    "stats": {
+     "tweetCount": 1,
+     "distinctAuthors": 1,
+     "engagement": 28
+    },
+    "dedupeKeys": [
+     "canonical:pubmed:42617807",
+     "url:https://pubmed.ncbi.nlm.nih.gov/42617807"
+    ]
+   },
+   {
+    "headline": "Higher Animal Fat Intake Linked to Increased Overall and CVD Mortality",
+    "summary": "Based on the linked discussion, an observational report published in JAMA Internal Medicine found that higher consumption of total animal fat was associated with an increased risk of overall and cardiovascular disease (CVD) mortality. Because the full abstract is unavailable and the account relies on social media discussion, specific population details, effect sizes, and study parameters cannot be verified. Observational findings demonstrate correlation rather than causation and may be confounded by broader dietary and lifestyle factors. Practical meaning: Higher intake of animal fat may be associated with increased cardiovascular and mortality risk, but more comprehensive data are needed to evaluate the exact impact.",
+    "category": "research-watch",
+    "evidenceNote": "Study type unclear · summary based on tweet discussion only (no abstract)",
+    "primaryLinks": [
+     {
+      "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2821738",
+      "title": "JAMA Internal Medicine Article"
+     }
+    ],
+    "sourceTweets": [
+     {
+      "url": "https://x.com/SentientBlobBob/status/2087372915335688361",
+      "authorHandle": "SentientBlobBob"
+     }
+    ],
+    "stats": {
+     "tweetCount": 1,
+     "distinctAuthors": 1,
+     "engagement": 5
+    },
+    "dedupeKeys": [
+     "url:https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2821738"
+    ]
+   },
+   {
+    "headline": "Umbrella Review Links Prediabetes to Increased Mortality, Heart Disease, and Dementia Risk",
+    "summary": "An umbrella review synthesizing 95 meta-analyses of prospective observational studies evaluated the link between prediabetes—defined by elevated fasting glucose, impaired glucose tolerance, or elevated HbA1c—and long-term health outcomes in adults. Prediabetes was associated with a 6% to 101% increased relative risk across several outcomes, including all-cause mortality, cardiovascular disease, coronary heart disease, stroke, chronic kidney disease, total cancer, and all-cause dementia (evaluated as moderate certainty of evidence). Risk associations were generally stronger when prediabetes was defined by impaired glucose tolerance rather than HbA1c. Because the synthesized data are observational, they establish association rather than direct causation, and residual confounding across individual cohorts remains a key limitation. Practical meaning: Identifying prediabetes may help flag elevated risks for cardiovascular and metabolic conditions, making blood sugar screening a useful topic to discuss with a doctor.",
+    "category": "clinician-conversation",
+    "evidenceNote": "Umbrella review of 95 meta-analyses of prospective studies · summary based on the abstract",
+    "primaryLinks": [
+     {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34718834",
+      "title": "Prediabetes and risk of mortality, diabetes-related complications and comorbidities: umbrella review of meta-analyses of prospective studies."
+     }
+    ],
+    "sourceTweets": [
+     {
+      "url": "https://x.com/MarketPicker/status/2090467608285913195",
+      "authorHandle": "MarketPicker"
+     }
+    ],
+    "stats": {
+     "tweetCount": 1,
+     "distinctAuthors": 1,
+     "engagement": 4
+    },
+    "dedupeKeys": [
+     "canonical:pubmed:34718834",
+     "url:https://pubmed.ncbi.nlm.nih.gov/34718834"
+    ]
+   },
+   {
+    "headline": "SGLT2 inhibitors demonstrate reduced mortality and heart failure risk in type 2 diabetes",
+    "summary": "In the landmark EMPA-REG OUTCOME randomized controlled trial, researchers evaluated the SGLT2 inhibitor empagliflozin versus placebo in adults with type 2 diabetes and established cardiovascular disease. The trial demonstrated clear reductions in all-cause mortality and heart failure hospitalizations. Because the full abstract was unavailable, this account is based on the linked publication record and discussion. The primary limitation is that evidence comes from clinical populations with diagnosed cardiometabolic disease, so effects in healthy adults without diabetes remain unproven. Practical meaning: Adults with type 2 diabetes, kidney disease, or cardiovascular risk factors may benefit from discussing SGLT2 inhibitors with their physician to evaluate established organ-protective benefits.",
+    "category": "clinician-conversation",
+    "evidenceNote": "Randomized controlled trial · summary based on tweet discussion only (no abstract)",
+    "primaryLinks": [
+     {
+      "url": "https://doi.org/10.1056/NEJMoa1504720",
+      "title": "Empagliflozin, Cardiovascular Outcomes, and Mortality in Type 2 Diabetes"
+     }
+    ],
+    "sourceTweets": [
+     {
+      "url": "https://x.com/agingroy/status/2088664031829856407",
+      "authorHandle": "agingroy"
+     }
+    ],
+    "stats": {
+     "tweetCount": 1,
+     "distinctAuthors": 1,
+     "engagement": 4
+    },
+    "dedupeKeys": [
+     "canonical:doi:10.1056/nejmoa1504720",
+     "canonical:pubmed:31535829",
+     "canonical:doi:10.1056/nejmoa2024816",
+     "canonical:pubmed:37952131",
+     "canonical:pubmed:38785209",
+     "canonical:pubmed:19587680",
+     "canonical:pubmed:24245565",
+     "canonical:doi:10.1097/xce.0000000000000159",
+     "canonical:doi:10.1038/s41586-025-09335-x",
+     "url:https://doi.org/10.1056/NEJMoa1504720",
+     "url:https://pubmed.ncbi.nlm.nih.gov/31535829",
+     "url:https://doi.org/10.1056/NEJMoa2024816",
+     "url:https://pubmed.ncbi.nlm.nih.gov/37952131",
+     "url:https://pubmed.ncbi.nlm.nih.gov/38785209",
+     "url:https://pubmed.ncbi.nlm.nih.gov/19587680",
+     "url:https://pubmed.ncbi.nlm.nih.gov/24245565",
+     "url:https://doi.org/10.1097/XCE.0000000000000159",
+     "url:https://doi.org/10.1038/s41586-025-09335-x"
+    ]
+   },
+   {
+    "headline": "Physical Fitness Markers Linked to Lower 7-Year Mortality in Older Adults",
+    "summary": "Based on the linked discussion of a study in over 13,000 adults aged 65 and older, higher levels of physical fitness—including measures of balance, agility, and strength—were associated with lower all-cause mortality over seven years of follow-up. Detailed numerical effect sizes are not available from the linked discussion. Because this is an observational finding, it demonstrates an association rather than causation, and reverse causality remains a key limitation as unmeasured underlying illness can reduce physical fitness. Practical meaning: Engaging in regular exercises that challenge balance, agility, and strength may support longevity in older age.",
+    "category": "applicable-now",
+    "evidenceNote": "Observational study of over 13,000 adults aged 65+ · summary based on tweet discussion only (no abstract)",
+    "primaryLinks": [
+     {
+      "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2852597?guestAccessKey=75e7bb71-6786-4ef3-b6ad-e5a0e876d0fe",
+      "title": "JAMA Network Open"
+     }
+    ],
+    "sourceTweets": [
+     {
+      "url": "https://x.com/ZainKhalpey/status/2087306457997885900",
+      "authorHandle": "ZainKhalpey"
+     }
+    ],
+    "stats": {
+     "tweetCount": 1,
+     "distinctAuthors": 1,
+     "engagement": 3
+    },
+    "dedupeKeys": [
+     "url:https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2852597?guestAccessKey=75e7bb71-6786-4ef3-b6ad-e5a0e876d0fe"
+    ]
+   },
+   {
+    "headline": "Modeling Study Finds Alcohol Mortality Risk Starts at Low Intakes With No Net Benefit",
+    "summary": "In a cause-specific modeling study using U.S. population health survey and mortality data from the CDC and IHME, researchers estimated lifetime alcohol-attributable morbidity and mortality across varying levels of consumption. The analysis found no net protective health effect at low intake levels. Lifetime mortality risk attributable to alcohol exceeded 1 in 1,000 at more than 6.5 drinks per week for men and 7.0 for women, rose above 1 in 100 at more than 8.5 drinks per week, and reached 1 in 25 (4%) for men consuming 14 drinks per week. Per-occasion drinking above one drink was also linked to increased risks of cardiovascular disease, breast cancer, and injury. A key limitation is that these findings rely on epidemiological modeling and self-reported intake data, which are subject to recall bias and unmeasured confounding. Practical meaning: Reducing alcohol consumption to one drink per day or fewer likely reduces lifetime mortality and chronic disease risks.",
+    "category": "applicable-now",
+    "evidenceNote": "Cause-specific modeling study of US population data · summary based on the abstract",
+    "primaryLinks": [
+     {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42420014",
+      "title": "Alcohol Intake and Health Study: No Protective Effect at Low Levels, With Mortality Increasing to 1 in 25 at 14 Drinks Per Week."
+     }
+    ],
+    "sourceTweets": [
+     {
+      "url": "https://x.com/Parrhesia777/status/2091807654762991933",
+      "authorHandle": "Parrhesia777"
+     }
+    ],
+    "stats": {
+     "tweetCount": 1,
+     "distinctAuthors": 1,
+     "engagement": 2
+    },
+    "dedupeKeys": [
+     "canonical:pubmed:42420014",
+     "canonical:doi:10.1038/s44360-026-00139-5",
+     "canonical:doi:10.15288/jsad.25-00435",
+     "url:https://www.nature.com/articles/s44360-026-00139-5",
+     "url:https://pubmed.ncbi.nlm.nih.gov/42420014",
+     "url:https://discovery.ucl.ac.uk/id/eprint/10226836/1/george-et-al-2026-alcohol-intake-and-health-study-no-protective-effect-at-low-levels-with-mortality-increasing-to-1-in.pdf",
+     "url:https://doi.org/10.1038/s44360-026-00139-5",
+     "url:https://www.healthdata.org/research-analysis/library/health-effects-associated-alcohol-consumption-burden-proof-study",
+     "url:https://www.healthdata.org/news-events/newsroom/news-releases/new-global-analysis-confirms-alcohols-complex-relationship",
+     "url:https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(18)31310-2/fulltext",
+     "url:https://doi.org/10.15288/jsad.25-00435"
+    ]
+   }
+  ],
+  "art-residencies": []
+ }
+}

@@ -1,8 +1,143 @@
 {
  "version": 1,
  "themeId": "longevity",
- "updatedAt": "2026-08-20T12:39:27.443Z",
+ "updatedAt": "2026-08-24T11:21:45.965Z",
  "entries": [
+  {
+   "keys": [
+    "canonical:doi:10.1093/eurheartj/ehaf351",
+    "url:https://doi.org/10.1093/eurheartj/ehaf351"
+   ],
+   "firstSeenDate": "2026-08-24",
+   "lastSeenDate": "2026-08-24",
+   "headline": "Decision-Making Framework Evaluates Clinical Futility in Advanced Heart Disease",
+   "category": "clinician-conversation",
+   "primaryLinks": [
+    {
+     "url": "https://doi.org/10.1093/eurheartj/ehaf351",
+     "title": "Decision-making for older adults with advanced heart disease: a framework for balancing benefit versus futility"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "canonical:pubmed:42617807",
+    "url:https://pubmed.ncbi.nlm.nih.gov/42617807"
+   ],
+   "firstSeenDate": "2026-08-24",
+   "lastSeenDate": "2026-08-24",
+   "headline": "Malnutrition Trajectories Linked to Functional Gains and Mortality in Rehab Inpatients",
+   "category": "clinician-conversation",
+   "primaryLinks": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/42617807",
+     "title": "Associations between transition of malnutrition diagnosis defined by the Global Leadership Initiative on Malnutrition criteria and functionality, mortality, and weaning of enteral nutrition in an inpatient rehabilitation setting: findings from a national surveillance."
+    }
+   ]
+  },
+  {
+   "keys": [
+    "url:https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2821738"
+   ],
+   "firstSeenDate": "2026-08-24",
+   "lastSeenDate": "2026-08-24",
+   "headline": "Higher Animal Fat Intake Linked to Increased Overall and CVD Mortality",
+   "category": "research-watch",
+   "primaryLinks": [
+    {
+     "url": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2821738",
+     "title": "JAMA Internal Medicine Article"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "canonical:pubmed:34718834",
+    "url:https://pubmed.ncbi.nlm.nih.gov/34718834"
+   ],
+   "firstSeenDate": "2026-08-24",
+   "lastSeenDate": "2026-08-24",
+   "headline": "Umbrella Review Links Prediabetes to Increased Mortality, Heart Disease, and Dementia Risk",
+   "category": "clinician-conversation",
+   "primaryLinks": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/34718834",
+     "title": "Prediabetes and risk of mortality, diabetes-related complications and comorbidities: umbrella review of meta-analyses of prospective studies."
+    }
+   ]
+  },
+  {
+   "keys": [
+    "canonical:doi:10.1056/nejmoa1504720",
+    "canonical:pubmed:31535829",
+    "canonical:doi:10.1056/nejmoa2024816",
+    "canonical:pubmed:37952131",
+    "canonical:pubmed:38785209",
+    "canonical:pubmed:19587680",
+    "canonical:pubmed:24245565",
+    "canonical:doi:10.1097/xce.0000000000000159",
+    "canonical:doi:10.1038/s41586-025-09335-x",
+    "url:https://doi.org/10.1056/NEJMoa1504720",
+    "url:https://pubmed.ncbi.nlm.nih.gov/31535829",
+    "url:https://doi.org/10.1056/NEJMoa2024816",
+    "url:https://pubmed.ncbi.nlm.nih.gov/37952131",
+    "url:https://pubmed.ncbi.nlm.nih.gov/38785209",
+    "url:https://pubmed.ncbi.nlm.nih.gov/19587680",
+    "url:https://pubmed.ncbi.nlm.nih.gov/24245565",
+    "url:https://doi.org/10.1097/XCE.0000000000000159",
+    "url:https://doi.org/10.1038/s41586-025-09335-x"
+   ],
+   "firstSeenDate": "2026-08-24",
+   "lastSeenDate": "2026-08-24",
+   "headline": "SGLT2 inhibitors demonstrate reduced mortality and heart failure risk in type 2 diabetes",
+   "category": "clinician-conversation",
+   "primaryLinks": [
+    {
+     "url": "https://doi.org/10.1056/NEJMoa1504720",
+     "title": "Empagliflozin, Cardiovascular Outcomes, and Mortality in Type 2 Diabetes"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "url:https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2852597?guestAccessKey=75e7bb71-6786-4ef3-b6ad-e5a0e876d0fe"
+   ],
+   "firstSeenDate": "2026-08-24",
+   "lastSeenDate": "2026-08-24",
+   "headline": "Physical Fitness Markers Linked to Lower 7-Year Mortality in Older Adults",
+   "category": "applicable-now",
+   "primaryLinks": [
+    {
+     "url": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2852597?guestAccessKey=75e7bb71-6786-4ef3-b6ad-e5a0e876d0fe",
+     "title": "JAMA Network Open"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "canonical:pubmed:42420014",
+    "canonical:doi:10.1038/s44360-026-00139-5",
+    "canonical:doi:10.15288/jsad.25-00435",
+    "url:https://www.nature.com/articles/s44360-026-00139-5",
+    "url:https://pubmed.ncbi.nlm.nih.gov/42420014",
+    "url:https://discovery.ucl.ac.uk/id/eprint/10226836/1/george-et-al-2026-alcohol-intake-and-health-study-no-protective-effect-at-low-levels-with-mortality-increasing-to-1-in.pdf",
+    "url:https://doi.org/10.1038/s44360-026-00139-5",
+    "url:https://www.healthdata.org/research-analysis/library/health-effects-associated-alcohol-consumption-burden-proof-study",
+    "url:https://www.healthdata.org/news-events/newsroom/news-releases/new-global-analysis-confirms-alcohols-complex-relationship",
+    "url:https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(18)31310-2/fulltext",
+    "url:https://doi.org/10.15288/jsad.25-00435"
+   ],
+   "firstSeenDate": "2026-08-24",
+   "lastSeenDate": "2026-08-24",
+   "headline": "Modeling Study Finds Alcohol Mortality Risk Starts at Low Intakes With No Net Benefit",
+   "category": "applicable-now",
+   "primaryLinks": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/42420014",
+     "title": "Alcohol Intake and Health Study: No Protective Effect at Low Levels, With Mortality Increasing to 1 in 25 at 14 Drinks Per Week."
+    }
+   ]
+  },
   {
    "keys": [
     "canonical:pubmed:42600373",
