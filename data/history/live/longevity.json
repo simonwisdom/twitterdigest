@@ -1,8 +1,118 @@
 {
  "version": 1,
  "themeId": "longevity",
- "updatedAt": "2026-08-24T11:21:45.965Z",
+ "updatedAt": "2026-08-31T12:12:16.352Z",
  "entries": [
+  {
+   "keys": [
+    "url:https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2852856?guestAccessKey=88cbba0f-c5f4-4b8f-9317-2df2f2f5dc62",
+    "url:https://edhub.ama-assn.org/jn-learning/audio-player/19088770"
+   ],
+   "firstSeenDate": "2026-08-31",
+   "lastSeenDate": "2026-08-31",
+   "headline": "GLP-1 Agonists Linked to Reduced All-Cause Mortality in Psychiatric Conditions",
+   "category": "research-watch",
+   "primaryLinks": [
+    {
+     "url": "https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2852856?guestAccessKey=88cbba0f-c5f4-4b8f-9317-2df2f2f5dc62",
+     "title": "JAMA Psychiatry Article on GLP-1s and Mortality in Psychiatric Disorders"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "url:https://jamanetwork.com/journals/jama/fullarticle/2852266"
+   ],
+   "firstSeenDate": "2026-08-31",
+   "lastSeenDate": "2026-08-31",
+   "headline": "Global Burden of Disease Study Evaluates Trends in High LDL Cholesterol Mortality",
+   "category": "clinician-conversation",
+   "primaryLinks": [
+    {
+     "url": "https://jamanetwork.com/journals/jama/fullarticle/2852266",
+     "title": "JAMA Article on Global Burden of Disease and LDL Cholesterol"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "canonical:doi:10.59717/j.xinn-nutri.2026.100030",
+    "url:https://doi.org/10.59717/j.xinn-nutri.2026.100030"
+   ],
+   "firstSeenDate": "2026-08-31",
+   "lastSeenDate": "2026-08-31",
+   "headline": "Review Examines Diet, Gut Microbiota, and Cognitive Aging",
+   "category": "research-watch",
+   "primaryLinks": [
+    {
+     "url": "https://doi.org/10.59717/j.xinn-nutri.2026.100030",
+     "title": "Dietary factors and cognitive aging: Mapping epidemiological evidence and the role of gut microbiota"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "url:https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2852856"
+   ],
+   "firstSeenDate": "2026-08-31",
+   "lastSeenDate": "2026-08-31",
+   "headline": "GLP-1 RAs linked to lower mortality vs SGLT2 inhibitors in large comparative study",
+   "category": "clinician-conversation",
+   "primaryLinks": [
+    {
+     "url": "https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2852856",
+     "title": "JAMA Psychiatry: GLP-1 RAs vs SGLT2 Inhibitors and Cardiovascular Outcomes"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "canonical:pubmed:42612506",
+    "url:https://pubmed.ncbi.nlm.nih.gov/42612506"
+   ],
+   "firstSeenDate": "2026-08-31",
+   "lastSeenDate": "2026-08-31",
+   "headline": "Fermented Milk Linked to Lower Mortality Risk in Older Japanese Men",
+   "category": "research-watch",
+   "primaryLinks": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/42612506",
+     "title": "Association between habitual intake of fermented milk products containing lactic acid bacteria and all-cause mortality: a community-based cohort prospective study."
+    }
+   ]
+  },
+  {
+   "keys": [
+    "canonical:doi:10.59717/j.xinn-nutri.2026.100032",
+    "url:https://doi.org/10.59717/j.xinn-nutri.2026.100032"
+   ],
+   "firstSeenDate": "2026-08-31",
+   "lastSeenDate": "2026-08-31",
+   "headline": "Early Lifestyle Intervention and Long-Term Multimorbidity Trajectories",
+   "category": "research-watch",
+   "primaryLinks": [
+    {
+     "url": "https://doi.org/10.59717/j.xinn-nutri.2026.100032",
+     "title": "Beyond glucose: How early lifestyle intervention rewires the long-term trajectory of multimorbidity and healthy aging"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "canonical:pubmed:42036458",
+    "url:https://pubmed.ncbi.nlm.nih.gov/42036458"
+   ],
+   "firstSeenDate": "2026-08-31",
+   "lastSeenDate": "2026-08-31",
+   "headline": "SGLT2 Inhibitors Linked to Lower All-Cause Mortality Across Diverse Ethnicities in Type 2 Diabetes",
+   "category": "clinician-conversation",
+   "primaryLinks": [
+    {
+     "url": "https://pubmed.ncbi.nlm.nih.gov/42036458",
+     "title": "SGLT2 inhibitor use and disparities in all-cause mortality in type 2 diabetes: insights from a multi-ethnic population."
+    }
+   ]
+  },
   {
    "keys": [
     "canonical:doi:10.1093/eurheartj/ehaf351",

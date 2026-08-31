@@ -1,0 +1,259 @@
+{
+ "date": "2026-08-31",
+ "generatedAt": "2026-08-31T12:09:03.829Z",
+ "themes": {
+  "longevity": [
+   {
+    "headline": "GLP-1 Agonists Linked to Reduced All-Cause Mortality in Psychiatric Conditions",
+    "summary": "Based on linked discussion of a report published in JAMA Psychiatry, treatment with GLP-1 receptor agonists was associated with an estimated 25% relative reduction in all-cause mortality among individuals with bipolar disorder, schizophrenia, or major depressive disorder. Because full study details and abstract are unavailable from the discussion, absolute risk differences, study design, and potential residual confounding cannot be verified, and association does not establish causation. Practical meaning: GLP-1 receptor agonists might be associated with improved survival in people with major psychiatric disorders, but further clinical validation is needed.",
+    "category": "research-watch",
+    "evidenceNote": "Study type unclear · summary based on tweet discussion only (no abstract)",
+    "primaryLinks": [
+     {
+      "url": "https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2852856?guestAccessKey=88cbba0f-c5f4-4b8f-9317-2df2f2f5dc62",
+      "title": "JAMA Psychiatry Article on GLP-1s and Mortality in Psychiatric Disorders"
+     }
+    ],
+    "sourceTweets": [
+     {
+      "url": "https://x.com/rogersmcintyre/status/2093053204195881364",
+      "authorHandle": "rogersmcintyre"
+     }
+    ],
+    "stats": {
+     "tweetCount": 1,
+     "distinctAuthors": 1,
+     "engagement": 187
+    },
+    "dedupeKeys": [
+     "url:https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2852856?guestAccessKey=88cbba0f-c5f4-4b8f-9317-2df2f2f5dc62",
+     "url:https://edhub.ama-assn.org/jn-learning/audio-player/19088770"
+    ]
+   },
+   {
+    "headline": "Global Burden of Disease Study Evaluates Trends in High LDL Cholesterol Mortality",
+    "summary": "Based on the linked discussion of a Global Burden of Disease study, elevated LDL cholesterol is estimated to account for roughly 3.6 million deaths annually worldwide. Age-standardized mortality rates attributable to high LDL cholesterol have dropped by an estimated 45% since 1990, though total absolute deaths have risen due to global population growth and aging. Because these figures rely on epidemiological modeling rather than direct trial data, unmeasured confounding and regional data quality differences remain major limitations. Practical meaning: Discussing lipid management with a clinician may help address a major contributor to cardiovascular mortality risk.",
+    "category": "clinician-conversation",
+    "evidenceNote": "Global Burden of Disease epidemiological analysis · summary based on tweet discussion only (no abstract)",
+    "primaryLinks": [
+     {
+      "url": "https://jamanetwork.com/journals/jama/fullarticle/2852266",
+      "title": "JAMA Article on Global Burden of Disease and LDL Cholesterol"
+     }
+    ],
+    "sourceTweets": [
+     {
+      "url": "https://x.com/NutritionMadeS3/status/2092887943958417781",
+      "authorHandle": "NutritionMadeS3"
+     }
+    ],
+    "stats": {
+     "tweetCount": 1,
+     "distinctAuthors": 1,
+     "engagement": 50
+    },
+    "dedupeKeys": [
+     "url:https://jamanetwork.com/journals/jama/fullarticle/2852266"
+    ]
+   },
+   {
+    "headline": "Review Examines Diet, Gut Microbiota, and Cognitive Aging",
+    "summary": "This review synthesizes prospective cohort studies and randomized trials evaluating how dietary patterns (including Mediterranean and MIND diets) and nutrients (such as omega-3 fatty acids, B vitamins, and carotenoids) relate to cognitive decline. The authors explore how diet-driven gut microbiota changes may mediate brain health via metabolic and neuroinflammatory pathways. However, findings across studies remain inconsistent due to variable dietary assessments and population heterogeneity. Practical meaning: Adopting a nutrient-rich dietary pattern like the Mediterranean or MIND diet may support long-term cognitive health, but exact microbial mechanisms and individualized outcomes remain under investigation.",
+    "category": "research-watch",
+    "evidenceNote": "Narrative review of prospective cohorts and randomized trials · summary based on the abstract",
+    "primaryLinks": [
+     {
+      "url": "https://doi.org/10.59717/j.xinn-nutri.2026.100030",
+      "title": "Dietary factors and cognitive aging: Mapping epidemiological evidence and the role of gut microbiota"
+     }
+    ],
+    "sourceTweets": [
+     {
+      "url": "https://x.com/NutrioSci/status/2093606088033898682",
+      "authorHandle": "NutrioSci"
+     }
+    ],
+    "stats": {
+     "tweetCount": 1,
+     "distinctAuthors": 1,
+     "engagement": 47
+    },
+    "dedupeKeys": [
+     "canonical:doi:10.59717/j.xinn-nutri.2026.100030",
+     "url:https://doi.org/10.59717/j.xinn-nutri.2026.100030"
+    ]
+   },
+   {
+    "headline": "GLP-1 RAs linked to lower mortality vs SGLT2 inhibitors in large comparative study",
+    "summary": "According to the linked discussion (abstract unavailable), a study of over 1 million patients evaluated outcomes following the initiation of GLP-1 receptor agonists compared with SGLT2 inhibitors. Starting a GLP-1 receptor agonist was associated with lower mortality and fewer cardiovascular events, with the greatest absolute risk reductions observed in individuals with serious mental illness. Because this report appears to reflect an observational association rather than a randomized trial, it cannot establish direct causation and may be subject to residual confounding. Practical meaning: Initiating a GLP-1 receptor agonist instead of an SGLT2 inhibitor might confer distinct cardiovascular and survival advantages in certain high-risk groups, though treatment choices require an individualized conversation with a prescribing clinician.",
+    "category": "clinician-conversation",
+    "evidenceNote": "Study of over 1 million patients · summary based on tweet discussion only (no abstract)",
+    "primaryLinks": [
+     {
+      "url": "https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2852856",
+      "title": "JAMA Psychiatry: GLP-1 RAs vs SGLT2 Inhibitors and Cardiovascular Outcomes"
+     }
+    ],
+    "sourceTweets": [
+     {
+      "url": "https://x.com/gbiondizoccai/status/2093707152900669581",
+      "authorHandle": "gbiondizoccai"
+     }
+    ],
+    "stats": {
+     "tweetCount": 1,
+     "distinctAuthors": 1,
+     "engagement": 21
+    },
+    "dedupeKeys": [
+     "url:https://jamanetwork.com/journals/jamapsychiatry/fullarticle/2852856"
+    ]
+   },
+   {
+    "headline": "Fermented Milk Linked to Lower Mortality Risk in Older Japanese Men",
+    "summary": "In a prospective cohort study of 1,280 community-dwelling Japanese adults aged 65 and older (519 men and 761 women, mean age 73.5 years) followed for 9.3 years, researchers evaluated whether habitual intake of fermented milk containing Lacticaseibacillus paracasei strain Shirota (LcS) was associated with all-cause mortality. During follow-up, 147 men (28.3%) and 114 women (15.0%) died. Men consuming LcS-containing fermented milk products at least three days per week over a five-year period had a lower hazard of death compared to those consuming them less often (hazard ratio 0.648, 95% CI 0.438–0.958; propensity-matched hazard ratio 0.640, 95% CI 0.434–0.943). No significant association was observed in women. Because this study is observational and relied on retrospective dietary recall, it cannot establish causation and may be influenced by unmeasured lifestyle differences. Practical meaning: Habitual consumption of certain fermented milk products may be associated with reduced mortality in older men, but it is unclear whether the dairy products directly improve longevity.",
+    "category": "research-watch",
+    "evidenceNote": "Prospective cohort study of 1,280 older adults · summary based on the abstract",
+    "primaryLinks": [
+     {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42612506",
+      "title": "Association between habitual intake of fermented milk products containing lactic acid bacteria and all-cause mortality: a community-based cohort prospective study."
+     }
+    ],
+    "sourceTweets": [
+     {
+      "url": "https://x.com/drdairy50/status/2092443985134391652",
+      "authorHandle": "drdairy50"
+     }
+    ],
+    "stats": {
+     "tweetCount": 1,
+     "distinctAuthors": 1,
+     "engagement": 12
+    },
+    "dedupeKeys": [
+     "canonical:pubmed:42612506",
+     "url:https://pubmed.ncbi.nlm.nih.gov/42612506"
+    ]
+   },
+   {
+    "headline": "Early Lifestyle Intervention and Long-Term Multimorbidity Trajectories",
+    "summary": "Because the full abstract is unavailable, this account is based on the linked publication title and discussion examining how early lifestyle interventions may alter long-term trajectories of multimorbidity and healthy aging beyond glucose regulation alone. Details regarding the exact study design, population, specific interventions, and quantitative effect sizes were not provided in the source material. Without granular methodological details, the true clinical impact and causal pathways cannot be independently verified. Practical meaning: It is unclear how specific early lifestyle protocols influence long-term multimorbidity patterns until comprehensive clinical trial data are published and evaluated.",
+    "category": "research-watch",
+    "evidenceNote": "Study type unclear · summary based on tweet discussion only (no abstract)",
+    "primaryLinks": [
+     {
+      "url": "https://doi.org/10.59717/j.xinn-nutri.2026.100032",
+      "title": "Beyond glucose: How early lifestyle intervention rewires the long-term trajectory of multimorbidity and healthy aging"
+     }
+    ],
+    "sourceTweets": [
+     {
+      "url": "https://x.com/NutrioSci/status/2093603730478559250",
+      "authorHandle": "NutrioSci"
+     }
+    ],
+    "stats": {
+     "tweetCount": 1,
+     "distinctAuthors": 1,
+     "engagement": 7
+    },
+    "dedupeKeys": [
+     "canonical:doi:10.59717/j.xinn-nutri.2026.100032",
+     "url:https://doi.org/10.59717/j.xinn-nutri.2026.100032"
+    ]
+   },
+   {
+    "headline": "SGLT2 Inhibitors Linked to Lower All-Cause Mortality Across Diverse Ethnicities in Type 2 Diabetes",
+    "summary": "A propensity-matched cohort study of 25,584 adults (12,792 matched pairs) aged 18–75 with type 2 diabetes in New Zealand evaluated the association between initiating the SGLT2 inhibitor empagliflozin and all-cause mortality. Annualized crude mortality was lower among SGLT2 inhibitor recipients than non-recipients, both in individuals with cardiovascular/renal disease (13.1 vs 35.2 deaths per 1,000 person-years) and without (3.6 vs 7.7 deaths per 1,000 person-years). After adjustment, risk reductions were observed across groups, with substantial associations in Māori (HR 0.48, 95% CI 0.34–0.67), Pacific (HR 0.51, 95% CI 0.40–0.65), and European populations (HR 0.67, 95% CI 0.55–0.82). The primary limitation is the observational design, meaning residual confounding cannot be excluded. Practical meaning: SGLT2 inhibitors may confer meaningful survival benefits across diverse ethnic groups with type 2 diabetes, warranting discussion with a clinician when managing cardiometabolic risk.",
+    "category": "clinician-conversation",
+    "evidenceNote": "Propensity-matched cohort study of 25,584 adults · summary based on the abstract",
+    "primaryLinks": [
+     {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42036458",
+      "title": "SGLT2 inhibitor use and disparities in all-cause mortality in type 2 diabetes: insights from a multi-ethnic population."
+     }
+    ],
+    "sourceTweets": [
+     {
+      "url": "https://x.com/redGDPS/status/2092985166452977998",
+      "authorHandle": "redGDPS"
+     }
+    ],
+    "stats": {
+     "tweetCount": 1,
+     "distinctAuthors": 1,
+     "engagement": 4
+    },
+    "dedupeKeys": [
+     "canonical:pubmed:42036458",
+     "url:https://pubmed.ncbi.nlm.nih.gov/42036458"
+    ]
+   }
+  ],
+  "art-residencies": [
+   {
+    "headline": "BSC Creative Intelligence Lab 1st Artistic Research Residency",
+    "summary": "The Barcelona Supercomputing Center (BSC-CNS) Creative Intelligence Lab has launched an open call for creative collectives to explore the MareNostrum 5 supercomputer and develop visual metaphors for the processes inside. Based on the Spanish-language announcement, the residency focuses on artistic research at the intersection of high-performance computing, data, and visual arts. Opportunity type is an in-person artistic research residency in Barcelona, Spain, with an application deadline of 2026-08-31. Specific duration, submission requirements, and financial provisions such as fees, stipends, or production budgets are not stated in the announcement. The funding level is funding-unclear.",
+    "category": "residency",
+    "opportunity": {
+     "deadline": "2026-08-31",
+     "location": "Barcelona, Spain",
+     "funding": "funding-unclear"
+    },
+    "image": "https://www.bsc.es/sites/default/files/public/styles/thumbnail/public/bscw2/content/news/horizontal-image/2026_creativeintelligencelab_residencia1_web3.jpg?itok=-LH36L_C",
+    "primaryLinks": [
+     {
+      "url": "https://www.bsc.es/4Sx",
+      "title": "El Creative Intelligence Lab del BSC lanza su primera residencia de investigación artística"
+     }
+    ],
+    "sourceTweets": [
+     {
+      "url": "https://x.com/BSC_CNS/status/2092884209245327666",
+      "authorHandle": "BSC_CNS"
+     }
+    ],
+    "stats": {
+     "tweetCount": 1,
+     "distinctAuthors": 1,
+     "engagement": 14
+    },
+    "dedupeKeys": [
+     "url:https://www.bsc.es/4Sx"
+    ]
+   },
+   {
+    "headline": "2026 Foundwork Artist Prize",
+    "summary": "Foundwork is accepting entries for its annual juried Artist Prize, awarding one contemporary artist an unrestricted $10,000 grant, studio visits with five international jurors, and a long-form interview. In addition, three shortlisted artists will each receive a $1,000 micro-grant.\n\nOpportunity type: Prize.\nLocation: Remote.\nDeadline: 2026-09-25 (selection period runs September 25, 2026–December 31, 2026).\nAccepted disciplines and career stage: Contemporary artists working in any media at any career stage.\nEligibility: Open to artists residing anywhere in the world, with limited exceptions.\nSubmission requirements: Applicants must register and maintain an active profile on the Foundwork platform with at least six artworks and an artist statement published throughout the selection window.\nFinancial support: An unrestricted $10,000 award for the winner and $1,000 micro-grants for three shortlisted artists. Other financial details are not stated.\nFunding level: Fully funded.\nCall language: English.",
+    "category": "prize",
+    "opportunity": {
+     "deadline": "2026-09-25",
+     "location": "Remote",
+     "funding": "fully-funded"
+    },
+    "image": "https://images.e-flux.com/test/8aef24e1-3f53-49f6-b01c-36d19b9ad62e?width=1200&amp;height=630",
+    "primaryLinks": [
+     {
+      "url": "https://www.e-flux.com/announcements/6787988/international-open-call-2026",
+      "title": "International open call 2026 - Announcements - e-flux"
+     }
+    ],
+    "sourceTweets": [
+     {
+      "url": "https://x.com/e_flux/status/2091931289574146245",
+      "authorHandle": "e_flux"
+     }
+    ],
+    "stats": {
+     "tweetCount": 1,
+     "distinctAuthors": 1,
+     "engagement": 2
+    },
+    "dedupeKeys": [
+     "url:https://www.e-flux.com/announcements/6787988/international-open-call-2026"
+    ]
+   }
+  ]
+ }
+}

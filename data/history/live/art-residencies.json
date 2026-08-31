@@ -1,8 +1,38 @@
 {
  "version": 1,
  "themeId": "art-residencies",
- "updatedAt": "2026-08-22T08:51:49.978Z",
+ "updatedAt": "2026-08-31T12:15:14.590Z",
  "entries": [
+  {
+   "keys": [
+    "url:https://www.bsc.es/4Sx"
+   ],
+   "firstSeenDate": "2026-08-31",
+   "lastSeenDate": "2026-08-31",
+   "headline": "BSC Creative Intelligence Lab 1st Artistic Research Residency",
+   "category": "residency",
+   "primaryLinks": [
+    {
+     "url": "https://www.bsc.es/4Sx",
+     "title": "El Creative Intelligence Lab del BSC lanza su primera residencia de investigación artística"
+    }
+   ]
+  },
+  {
+   "keys": [
+    "url:https://www.e-flux.com/announcements/6787988/international-open-call-2026"
+   ],
+   "firstSeenDate": "2026-08-31",
+   "lastSeenDate": "2026-08-31",
+   "headline": "2026 Foundwork Artist Prize",
+   "category": "prize",
+   "primaryLinks": [
+    {
+     "url": "https://www.e-flux.com/announcements/6787988/international-open-call-2026",
+     "title": "International open call 2026 - Announcements - e-flux"
+    }
+   ]
+  },
   {
    "keys": [
     "url:https://americasfuture.org/opportunities/writing-fellows",
